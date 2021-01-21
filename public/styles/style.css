@@ -1,1 +1,4 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/*# sourceMappingURL=style.css.map */
