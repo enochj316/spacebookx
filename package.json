@@ -19,5 +19,7 @@
     "sequelize": "^6.4.0",
     "tailwindcss": "^2.0.2"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "sequelize-cli": "^6.2.0"
+  }
 }
