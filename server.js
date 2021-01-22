@@ -1,17 +1,22 @@
-// Requiring necessary npm packages
-const express = require("express");
+const express = require('express');
 
+// Sets up the Express App
 const app = express();
-const db = require("./models")
 const PORT = process.env.PORT || 8080;
 
+// Requiring our models for syncing
+const db = require('./models');
+
+// Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-app.use(express.static('app/public'));
+// Static directory
+app.use(express.static('public'));
 
-app.get("/", (req, res) => {
-    db.Users.findAll({}).then((dbHit) => console.log(res.json(dbHit)))
+// Routes
+app.get("/users", (req, res) => {
+    db.Users.findAll().then((result) => res.send(JSON.stringify(result)))
 })
 
 app.post("/users", (req, res) => {
@@ -19,9 +24,10 @@ app.post("/users", (req, res) => {
         name: req.body.name,
         email: req.body.email,
         phonenumber: req.body.phonenumber
-    }).then((dbHit) => res.json(dbHit))
-})  
+    }).then((result) => res.json(result))
+})
 
-db.sequelize.sync({ force: true }).then(() => {
+//add {force: true} to reset table
+db.sequelize.sync().then(() => {
     app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));
 });
