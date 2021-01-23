@@ -59,6 +59,16 @@ app.delete("/posts/:id", (req, res) => {
             id: req.params.id,
         },
     }).then((result) => res.json(result))
+
+})
+// Friends //
+//get friends of specific person
+app.get("/friends", (req, res) => {
+    db.Friends.findAll({
+        where: {
+                             
+        }
+    })
 })
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
