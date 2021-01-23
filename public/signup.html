@@ -14,27 +14,26 @@
         <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
             <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
                 <h1 class="mb-8 text-3xl text-center">Sign up</h1>
-                <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" name="fullname"
+                <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" id="first-name-input" name="fullname"
                     placeholder="First Name" />
 
-                <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" name="fullname"
+                <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" id="last-name-input" name="fullname"
                     placeholder="Last Name" />
 
-                <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" name="email"
+                <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" id="email-input" name="email"
                     placeholder="Email" />
 
-                <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" name="fullname"
+                <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" id="phone-number-input" name="fullname"
                     placeholder="Phone Number" />
 
-                <input type="password" class="block border border-grey-light w-full p-3 rounded mb-4" name="password"
+                <input type="password" class="block border border-grey-light w-full p-3 rounded mb-4" id="password-input" name="password"
                     placeholder="Password" />
-                    
-                <input type="password" class="block border border-grey-light w-full p-3 rounded mb-4"
+                <input type="password" class="block border border-grey-light w-full p-3 rounded mb-4" id="confirm-password-input"
                     name="confirm_password" placeholder="Confirm Password" />
 
-                <button class="w-full mr-5 bg-green-500 hover:bg-green-dark focus:outline-none text-white font-bold py-2 px-6 rounded-lg">
-                    Create Account
-                </button>
+                <button type="submit"
+                    class="w-full text-center py-3 px-4 rounded-xl bg-blue-300 hover:bg-blue-700 text-white font-bold focus:outline-none my-1" id="sign-up-btn">Create
+                    Account</button>
 
                 <div class="text-center text-sm text-grey-dark mt-4">
                     By signing up, you agree to
@@ -52,7 +51,9 @@
             </div>
         </div>
     </div>
-
+<script src="js/signup.js">
+    
+</script>
 </body>
 
 </html>
