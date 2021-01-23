@@ -21,9 +21,21 @@ app.get("/users", (req, res) => {
 
 app.post("/users", (req, res) => {
     db.Users.create({
-        name: req.body.name,
+        first_name: req.body.first_name,
+        last_name: req.body.last_name,
         email: req.body.email,
         phonenumber: req.body.phonenumber
+    }).then((result) => res.json(result))
+})
+
+app.get("/posts", (req, res) => {
+    db.Posts.findAll().then((result) => res.send(JSON.stringify(result)))
+})
+
+app.post("/posts", (req, res) => {
+    db.Posts.create({
+        title: req.body.title,
+        body: req.body.body
     }).then((result) => res.json(result))
 })
 
