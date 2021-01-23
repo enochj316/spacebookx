@@ -14,9 +14,13 @@ app.use(express.json());
 // Static directory
 app.use(express.static('public'));
 
-// Routes
+// Routes ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// USERS //
 app.get("/users", (req, res) => {
-    db.Users.findAll().then((result) => res.send(JSON.stringify(result)))
+    db.Users.findAll({
+        include: [db.Posts, db.Friends]
+    }).then((result) => res.send(JSON.stringify(result)))
 })
 
 app.post("/users", (req, res) => {
@@ -28,6 +32,15 @@ app.post("/users", (req, res) => {
     }).then((result) => res.json(result))
 })
 
+app.delete("/users/:id", (req, res) => {
+    db.Users.destroy({
+        where: {
+            id: req.params.id
+        }
+    }).then((result) => res.json(result))
+})
+
+// POSTS //
 app.get("/posts", (req, res) => {
     db.Posts.findAll().then((result) => res.send(JSON.stringify(result)))
 })
@@ -39,7 +52,16 @@ app.post("/posts", (req, res) => {
     }).then((result) => res.json(result))
 })
 
+app.delete("/posts/:id", (req, res) => {
+    db.Posts.destroy({
+        where: {
+            id: req.params.id,
+        },
+    }).then((result) => res.json(result))
+})
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 //add {force: true} to reset table
-db.sequelize.sync().then(() => {
+db.sequelize.sync({force: true}).then(() => {
     app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));
 });
