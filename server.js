@@ -48,7 +48,8 @@ app.get("/posts", (req, res) => {
 app.post("/posts", (req, res) => {
     db.Posts.create({
         title: req.body.title,
-        body: req.body.body
+        body: req.body.body,
+        UserId: req.body.UserId
     }).then((result) => res.json(result))
 })
 
@@ -62,6 +63,6 @@ app.delete("/posts/:id", (req, res) => {
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 //add {force: true} to reset table
-db.sequelize.sync({force: true}).then(() => {
+db.sequelize.sync().then(() => {
     app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));
 });
