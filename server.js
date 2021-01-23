@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 
 // Sets up the Express App
 const app = express();
@@ -14,7 +15,7 @@ app.use(express.json());
 // Static directory
 app.use(express.static('public'));
 
-// Routes ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// API Routes ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 // USERS //
 app.get("/users", (req, res) => {
@@ -28,7 +29,8 @@ app.post("/users", (req, res) => {
         first_name: req.body.first_name,
         last_name: req.body.last_name,
         email: req.body.email,
-        phonenumber: req.body.phonenumber
+        phonenumber: req.body.phonenumber,
+        password: req.body.password
     }).then((result) => res.json(result))
 })
 
@@ -71,8 +73,13 @@ app.get("/friends", (req, res) => {
     })
 })
 
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+// HTML Routes ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "./public/login.html"));
+});
 
 //add {force: true} to reset table
 db.sequelize.sync().then(() => {
