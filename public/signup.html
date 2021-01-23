@@ -2,44 +2,55 @@
 <html lang="en">
 
 <head>
-  <title>Sign-up</title>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="styles/tailwind.css" rel="stylesheet">
+    <title>Sign-up</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="styles/tailwind.css" rel="stylesheet">
     <link href="styles/style.css" rel="stylesheet">
 </head>
 
 <body>
-  <nav class="navbar navbar-default">
-    <div class="container-fluid">
-      <div class="navbar-header">
-      </div>
+    <div class="bg-grey-lighter min-h-screen flex flex-col">
+        <div class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2">
+            <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
+                <h1 class="mb-8 text-3xl text-center">Sign up</h1>
+                <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" name="fullname"
+                    placeholder="First Name" />
+
+                <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" name="fullname"
+                    placeholder="Last Name" />
+
+                <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" name="email"
+                    placeholder="Email" />
+
+                <input type="text" class="block border border-grey-light w-full p-3 rounded mb-4" name="fullname"
+                    placeholder="Phone Number" />
+
+                <input type="password" class="block border border-grey-light w-full p-3 rounded mb-4" name="password"
+                    placeholder="Password" />
+                <input type="password" class="block border border-grey-light w-full p-3 rounded mb-4"
+                    name="confirm_password" placeholder="Confirm Password" />
+
+                <button type="submit"
+                    class="w-full text-center py-3 rounded bg-green text-white hover:bg-green-dark focus:outline-none my-1">Create
+                    Account</button>
+
+                <div class="text-center text-sm text-grey-dark mt-4">
+                    By signing up, you agree to
+                    <a class="no-underline border-b border-grey-dark text-grey-dark" href="#">
+                        Sign over your life to us!
+                    </a>
+                </div>
+            </div>
+
+            <div class="text-grey-dark mt-6">
+                Already have an account?
+                <a class="no-underline border-b border-blue text-blue" href="../login/">
+                    Log in
+                </a>.
+            </div>
+        </div>
     </div>
-  </nav>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-6 col-md-offset-3">
-        <h2>Sign Up Form</h2>
-        <form class="signup">
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="email-input" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="password-input" placeholder="Password">
-          </div>
-          <div style="display: none" id="alert" class="alert alert-danger" role="alert">
-            <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
-            <span class="sr-only">Error:</span> <span class="msg"></span>
-          </div>
-          <button type="submit" class="btn btn-default">Sign Up</button>
-        </form>
-        <br />
-        <p>Or log in <a href="/login">here</a></p>
-      </div>
-    </div>
-  </div>
 
 </body>
 
