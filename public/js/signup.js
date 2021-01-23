@@ -1,9 +1,9 @@
-document.addEventListener("DOMContentLoaded", (e) => {
-    console.log("Dom loaded!")
+document.addEventListener("DOMContentLoaded", (event) => {
+    console.log("DOM loaded! 🚀")
 
     const signUpBtn = document.getElementById("sign-up-btn");
-    signUpBtn.addEventListener("click", (e) => {
-        e.preventDefault();
+    signUpBtn.addEventListener("click", (event) => {
+        event.preventDefault();
         //grab values of the form fields
         //fetch POST with values as a JSON object 
         const newUser = {

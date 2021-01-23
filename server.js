@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const passport = require("./config/passport.js");
 
 // Sets up the Express App
 const app = express();
@@ -11,9 +12,10 @@ const db = require('./models');
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
-// Static directory
 app.use(express.static('public'));
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 // API Routes ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -63,15 +65,13 @@ app.delete("/posts/:id", (req, res) => {
     }).then((result) => res.json(result))
 
 })
-// Friends //
-//get friends of specific person
-app.get("/friends", (req, res) => {
-    db.Friends.findAll({
-        where: {
-                             
-        }
-    })
-})
+// Login with passport//
+app.post("/api/login", passport.authenticate("local"), (req, res) => {
+    res.json({
+        email: req.user.email,
+        id: req.user.id
+    });
+});
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
