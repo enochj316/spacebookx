@@ -14,7 +14,7 @@ const db = require('./models');
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
-app.use(session({ secret: "keyboard cat", resave: true, saveUninitialized: true }));
+app.use(session({ secret: "cheesy mcgee", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 
