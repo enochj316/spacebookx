@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SpaceBook</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="styles/tailwind.css" rel="stylesheet">
+    <link href="styles/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="flex items-center bg-gray-800 p-3 flex-wrap">
+        <a href="#" class="p-2 mr-4 inline-flex items-center">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="fill-current text-white h-8 w-8 mr-2">
+
+            </svg>
+            <span class="text-xl text-white font-bold uppercase tracking-wide">Logo</span>
+        </a>
+        <button
+            class="text-white inline-flex p-3 hover:bg-gray-900 rounded lg:hidden ml-auto hover:text-white outline-none nav-toggler"
+            data-target="#navigation">
+            <i class="material-icons">menu</i>
+        </button>
+        <div class="hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto" id="navigation">
+            <div
+                class="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start flex flex-col lg:h-auto">
+                <div class="pt-2 relative mx-auto text-gray-600">
+                    <input
+                        class="border-2 border-gray-300 bg-gray-800 h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
+                        type="search" name="search" placeholder="Search">
+                    <button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
+                        <svg class="text-gray-600 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
+                            xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
+                            viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;"
+                            xml:space="preserve" width="512px" height="512px">
+                            <path
+                                d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
+                        </svg>
+                    </button>
+                </div>
+                <a href="#"
+                    class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+                    <span></span>
+                </a>
+                <a href="#"
+                    class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+                    <span>Home</span>
+                </a>
+                <a href="#"
+                    class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+                    <span>Logout</span>
+                </a>
+            </div>
+        </div>
+    </nav>
+
+
+
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 sm:px-8 sm:py-12 sm:gap-x-8 md:py-16">
+        <div class="col-start-1 row-start-1 flex sm:col-start-2 sm:row-span-3">
+            <div class="w-full grid grid-cols-3 grid-rows-2 gap-2">
+                <div class="relative col-span-3 row-span-2 md:col-span-2">
+                    <img src="https://i.postimg.cc/7P1H9CB0/gettyimages-86788270-e1599654644219.jpg" alt=""
+                        class="absolute inset-0 w-full h-full object-cover bg-gray-100 sm:rounded-lg" />
+                </div>
+                <div class="relative hidden md:block">
+                    <img src="https://i.postimg.cc/gkQ6FLWj/download.jpg" alt=""
+                        class="absolute inset-0 w-full h-full object-cover rounded-lg bg-gray-100" />
+                </div>
+                <div class="relative hidden md:block">
+                    <img src="https://i.postimg.cc/d3XDYpgp/b-compressed.png" alt=""
+                        class="absolute inset-0 w-full h-full object-cover rounded-lg bg-gray-100" />
+                </div>
+            </div>
+        </div>
+        <div class="relative z-10 col-start-1 row-start-1 px-4 pt-40 pb-3 bg-gradient-to-t from-black sm:bg-none">
+            <h2 class="text-xl font-semibold text-white sm:text-2xl sm:leading-7 sm:text-black md:text-3xl">
+                Ted "Theodore" Logan
+            </h2>
+        </div>
+        <div class="col-start-1 row-start-2 px-4 sm:pb-16">
+            <div class="flex items-center text-sm font-medium my-5 sm:mt-2 sm:mb-4">
+                <div>San Dimas, California in 1988</div>
+            </div>
+            <hr class="w-16 border-gray-300 hidden sm:block">
+        </div>
+        <div class="col-start-1 row-start-3 space-y-3 px-4">
+            <p class="flex items-center text-black text-sm font-medium">
+                Theodore "Ted" Logan was born and raised in San Dimas, California. He lived with his father San Dimas
+                Police Captain Jonathan Logan and his younger brother Deacon Logan. He met Bill S. Preston, Esq. and the
+                two became friends forming their own band the Wyld Stallyns.
+            </p>
+        </div>
+    </div>
+    <br>
+
+
+
+    <div class="space-y-8">
+        <figure class="lg:w-1/3 md:flex bg-gray-100 rounded-xl p-8 md:p-0">
+            <img class="w-32 h-32 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
+                src="https://i.postimg.cc/7P1H9CB0/gettyimages-86788270-e1599654644219.jpg" alt="profile pic"
+                width="384" height="512">
+            <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
+                <blockquote>
+                    <p class="text-lg font-semibold">
+                        Be excellent to each other!
+                    </p>
+                </blockquote>
+                <figcaption class="font-medium">
+                    <div class="text-cyan-600">
+                        Ted
+                    </div>
+                    <div class="text-gray-500">
+                        Wyld Stallyns member
+                    </div>
+                </figcaption>
+            </div>
+        </figure>
+
+        <figure class="lg:w-1/3 md:flex bg-gray-100 rounded-xl p-8 md:p-0">
+            <img class="w-32 h-32 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
+                src="https://i.postimg.cc/7P1H9CB0/gettyimages-86788270-e1599654644219.jpg" alt="profile pic"
+                width="384" height="512">
+            <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
+                <blockquote>
+                    <p class="text-lg font-semibold">
+                        That was non-non-non-non-heinous!
+                    </p>
+                </blockquote>
+                <figcaption class="font-medium">
+                    <div class="text-cyan-600">
+                        Ted
+                    </div>
+                    <div class="text-gray-500">
+                        Wyld Stallyns member
+                    </div>
+                </figcaption>
+            </div>
+        </figure>
+    </div>
+
+
+</body>
+
+</html>
