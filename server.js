@@ -23,5 +23,5 @@ require('./routes/html-routes.js')(app);
 
 //add {force: true} to reset table
 db.sequelize.sync().then(() => {
-    app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));
+    app.listen(PORT, () => console.log(`Server listening on: http://localhost:${PORT}`));
 });
