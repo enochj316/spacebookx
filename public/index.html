@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Reset CSS-->
+    <link href="styles/reset.css" rel="stylesheet">
+    <!--Tailwind CSS-->
+    <link href="styles/tailwind.css" rel="stylesheet">
+    <!--CSS-->
+	<link href="styles/style.css" rel="stylesheet">
+    <title>User Name</title>
+</head>
+<body>
+    <header class="header">
+        <!--Nav Bar-->
+        <nav class="flex flex-jc-sb flex-ai-c shadow">
+            <!--Logo-->
+            <a href="/" class="header__logo">
+                <img src="Assets/spacebookLogo.png" alt="Spacebook" 
+            </a>
+            <!--Hamburger Menu-->
+            <a href="#" class="header__menu hide-for-desktop">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <!--Hamburger Menu Links-->
+            <div class="header__links hide-for-mobile">
+                <a href="#" class= "hover:bg-gray-100 px-3 py-2 rounded-md">My Profile</a>
+                <a href="#" class="hover:bg-gray-100 px-3 py-2 rounded-md">Add Friend</a>
+                <a href="#" class="hover:bg-gray-100 px-3 py-2 rounded-md">Logout</a>
+            </div>
+
+            <!--Profile Pic/Button  (left it as a button in case we needed it)-->
+            <div>
+                <button class="max-w-xs bg-gray-800 rounded-full flex items-center focus:outline-none">
+                  <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                </button>
+            </div>
+        </nav>
+    </header>
+    
+    <!--Sidebar-->
+    <!-- <div class="sidebar flex flex-col w-32 flex-1 bg-gray-100">
+        <div class="w-full flex items-center justify-center h-12 bg-gray-100">
+          top
+        </div>
+        <div class="w-full flex-1 bg-gray-400"></div>
+        <div class="w-full flex items-center justify-center h-12 bg-gray-100">
+          bottom
+        </div>
+    </div> -->
+
+    <!--User Content-->
+    <!--px = "padding x-axis" py = "padding y-axis"-->
+    <div class="px-6 py-8">
+        <div class="container mx-auto">
+            <div class="w-full lg:w-8/12">
+                <div class="flex items-center justify-between">
+                    <!--Moments Feed-->
+                    <h1 class="text-xl font-bold text-gray-700 md:text-2xl">Moments Feed</h1>
+                </div>
+                <div class="mt-6">
+                    <div class="max-w-4xl px-10 py-6 bg-white rounded-lg shadow-md">
+                        <div class="mt-2"><a href="#" class="text-2xl text-gray-700 font-bold hover:underline">Share Your Moments:</a>
+                            <div>
+                                <div class="mt-1">
+                                  <textarea id="about" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md" placeholder="Share a moment!"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mt-4">
+                            <div>
+                                <a href="#" class="px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500">Laravel</a>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6">
+                    <div class="max-w-4xl px-10 py-6 bg-white rounded-lg shadow-md">
+                        <div class="flex justify-between items-center">
+                            <span class="font-light text-gray-600">Jun 1, 2020</span>
+                            <a href="#" class="px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500">Laravel</a>
+                        </div>
+                        <div class="mt-2"><a href="#" class="text-2xl text-gray-700 font-bold hover:underline">Build Your New Idea with Laravel Freamwork.</a>
+                            <p class="mt-2 text-gray-600">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos enim reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!
+                            </p>
+                        </div>
+                        <div class="flex justify-between items-center mt-4">
+                            <a href="#" class="text-blue-500 hover:underline">Read more</a>
+                            <div>
+                                <a href="#" class="flex items-center"><img
+                                    src="https://images.unsplash.com/photo-1464863979621-258859e62245?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=333&amp;q=80"
+                                    alt="avatar" class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block">
+                                <h1 class="text-gray-700 font-bold hover:underline">Jane Doe</h1>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-6">
+                    <div class="max-w-4xl px-10 py-6 bg-white rounded-lg shadow-md">
+                        <div class="flex justify-between items-center">
+                            <span class="font-light text-gray-600">Jun 1, 2020</span>
+                            <a href="#" class="px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500">Laravel</a>
+                        </div>
+                        <div class="mt-2"><a href="#" class="text-2xl text-gray-700 font-bold hover:underline">Build Your New Idea with Laravel Freamwork.</a>
+                            <p class="mt-2 text-gray-600">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos enim reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!
+                            </p>
+                        </div>
+                        <div class="flex justify-between items-center mt-4">
+                            <a href="#" class="text-blue-500 hover:underline">Read more</a>
+                            <div>
+                                <a href="#" class="flex items-center">
+                                <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=731&amp;q=80"
+                                alt="avatar" class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block">
+                                <h1 class="text-gray-700 font-bold hover:underline">Alex John</h1>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+       
+</script>
+</html>

@@ -1,0 +1,55 @@
+html{
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing:border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    // font-family: ;
+    font-size: $font-med;
+    color: $grayishBlue;
+    line-height: 1.5;
+}
+
+a, a:visited, a:hover {
+    text-decoration: none;
+}
+
+//Flexbox
+.flex {
+    display: flex;
+
+    &-jc-sb {
+        justify-content: space-between;
+    }
+
+    &-jc-sa {
+        justify-content: space-around;
+    }
+
+    &-jc-c {
+        justify-content: center;
+    }
+
+
+    &-ai-c {
+        align-items: center;
+    }
+}
+
+// Visibility
+.hide-for-mobile {
+    @include breakpoint-down(medium){
+      display: none;
+    }
+}
+  
+.hide-for-desktop {
+    @include breakpoint-up(large){
+      display: none;
+    }
+}
