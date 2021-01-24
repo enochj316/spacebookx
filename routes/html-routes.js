@@ -21,4 +21,20 @@ module.exports = (app) => {
 
         app.use(routes); */ 
     });
+
+    app.get("/home_id", (req, res) => {
+        const exphbs = require('express-handlebars');
+
+        app.engine('handlebars', exphbs({
+            defaultLayout: '_home'
+        }));
+        app.set('view engine', 'handlebars');
+
+        res.render('home');
+
+        /*  // Import routes and give the server access to them.
+        const routes = require('../controllers/user_controller');
+
+        app.use(routes); */ 
+    });
 }
