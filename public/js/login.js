@@ -18,6 +18,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             body: JSON.stringify(loginUser)
         }).then((response) => {
             console.log(response)
+            window.location.assign(response.url)
         }).catch(err => {
             console.log(err)
         })

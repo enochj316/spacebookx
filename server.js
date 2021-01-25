@@ -1,7 +1,9 @@
 const express = require('express');
 const session = require("express-session");
+const flash = require('express-flash')
 const path = require('path');
 const passport = require("./config/passport.js");
+
 
 // Sets up the Express App
 const app = express();
@@ -17,11 +19,12 @@ app.use(express.static('public'));
 app.use(session({ secret: "cheesy mcgee", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
+app.use(flash())
 
 require('./routes/api-routes.js')(app);
 require('./routes/html-routes.js')(app);
 
 //add {force: true} to reset table
 db.sequelize.sync().then(() => {
-    app.listen(PORT, () => console.log(`Listening on PORT ${PORT}`));
+    app.listen(PORT, () => console.log(`Server listening on: http://localhost:${PORT}`));
 });

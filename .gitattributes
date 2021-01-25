@@ -2,3 +2,4 @@
 *.js linguist-vendored=false
 *.scss linguist-vendored=false
 *.html linguist-vendored=false
+*.handlebars linguist-vendored=false

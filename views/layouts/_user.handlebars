@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SpaceBook</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="styles/tailwind.css" rel="stylesheet">
+    <link href="styles/style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/user.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <!--Nav Bar-->
+        <nav class="flex flex-jc-sb flex-ai-c shadow">
+                <!--Logo-->
+                <a href="/" class="header__logo">
+                    <img src="Assets/spacebookLogo.png" alt="Spacebook" 
+                </a>
+                <!--Hamburger Menu-->
+                <a href="#" class="header__menu hide-for-desktop">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+                <!--Hamburger Menu Links-->
+                <div class="header__links hide-for-mobile">
+                    <a href="#" class="hover:bg-gray-100 px-3 py-2 rounded-md">My Profile</a>
+                    <a href="#" class="hover:bg-gray-100 px-3 py-2 rounded-md">Add Friend</a>
+                    <a href="#" class="hover:bg-gray-100 px-3 py-2 rounded-md">Logout</a>
+                </div>
+
+                <!--Profile Pic/Button  (left it as a button in case we needed it)-->
+                <div>
+                    <button class="max-w-xs bg-gray-800 rounded-full flex items-center focus:outline-none">
+                        <img class="h-8 w-8 rounded-full"
+                            src="https://i.postimg.cc/7P1H9CB0/gettyimages-86788270-e1599654644219.jpg"
+                            alt="profile_pic">
+                    </button>
+                </div>
+        </nav>
+    </header>
+
+    {{{ body }}}
+
+</body>
+
+</html>

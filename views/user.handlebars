@@ -1,0 +1,106 @@
+<div class="grid grid-cols-1 sm:grid-cols-2 sm:px-8 sm:py-12 sm:gap-x-8 md:py-16">
+    <div class="col-start-1 row-start-1 flex sm:col-start-2 sm:row-span-3">
+        <div class="w-full grid grid-cols-3 grid-rows-2 gap-2">
+            <div class="relative col-span-3 row-span-2 md:col-span-2">
+                <img src="https://i.postimg.cc/7P1H9CB0/gettyimages-86788270-e1599654644219.jpg" alt=""
+                    class="absolute inset-0 w-full h-full object-cover bg-gray-100 sm:rounded-lg" />
+            </div>
+            <div class="relative hidden md:block">
+                <img src="https://i.postimg.cc/gkQ6FLWj/download.jpg" alt=""
+                    class="absolute inset-0 w-full h-full object-cover rounded-lg bg-gray-100" />
+            </div>
+            <div class="relative hidden md:block">
+                <img src="https://i.postimg.cc/d3XDYpgp/b-compressed.png" alt=""
+                    class="absolute inset-0 w-full h-full object-cover rounded-lg bg-gray-100" />
+            </div>
+        </div>
+    </div>
+    <div class="relative z-10 col-start-1 row-start-1 px-4 pt-40 pb-3 bg-gradient-to-t from-black sm:bg-none">
+        <h2 class="text-xl font-semibold text-white sm:text-2xl sm:leading-7 sm:text-black md:text-3xl">
+            Ted "Theodore" Logan
+        </h2>
+    </div>
+    <div class="col-start-1 row-start-2 px-4 sm:pb-16">
+        <div class="flex items-center text-sm font-medium my-5 sm:mt-2 sm:mb-4">
+            <div>San Dimas, California in 1988</div>
+        </div>
+        <hr class="w-16 border-gray-300 hidden sm:block">
+    </div>
+    <div class="col-start-1 row-start-3 space-y-3 px-4">
+        <p class="flex items-center text-black text-sm font-medium">
+            Theodore "Ted" Logan was born and raised in San Dimas, California. He lived with his father San Dimas
+            Police Captain Jonathan Logan and his younger brother Deacon Logan. He met Bill S. Preston, Esq. and the
+            two became friends forming their own band the Wyld Stallyns.
+        </p>
+    </div>
+</div>
+
+<div class="px-6">
+    <div class="container mx-auto">
+        <div class="w-full lg:w-8/12">
+            <div class="flex items-center justify-between">
+                <!--Moments Feed-->
+                <h1 class="text-xl font-bold text-gray-700 md:text-2xl">Let's Explore Moments Around You...</h1>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="px-6">
+    <div class="container mx-auto">
+        <div class="w-full lg:w-8/12">
+            <div class="mt-6" x-data="{ open: false }">
+
+                <!-- Button to open modal -->
+                <button class="plus px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500"
+                    @click="open = true">Create Moment to Share</button>
+
+                <!-- Overlay -->
+                <div class="absolute top-0 left-0 flex items-center justify-center w-full h-full overflow-hidden"
+                    style="background-color: rgba(0,0,0,.7);" x-show="open">
+
+                    <!-- modal -->
+                    <div class="h-auto p-4 mx-2 text-left bg-white rounded shadow-xl max-w-xl md:p-6 lg:p-8 md:mx-0"
+                        @click.away="open = false">
+                        <div class="create-form mt-6" id="create_moment">
+                            <div class="max-w-4xl px-10 py-6 bg-white rounded-lg shadow-md">
+                                <div class="mt-2"><a
+                                        class="text-2xl text-gray-700 font-bold hover:underline">Share Your
+                                        Moments:</a>
+                                    <div>
+                                        <div class="mt-1">
+                                            <textarea id="moment_text" name="moment" rows="3"
+                                                class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md"
+                                                placeholder=""></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Share button  --->
+                        <div class="mt-5 sm:mt-6">
+                            <span class="flex w-full rounded-md shadow-sm flex items-center justify-center">
+                                <button @click="open = false"
+                                    class="plus px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500">
+                                    Share!
+                                </button>
+                            </span>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+{{> friends/friends-block }}
+
+{{> moments/moment-block }}
+
+{{> moments/moment-block }}
+
+{{> moments/post-block }}

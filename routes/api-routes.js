@@ -50,11 +50,30 @@ module.exports = (app) => {
     })
 
     // Login with passport//
-    app.post("/api/login", passport.authenticate("local"), (req, res) => {
+    app.post("/api/login", passport.authenticate("local", {
+        successRedirect: "/home",
+        failureRedirect: "/",
+        failureFlash: true
+    }), (req, res) => {
         res.json({
             email: req.user.email,
             id: req.user.id
         });
     });
-}
+
+    app.get("/api/user_data", (req, res) => {
+        if (!req.user) {
+          // The user is not logged in, send back an empty object
+          res.json({});
+        } else {
+          // Otherwise send back the user's email and id
+          // Sending back a password, even a hashed password, isn't a good idea
+          res.json({
+            email: req.user.email,
+            id: req.user.id
+          });
+        }
+      });
+};
+
 
