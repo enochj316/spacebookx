@@ -37,4 +37,9 @@ module.exports = (app) => {
 
         app.use(routes); */ 
     });
+
+    //test route
+    app.get("/home", (req, res) => {
+        res.sendFile(path.join(__dirname, "../public/home.html"));
+    })
 }
