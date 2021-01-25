@@ -53,6 +53,7 @@ module.exports = (app) => {
     app.post("/api/login", passport.authenticate("local", {
         successRedirect: "/home",
         failureRedirect: "/",
+        failureFlash: true
     }), (req, res) => {
         res.json({
             email: req.user.email,

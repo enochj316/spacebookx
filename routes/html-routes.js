@@ -1,10 +1,15 @@
 const path = require("path");
+const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 // HTML Routes ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 module.exports = (app) => {
     app.get("/", (req, res) => {
         res.sendFile(path.join(__dirname, "../public/login.html"));
     });
+
+    app.get("/home", isAuthenticated, (req, res) => {
+        res.sendFile(path.join(__dirname, "../public/home.html"));
+    })
 
     app.get("/user_id", (req, res) => {
         const exphbs = require('express-handlebars');
@@ -37,9 +42,4 @@ module.exports = (app) => {
 
         app.use(routes); */ 
     });
-
-    //test route
-    app.get("/home", (req, res) => {
-        res.sendFile(path.join(__dirname, "../public/home.html"));
-    })
 }
