@@ -82,10 +82,16 @@ a, a:visited, a:hover {
   margin-bottom: 3px;
 }
 
+.header__links {
+  margin-right: 0%;
+  -webkit-padding-start: 50%;
+          padding-inline-start: 50%;
+}
+
 .header__links a {
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: end;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 .sidebar {
