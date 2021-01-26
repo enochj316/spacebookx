@@ -12,3 +12,10 @@ $(document).ready(() => {
         $("#moment-time").text(data[0].createdAt);
       });
 });
+
+let button = document.querySelector('.btn')
+
+ // press the button to toggle the .dark-mode class
+button.addEventListener('click', () => {
+  document.documentElement.classList.toggle('dark-mode')
+})

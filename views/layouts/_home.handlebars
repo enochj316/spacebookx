@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="styles/tailwind.css" rel="stylesheet">
     <link href="styles/style.css" rel="stylesheet">
+    <link rel="icon" href="Assets/spacebook_icon.png" type="image/png">
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 
@@ -16,7 +17,8 @@
         <nav class="flex flex-jc-sb flex-ai-c shadow">
             <!--Logo-->
             <a href="/home_id" class="header__logo">
-                <img src="Assets/spacebookLogo.png" alt="Spacebook" </a>
+                <img class="logo" src="Assets/spacebookLogo.png" alt="Spacebook" </a>
+                <h2 id="name-top-right">Welcome </h2>
                 <!--Hamburger Menu-->
                 <a href="#" class="header__menu hide-for-desktop">
                     <span></span>
@@ -27,13 +29,12 @@
                 <div class="header__links hide-for-mobile">
                     <a href="#" class="hover:bg-gray-100 px-3 py-2 rounded-md" id="profile-button">My Profile</a>
                     <a href="#" class="hover:bg-gray-100 px-3 py-2 rounded-md">Add Friend</a>
-                    <a href="#" class="hover:bg-gray-100 px-3 py-2 rounded-md">Logout</a>
+                    <a href="/" class="hover:bg-gray-100 px-3 py-2 rounded-md">Logout</a>
                 </div>
 
                 <!--Profile Pic/Button  (left it as a button in case we needed it)-->
                 <div>
-                    <h1 id="name-top-right"></h1>
-                    <button class="max-w-xs bg-gray-800 rounded-full flex items-center focus:outline-none">
+                    <button class="mx-2 max-w-xs bg-gray-800 rounded-full flex items-center focus:outline-none">
                         <img class="h-8 w-8 rounded-full"
                             src="https://i.postimg.cc/7P1H9CB0/gettyimages-86788270-e1599654644219.jpg"
                             alt="profile_pic">

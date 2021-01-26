@@ -12,7 +12,15 @@ body {
     // font-family: ;
     font-size: $font-med;
     color: $grayishBlue;
+    background-color: $lightGrayishBlue;
     line-height: 1.5;
+
+    &.noscroll {
+        overflow: hidden;
+    }
+
+    //shadow
+    //box-shadow: -2px 10px 15px 0px
 }
 
 a, a:visited, a:hover {
@@ -20,26 +28,25 @@ a, a:visited, a:hover {
 }
 
 //Flexbox
-.flex {
-    display: flex;
+// .flex {
+//     display: flex;
 
-    &-jc-sb {
-        justify-content: space-between;
-    }
+//     &-jc-sb {
+//         justify-content: space-between;
+//     }
 
-    &-jc-sa {
-        justify-content: space-around;
-    }
+//     &-jc-sa {
+//         justify-content: space-around;
+//     }
 
-    &-jc-c {
-        justify-content: center;
-    }
+//     &-jc-c {
+//         justify-content: center;
+//     }
 
-
-    &-ai-c {
-        align-items: center;
-    }
-}
+//     &-ai-c {
+//         align-items: center;
+//     }
+// }
 
 // Visibility
 .hide-for-mobile {
