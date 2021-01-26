@@ -11,11 +11,11 @@ const mysql = require('mysql');
 
 // Set up connection parameters
 const local = {
-  host: 'localhost',
-  port: process.env.PORT || 3306,
-  user: process.env.MYSQL_USER,        // in .env file
-  password: process.env.MYSQL_PASSWD,  // in .env file
-  database: 'burgers_db'
+    host: 'localhost',
+    port: process.env.PORT || 3306,
+    user: process.env.MYSQL_USER,        // in .env file
+    password: process.env.MYSQL_PASSWD,  // in .env file
+    database: ''
 };
 
 // const cleardb = process.env.CLEARDB_DATABASE_URL;
@@ -27,12 +27,12 @@ const connection = mysql.createConnection(connParams);
 
 // Attempt to connecto to the database
 connection.connect(error => {
-  if (error) {
-    console.error('ERROR: Unable to make a connection' + error.stack);
-    return;
-  }
+    if (error) {
+        console.error('ERROR: Unable to make a connection' + error.stack);
+        return;
+    }
 
-  console.log('Connected to database as ID: ' + connection.threadId);
+    console.log('Connected to database as ID: ' + connection.threadId);
 });
 
 // Export the connection

@@ -69,33 +69,6 @@ $(".search").on("click", function () {
         })
     })
 
-    //This ajax request collects weather data for the next 5 days
-    $.ajax({
-        url: queryURL2,
-        method: "GET"
-    }).then(function (response) {
-        var forecastTimes = response.list;
-        for (i = 0; i < forecastTimes.length; i++) {
-            if (forecastTimes[i].dt_txt[12] === "2") {
-                var forecastdate = forecastTimes[i].dt_txt;
-                var forecastdatedisplay = forecastdate.charAt(5) + forecastdate.charAt(6) + "/" + forecastdate.charAt(8) + forecastdate.charAt(9) +
-                    "/" + forecastdate.charAt(0) + forecastdate.charAt(1) + forecastdate.charAt(2) + forecastdate.charAt(3);
-                var forecasticon = forecastTimes[i].weather[0].icon;
-                var forecasticonurl = "http://openweathermap.org/img/w/" + forecasticon + ".png";
-                var forecastTemp = forecastTimes[i].main.temp - 273.15;
-                var forecastHum = forecastTimes[i].main.humidity;
-                if (forecastdisplay === false || forecastdisplay === undefined) {
-                    $(".forecast-list").append("<div class='my-3 pb-3 col-md-2 col-lg-2 forecast-day'>" +
-                        "<h5>" + forecastdatedisplay + "<h5>" +
-                        "<img class='ficon' src=" + forecasticonurl + " alt='Weather icon'>" +
-                        "<div>Temp: " + forecastTemp.toFixed(1) + " °C" +
-                        "</div><div>Humidity: " + forecastHum +
-                        "%</div></div></div>");
-                }
-            }
-        }
-        forecastdisplay = true;
-    })
 });
 
 //This click fuction will search the weather stats for the previous city when "city button" is clicked on.
