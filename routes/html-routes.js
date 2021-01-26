@@ -7,9 +7,9 @@ module.exports = (app) => {
         res.sendFile(path.join(__dirname, "../public/login.html"));
     });
 
-    app.get("/home", isAuthenticated, (req, res) => {
-        res.sendFile(path.join(__dirname, "../public/home.html"));
-    })
+    // app.get("/home", isAuthenticated, (req, res) => {
+    //     res.sendFile(path.join(__dirname, "../public/home.html"));
+    // })
 
     app.get("/user_id", (req, res) => {
         const exphbs = require('express-handlebars');
@@ -27,7 +27,7 @@ module.exports = (app) => {
         app.use(routes); */ 
     });
 
-    app.get("/home_id", (req, res) => {
+    app.get("/home_id", isAuthenticated, (req, res) => {
         const exphbs = require('express-handlebars');
 
         app.engine('handlebars', exphbs({
@@ -35,7 +35,7 @@ module.exports = (app) => {
         }));
         app.set('view engine', 'handlebars');
 
-        res.render('home');
+        res.render('home', );
 
         /*  // Import routes and give the server access to them.
         const routes = require('../controllers/user_controller');

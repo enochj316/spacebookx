@@ -4,7 +4,15 @@ $(document).ready(() => {
     $.get("/api/user_data").then(data => {
       $("#name-top-right").text(data.email);
     });
-  });
+
+    $.get("/posts").then(data => {
+      console.log(data)
+      $("#moment-body").text(data[0].body);
+      $("#moment-title").text(data[0].title);
+      $("#moment-time").text(data[0].createdAt);
+    });
+
+});
 
 // document.addEventListener("DOMContentLoaded", (event) => {
 //     console.log("DOM loaded! 🚀");

@@ -29,7 +29,7 @@ module.exports = (app) => {
 
     // POSTS //
     app.get("/posts", (req, res) => {
-        db.Posts.findAll().then((result) => res.send(JSON.stringify(result)))
+        db.Posts.findAll().then((result) => res.json(result))
     })
 
     app.post("/posts", (req, res) => {
@@ -51,7 +51,7 @@ module.exports = (app) => {
 
     // Login with passport//
     app.post("/api/login", passport.authenticate("local", {
-        successRedirect: "/home",
+        successRedirect: "/home_id",
         failureRedirect: "/",
         failureFlash: true
     }), (req, res) => {
