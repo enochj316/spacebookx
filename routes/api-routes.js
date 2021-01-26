@@ -28,15 +28,25 @@ module.exports = (app) => {
     })
 
     // POSTS //
+    //find all posts based on userid
+    app.get("/posts_user", (req, res) => {
+        db.Posts.findAll(
+            { where: {
+                UserId : req.user.id
+            }}
+        ).then((result) => res.json(result))
+    })
+    //find all posts for home page
     app.get("/posts", (req, res) => {
-        db.Posts.findAll().then((result) => res.send(JSON.stringify(result)))
+        db.Posts.findAll().then((result) => res.json(result))
     })
 
     app.post("/posts", (req, res) => {
         db.Posts.create({
             title: req.body.title,
             body: req.body.body,
-            UserId: req.body.UserId
+            UserId: req.user.id
+            //req.user.id is a global value based on passport
         }).then((result) => res.json(result))
     })
 
@@ -51,7 +61,7 @@ module.exports = (app) => {
 
     // Login with passport//
     app.post("/api/login", passport.authenticate("local", {
-        successRedirect: "/home",
+        successRedirect: "/home_id",
         failureRedirect: "/",
         failureFlash: true
     }), (req, res) => {
@@ -69,7 +79,10 @@ module.exports = (app) => {
           // Otherwise send back the user's email and id
           // Sending back a password, even a hashed password, isn't a good idea
           res.json({
+            first_name: req.user.first_name,
+            last_name: req.user.last_name,
             email: req.user.email,
+            phonenumber: req.user.phonenumber,
             id: req.user.id
           });
         }
