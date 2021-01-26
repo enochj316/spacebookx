@@ -45,7 +45,8 @@ module.exports = (app) => {
         db.Posts.create({
             title: req.body.title,
             body: req.body.body,
-            UserId: req.body.UserId
+            UserId: req.user.id
+            //req.user.id is a global value based on passport
         }).then((result) => res.json(result))
     })
 
