@@ -29,6 +29,7 @@ module.exports = (app) => {
     });
 
     app.get("/home_id", isAuthenticated, (req, res) => {
+        console.log("home page hit!")
         const exphbs = require('express-handlebars');
 
         app.engine('handlebars', exphbs({
@@ -36,9 +37,11 @@ module.exports = (app) => {
         }));
         app.set('view engine', 'handlebars');
 
-        const hbsObject = db.Posts.findAll().then((result) => {
-            console.log(result);
-        })
+        //do a api call, to create an object and pass into res.render to generate handlebar
+        //currently getting a promise.....
+        //alternatively generate dynamic elements in home.js instead
+        const hbsObject = db.Posts.findAll().then((result) => response.json(result))
+        console.log(hbsObject)
 
         res.render('home');
 
