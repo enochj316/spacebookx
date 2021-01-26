@@ -5,7 +5,7 @@ $(document).ready(() => {
       $("#user-name").text(data.first_name);
     });
 
-    $.get("/posts").then(data => {
+    $.get("/posts_user").then(data => {
         console.log(data)
         $("#moment-body").text(data[0].body);
         $("#moment-title").text(data[0].title);

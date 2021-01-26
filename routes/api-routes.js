@@ -28,6 +28,15 @@ module.exports = (app) => {
     })
 
     // POSTS //
+    //find all posts based on userid
+    app.get("/posts_user", (req, res) => {
+        db.Posts.findAll(
+            { where: {
+                UserId : req.user.id
+            }}
+        ).then((result) => res.json(result))
+    })
+    //find all posts for home page
     app.get("/posts", (req, res) => {
         db.Posts.findAll().then((result) => res.json(result))
     })
