@@ -25,10 +25,11 @@
     }
 
     &__links {
+        margin-right: 0%;
+        padding-inline-start: 50%;
         a{
-            justify-content: end;
+            justify-content: space-evenly;
         }
-
     }
 
 }
