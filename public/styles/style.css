@@ -194,7 +194,6 @@ a, a:visited, a:hover {
   transition: color 300ms ease-in-out;
 }
 
-
 .header__links a:not(:last-child) {
   margin-right: 32px;
 }
@@ -202,6 +201,11 @@ a, a:visited, a:hover {
 .header__links a::before {
   content: "";
   display: block;
+  position: absolute;
+  height: 5px;
+  left: 0;
+  right: 0;
+}
 
 /* nav */
 ul,
@@ -209,7 +213,7 @@ li {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  /* display: inline-block; */
+  display: inline-block;
 }
 
 .dropdown {
@@ -298,18 +302,6 @@ li {
 }
 
 */
-.sidebar {
-  left: 0;
-  bottom: 0;
-  top: 120px;
-  width: 178px;
-  
-  position: absolute;
-  height: 5px;
-  left: 0;
-  right: 0;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
