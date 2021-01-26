@@ -1,3 +1,4 @@
+const db = require("../models")
 const path = require("path");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
@@ -35,7 +36,11 @@ module.exports = (app) => {
         }));
         app.set('view engine', 'handlebars');
 
-        res.render('home', );
+        const hbsObject = db.Posts.findAll().then((result) => {
+            console.log(result);
+        })
+
+        res.render('home');
 
         /*  // Import routes and give the server access to them.
         const routes = require('../controllers/user_controller');
