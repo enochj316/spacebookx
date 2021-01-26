@@ -6,7 +6,7 @@ $(document).ready(() => {
     });
 
     $.get("/posts").then(data => {
-      console.log(data)
+      console.log(data.length)
       $("#moment-body").text(data[0].body);
       $("#moment-title").text(data[0].title);
       $("#moment-time").text(data[0].createdAt);
@@ -47,5 +47,5 @@ document.addEventListener("DOMContentLoaded", (event) => {
     }).catch(err => {
         console.log(err)
     })
-    })
+  })
 })
