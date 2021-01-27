@@ -1,10 +1,12 @@
 const db = require("../models")
 const path = require("path");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
+const { response } = require("express");
 
 // HTML Routes ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 module.exports = (app) => {
     app.get("/", (req, res) => {
+        req.user = "";
         res.sendFile(path.join(__dirname, "../public/login.html"));
     });
 
@@ -35,7 +37,6 @@ module.exports = (app) => {
             defaultLayout: '_home'
         }));
         app.set('view engine', 'handlebars');
-
         //do a findAll posts, then pass result as object into render
         db.Posts.findAll().then((result) => {
             res.render('home', {result: result})
@@ -55,7 +56,7 @@ module.exports = (app) => {
         app.set('view engine', 'handlebars');
 
         //change to db.Friends.findAll
-        db.Friends.findAll().then((result) => {
+        db.Users.findAll().then((result) => {
             res.render('friends', {result: result})
         })
 

@@ -89,6 +89,21 @@ module.exports = (app) => {
           });
         }
       });
+
+      //adding friends route
+      app.post("/friends", (req, res) => {
+        db.Friends.create({
+            first_name: req.body.first_name,
+            last_name: req.body.last_name,
+            UserId: req.user.id
+            //req.user.id is a global value based on passport
+        }).then((result) => res.json(result))
+      })
+
+      app.get('/logout', (req, res) => {
+        req.logout();
+        res.redirect('/');
+      });
 };
 
 
