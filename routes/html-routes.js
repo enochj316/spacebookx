@@ -8,7 +8,7 @@ module.exports = (app) => {
         res.sendFile(path.join(__dirname, "../public/login.html"));
     });
 
-    app.get("/user_id", (req, res) => {
+    app.get("/user_id", isAuthenticated, (req, res) => {
         const exphbs = require('express-handlebars');
 
         app.engine('handlebars', exphbs({
@@ -16,7 +16,10 @@ module.exports = (app) => {
         }));
         app.set('view engine', 'handlebars');
 
-        res.render('user');
+        //find all where user id = req.user
+        db.Posts.findAll().then((result) => {
+            res.render('user', {result: result})
+        })
 
         /*  // Import routes and give the server access to them.
         const routes = require('../controllers/user_controller');
@@ -36,15 +39,22 @@ module.exports = (app) => {
         //do a findAll posts, then pass result as object into render
         db.Posts.findAll().then((result) => {
             res.render('home', {result: result})
-            //     title: result[0].dataValues.title,
-            //     body: result[0].dataValues.body,
-            //     createdAt: result[0].dataValues.createdAt
-            // }) 
-            console.log({
-                title: result[0].dataValues.title,
-                body: result[0].dataValues.body,
-                createdAt: result[0].dataValues.createdAt
-            })
+        })
+
+    });
+
+    app.get("/friends", isAuthenticated, (req, res) => {
+        console.log("friends page hit!")
+        const exphbs = require('express-handlebars');
+
+        app.engine('handlebars', exphbs({
+            defaultLayout: '_friends'
+        }));
+        app.set('view engine', 'handlebars');
+
+        //change to db.Friends.findAll
+        db.Friends.findAll().then((result) => {
+            res.render('friends', {result: result})
         })
 
     });
