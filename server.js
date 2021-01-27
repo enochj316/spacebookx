@@ -18,7 +18,7 @@ app.use(express.static('public'));
 app.use(session({ secret: "cheesy mcgee", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(flash())
+app.use(flash());
 
 require('./routes/api-routes.js')(app);
 require('./routes/html-routes.js')(app);
