@@ -32,6 +32,7 @@
         background-color: $white;
         max-width: 100%;
         padding: 24px;
+        box-shadow: 2px 2px 2px 5px $white; 
     }
 
     &__logo {
@@ -78,7 +79,7 @@
 
     &__links {
         a {
-            color: $grayishBlue;
+            color: hsl(217, 19%, 27%);
             transition: color 300ms ease-in-out;
       
             &:not(:last-child){

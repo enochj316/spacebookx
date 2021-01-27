@@ -5,229 +5,181 @@
     <title>SpaceBook</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Reset CSS-->
+    <link href="styles/reset.css" rel="stylesheet">
+    <!--Tailwind CSS-->
     <link href="styles/tailwind.css" rel="stylesheet">
+    <!--CSS-->
     <link href="styles/style.css" rel="stylesheet">
+    <!-- Spacebook Icon -->
+    <link rel="icon" href="Assets/spacebook_icon.png" type="image/png">
 </head>
 
 <body>
-    <nav class="flex items-center bg-gray-800 p-3 flex-wrap">
-        <a href="#" class="p-2 mr-4 inline-flex items-center">
-            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="fill-current text-white h-8 w-8 mr-2">
+    <div class="header">
+        <div class="overlay has-fade"></div>
+        <!-- ---------------------------------------------------------Nav Bar -->
+        <nav class="flex justify-between items-center shadow">
+            <!--Logo-->
+            <a href="/" class="header__logo">
 
-            </svg>
-            <span class="text-xl text-white font-bold uppercase tracking-wide">Logo</span>
-        </a>
-        <button
-            class="text-white inline-flex p-3 hover:bg-gray-900 rounded lg:hidden ml-auto hover:text-white outline-none nav-toggler"
-            data-target="#navigation">
-            <i class="material-icons">menu</i>
-        </button>
-        <div class="hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto" id="navigation">
-            <div
-                class="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start flex flex-col lg:h-auto">
-                <div class="pt-2 relative mx-auto text-gray-600">
-                    <input
-                        class="border-2 border-gray-300 bg-gray-800 h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none"
-                        type="search" name="search" placeholder="Search">
-                    <button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
-                        <svg class="text-gray-600 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
-                            viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;"
-                            xml:space="preserve" width="512px" height="512px">
-                            <path
-                                d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
-                        </svg>
-                    </button>
-                </div>
-                <a href="#"
-                    class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
-                    <span></span>
-                </a>
-                <a href="#"
-                    class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
-                    <span>Home</span>
-                </a>
-                <a href="#"
-                    class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
-                    <span>Logout</span>
-                </a>
+                <img src="Assets/spacebookLogo.png" alt="Spacebook" 
+            </a>
+            <!--Hamburger Menu-->
+            <a id= "btnHamburger" href="#" class="header__toggle hide-for-desktop">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <!--Hamburger Menu Links-->
+            <div class="header__links hide-for-mobile">
+                <a href="#" class= "hover:bg-gray-100 px-3 py-2 rounded-md">Moments Feed</a>
+                <a href="#" class="hover:bg-gray-100 px-3 py-2 rounded-md">Add Friend</a>
+                <a href="#" class="hover:bg-gray-100 px-3 py-2 rounded-md">Logout</a>
             </div>
+
+            <!--Profile Pic/Button  (left it as a button in case we needed it)-->
+            <!-- <div>
+                <button class="max-w-xs bg-gray-800 rounded-full items-center focus:outline-none">
+                  <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                </button>
+            </div> -->
+        </nav>
+
+        <div class="header__menu has-fade">
+            <a href="">Moments Feed</a>
+            <a href="">Add Friend</a>
+            <a href="">Logout</a>   
         </div>
-    </nav>
+        <!-- Search Bar -->
+        <!-- <div class="pt-2 relative mx-auto text-gray-600">
+            <input class="border-2 border-gray-300 bg-gray-800 h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none" type="search" name="search" placeholder="Search">
+            <button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
+                <svg class="text-gray-600 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
+                    viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;"
+                    xml:space="preserve" width="512px" height="512px">
+                    <path
+                        d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
+                </svg>
+            </button>
+        </div> -->
+    </div>
+    
+    
+    <!-------------------------------------------------------Body Content-->
 
+    <div class="flex grid grid-rows-3 grid-flow-col gap-0 md:gap-2 xl:gap-5"">
 
-
-
-    <div class="grid grid-cols-1 sm:grid-cols-2 sm:px-8 sm:py-12 sm:gap-x-8 md:py-16">
-        <div class="col-start-1 row-start-1 flex sm:col-start-2 sm:row-span-3">
-            <div class="w-full grid grid-cols-3 grid-rows-2 gap-2">
-                <div class="relative col-span-3 row-span-2 md:col-span-2">
+        <!---------------------------------------------------Bio-->
+        <div class="row-span-3 mx-5 md:mx-8 xl:mx-20 my-14 md:my-20 md:max-w-sm">
+            <div class=" px-3 py-4 md:px-5 md:py-6 bg-white rounded-lg shadow-md">
+                <div class="flex justify-center">
                     <img src="https://i.postimg.cc/7P1H9CB0/gettyimages-86788270-e1599654644219.jpg" alt=""
-                        class="absolute inset-0 w-full h-full object-cover bg-gray-100 sm:rounded-lg" />
+                    class="inset-0 max-h-40 bg-gray-100 sm:rounded-lg" />
                 </div>
-                <div class="relative hidden md:block">
-                    <img src="https://i.postimg.cc/gkQ6FLWj/download.jpg" alt=""
-                        class="absolute inset-0 w-full h-full object-cover rounded-lg bg-gray-100" />
+                <!-- Bio -->
+                <div class="col-start-1 row-start-1 flex justify-center pt-3">
+                    <h2 class="text-base text-gray-700 font-bold sm:text-2xl sm:leading-7 sm:text-black md:text-3xl">Ted "Theodore" Logan</h2>
                 </div>
-                <div class="relative hidden md:block">
-                    <img src="https://i.postimg.cc/d3XDYpgp/b-compressed.png" alt=""
-                        class="absolute inset-0 w-full h-full object-cover rounded-lg bg-gray-100" />
-                </div>
-            </div>
-        </div>
-        <div class="relative z-10 col-start-1 row-start-1 px-4 pt-40 pb-3 bg-gradient-to-t from-black sm:bg-none">
-            <h2 class="text-xl font-semibold text-white sm:text-2xl sm:leading-7 sm:text-black md:text-3xl">
-                Ted "Theodore" Logan
-            </h2>
-        </div>
-        <div class="col-start-1 row-start-2 px-4 sm:pb-16">
-            <div class="flex items-center text-sm font-medium my-5 sm:mt-2 sm:mb-4">
-                <div>San Dimas, California in 1988</div>
-            </div>
-            <hr class="w-16 border-gray-300 hidden sm:block">
-        </div>
-        <div class="col-start-1 row-start-3 space-y-3 px-4">
-            <p class="flex items-center text-black text-sm font-medium">
-                Theodore "Ted" Logan was born and raised in San Dimas, California. He lived with his father San Dimas
-                Police Captain Jonathan Logan and his younger brother Deacon Logan. He met Bill S. Preston, Esq. and the
-                two became friends forming their own band the Wyld Stallyns.
-            </p>
-        </div>
-    </div>
-    <br>
-
-    <div class="mx-0 w-4/12 absolute fixed top-50 hidden lg:block">
-        <div class="px-8">
-            <h1 class="mx-4 text-xl font-bold text-gray-700">Friends</h1>
-            <div class="flex flex-col bg-white max-w-sm px-6 py-4 mx-auto rounded-lg shadow-md">
-                
-                <ul class="-mx-4">
-                    <li class="flex items-center"><img
-                            src="https://i.postimg.cc/MK2jXtxy/31xpbillted-article-Large-v2.jpg" alt="avatar"
-                            class="w-10 h-10 object-cover rounded-full mx-4">
-                        <p><a href="#" class="text-gray-700 font-bold mx-1 hover:underline">Bill</a><span
-                                class="text-gray-700 text-sm font-light">Created 25 Posts</span></p>
-                    </li>
-                    <li class="flex items-center mt-6"><img src="https://i.postimg.cc/ZRYzwGrr/billandtedcarlin.jpg"
-                            alt="avatar" class="w-10 h-10 object-cover rounded-full mx-4">
-                        <p><a href="#" class="text-gray-700 font-bold mx-1 hover:underline">Rufus</a><span
-                                class="text-gray-700 text-sm font-light">Created 2 Posts</span></p>
-                    </li>
-                    <li class="flex items-center mt-6"><img src="https://i.postimg.cc/RhKrhv9x/Character-Socrates.jpg"
-                            alt="avatar" class="w-10 h-10 object-cover rounded-full mx-4">
-                        <p><a href="#" class="text-gray-700 font-bold mx-1 hover:underline">Socrates Johnson</a><span
-                                class="text-gray-700 text-sm font-light">Created 73 Posts</span></p>
-                    </li>
-                </ul>
-            </div>
-            <button type="submit"
-                    class="mx-5 my-1 flex items-center p-1 bg-blue-200 rounded-xl shadow-xs cursor-pointer hover:bg-blue-500 hover:text-gray-100">
-                    See More</button>
-        </div>
-    </div>
-
-
-    <div class="lg:pl-40">
-        <div
-            class="card max-w-md w-full lg:flex hover:shadow-none relative flex rounded-xl flex-col mx-auto shadow-xl m-7">
-            <figure class="md:flex bg-gray-100 rounded-xl p-8 md:p-0">
-                <img class="w-32 h-32 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
-                    src="https://i.postimg.cc/7P1H9CB0/gettyimages-86788270-e1599654644219.jpg" alt="profile pic"
-                    width="384" height="512">
-                <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
-                    <blockquote>
-                        <p class="text-lg font-semibold">
-                            Be excellent to each other!
-                        </p>
-                    </blockquote>
-                    <figcaption class="font-medium">
-                        <div class="text-cyan-600">
-                            Ted
-                        </div>
-                        <div class="text-gray-500">
-                            Wyld Stallyns member
-                        </div>
-                    </figcaption>
-                </div>
-            </figure>
-        </div>
-        <div
-            class="card max-w-md w-full lg:flex hover:shadow-none relative flex rounded-xl flex-col mx-auto shadow-xl m-7">
-            <figure class="md:flex bg-gray-100 rounded-xl p-8 md:p-0">
-                <img class="w-32 h-32 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
-                    src="https://i.postimg.cc/7P1H9CB0/gettyimages-86788270-e1599654644219.jpg" alt="profile pic"
-                    width="384" height="512">
-                <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
-                    <blockquote>
-                        <p class="text-lg font-semibold">
-                            That was non-non-non-non-heinous!
-                        </p>
-                    </blockquote>
-                    <figcaption class="font-medium">
-                        <div class="text-cyan-600">
-                            Ted
-                        </div>
-                        <div class="text-gray-500">
-                            Wyld Stallyns member
-                        </div>
-                    </figcaption>
-                </div>
-            </figure>
-        </div>
-
-        <div
-            class="card max-w-2xl w-full lg:flex hover:shadow-none relative flex rounded-xl flex-col mx-auto shadow-xl m-7">
-            <div class="max-w-3xl px-10 py-6 bg-white relative rounded-lg shadow-md">
-                <div class="flex justify-between items-center"><span class="font-light text-gray-600">Jun 1,
-                        2025</span>
-                    <a href="#" class="px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500">
-                        # Time Travel?
-                    </a>
-                </div>
-                <div class="mt-2"><a class="text-2xl text-gray-700 font-bold hover:underline">
-                        All we are is dust in the wind, dude </a>
-                    <p class="mt-2 text-gray-600">
-                        Remember When She Was A Senior And We Were Freshmen?
-                    </p>
-                    <p class="mt-2 text-gray-600">
-                        The Best Time To Be Is Now, And All’s We Can Say Is...Let’s Rock!
+                <div class="px-4 flex justify-center">
+                    <p class="text-sm font-medium my-1 sm:mt-2 sm:mb-4">
+                        San Dimas, California in 1988
                     </p>
                 </div>
-                <div class="flex justify-end items-center mt-4">
-                    <div><a href="#" class="flex items-center"><img
-                                src="https://i.postimg.cc/7P1H9CB0/gettyimages-86788270-e1599654644219.jpg" alt="avatar"
-                                class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block">
-                            <h1 class="text-gray-700 font-bold hover:underline">Ted</h1>
-                        </a></div>
+                <div class="px-4 flex items-center">
+                    <p class="text-black text-sm md:text-md">
+                        Theodore "Ted" Logan was born and raised in San Dimas, California. He lived with his father San Dimas
+                        Police Captain Jonathan Logan and his younger brother Deacon Logan. He met Bill S. Preston, Esq. and the
+                        two became friends forming their own band the Wyld Stallyns.
+                    </p>
                 </div>
             </div>
         </div>
+        
+        <!----------------------------------------------------------Moments Feed-->
+       
+        <!--px = "padding x-axis" py = "padding y-axis"-->
 
-        <div
-            class="card max-w-md w-full lg:flex hover:shadow-none relative flex rounded-xl flex-col mx-auto shadow-xl m-7">
-            <figure class="md:flex bg-gray-100 rounded-xl p-8 md:p-0">
-                <img class="w-32 h-32 md:w-48 md:h-auto md:rounded-none rounded-full mx-auto"
-                    src="https://i.postimg.cc/7P1H9CB0/gettyimages-86788270-e1599654644219.jpg" alt="profile pic"
-                    width="384" height="512">
-                <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
-                    <blockquote>
-                        <p class="text-lg font-semibold">
-                            Strange Things Are Afoot At The Circle K...
-                        </p>
-                    </blockquote>
-                    <figcaption class="font-medium">
-                        <div class="text-cyan-600">
-                            Ted
-                        </div>
-                        <div class="text-gray-500">
-                            Wyld Stallyns member
-                        </div>
-                    </figcaption>
+        <div class="mr-5 md:mr-6 my-4 md:my-8">
+            <!-------------------------------------------------Moments Input-->
+            <div class="max-w-6xl">
+                <div class="flex items-center justify-between">
+                    <h1 class="hide-for-mobile md:text-2xl font-bold text-white">Let's Explore Moments Around You...</h1>
+                    <h1 class="hide-for-desktop md:text-2xl text-base font-bold text-white">Let's Explore Your Moments...</h1>
                 </div>
-            </figure>
+                <div class="body__card mt-4">
+                    <div class="max-w-4xl px-5 pb-5 pt-3 md:px-10 md:py-6 bg-white rounded-lg shadow-md">
+                        <div class="mt-2"><a href="#" class="text-sm md:text-2xl text-gray-700 font-bold hover:underline">Share Your Moments:</a>
+                            <div>
+                                <div class="mt-1">
+                                <textarea id="about" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md" placeholder=""></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mt-4">
+                            <div>
+                                <a href="#" class="px-2 py-1 bg-gray-600 text-sm md:text-lg text-gray-100 font-bold rounded hover:bg-gray-500">Submit</a>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!------------------------------------------------------Moment-->
+
+                <div class="body__card col-span-2 mt-6">
+                    <div class="max-w-4xl p-5 md:px-10 md:py-6 bg-white rounded-lg shadow-md">
+                        <div class="flex justify-between items-center">
+
+                            <span class="font-light text-sm md:text-lg text-gray-600">Jun 1, 2020</span>
+                            <!-- <a href="#" class="px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500">Laravel</a> -->
+                        </div>
+                        <div class="mt-2"><a href="#" class="text-sm md:text-2xl text-gray-700 font-bold hover:underline">Moment title</a>
+                            <p class="mt-2 text-sm md:text-lg text-gray-600">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos enim reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!
+
+                            </p>
+                        </div>
+                        <div class="flex justify-between items-center mt-4">
+                            <!-- <a href="#" class="text-blue-500 hover:underline">Read more</a> -->
+                            <div>
+                                <a href="#" class="flex items-center"><img
+
+                                    src="https://images.unsplash.com/photo-1464863979621-258859e62245?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=333&amp;q=80"
+                                    alt="avatar" class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block">
+                                <h1 class="text-sm md:text-lg text-gray-700 font-bold hover:underline">Jane Doe</h1>
+
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!------------------------------------------------------Moment-->
+                <div class="body__card row-span-2 col-span-2 mt-6">
+                    <div class="max-w-4xl p-5 md:px-10 md:py-6 bg-white rounded-lg shadow-md">
+                        <div class="flex justify-between items-center">
+
+                            <span class="font-light text-sm md:text-lg text-gray-600">Jun 1, 2020</span>
+                        </div>
+                        <div class="mt-2"><a href="#" class="text-sm md:text-2xl text-gray-700 font-bold hover:underline">Moment title</a>
+                            <p class="mt-2 text-sm md:text-lg text-gray-600">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos enim reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!
+                            </p>
+                        </div>
+                        <div class="flex justify-between items-center mt-4">
+                            <div>
+                                <a href="#" class="flex items-center">
+
+                                <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=731&amp;q=80"
+                                alt="avatar" class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block">
+                                <h1 class="text-sm md:text-lg text-gray-700 font-bold hover:underline">Alex John</h1>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-
 </body>
 
 </html>
