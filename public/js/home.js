@@ -43,12 +43,13 @@ $(document).ready(() => {
     });
 
     
-    const postButton = document.getElementById("post-button");	
-    const postText = document.getElementById("about");	
+    const postButton = document.getElementById("post-button");
+    const postTitle = document.getElementById("post-title")	
+    const postText = document.getElementById("post-body");	
     postButton.addEventListener("click", (e) => {	
       e.preventDefault();	
       const postObj = {	
-        title: "Title",	
+        title: postTitle.value.trim(),	
         body: postText.value.trim(),	
       }	
 
