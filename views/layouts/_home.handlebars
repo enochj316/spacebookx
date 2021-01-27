@@ -13,14 +13,15 @@
 
 <body>
     <header class="header">
+        <div class="overlay has-fade"></div>
         <!--Nav Bar-->
-        <nav class="flex flex-jc-sb flex-ai-c shadow">
+        <nav class="flex justify-between items-center shadow">
             <!--Logo-->
             <a href="/home_id" class="header__logo">
                 <img class="logo" src="Assets/spacebookLogo.png" alt="Spacebook" </a>
                 <h2 id="name-top-right">Welcome </h2>
                 <!--Hamburger Menu-->
-                <a href="#" class="header__menu hide-for-desktop">
+                <a id= "btnHamburger" href="#" class="header__toggle hide-for-desktop">
                     <span></span>
                     <span></span>
                     <span></span>
@@ -41,6 +42,12 @@
                     </button>
                 </div>
         </nav>
+
+        <div class="header__menu has-fade">
+            <a href="">My Profile</a>
+            <a href="">Add Friend</a>
+            <a href="">Logout</a>
+        </div>
     </header>
 
     {{{ body }}}
