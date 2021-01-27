@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SpaceBook</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="styles/tailwind.css" rel="stylesheet">
+    <link href="styles/style.css" rel="stylesheet">
+    <link rel="icon" href="Assets/spacebook_icon.png" type="image/png">
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <div class="overlay has-fade"></div>
+        <!--Nav Bar-->
+        <nav class="flex justify-between items-center shadow">
+            <!--Logo-->
+            <a href="/home_id" class="header__logo">
+                <img class="logo" src="Assets/spacebookLogo.png" alt="Spacebook" </a>
+                <h2 id="name-top-right">Welcome </h2>
+                <!--Hamburger Menu-->
+                <a id="btnHamburger" href="#" class="header__toggle hide-for-desktop">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+                <!--Hamburger Menu Links-->
+                <div class="header__links hide-for-mobile">
+                    <a href="#" class="hover:bg-gray-100 px-3 py-2 rounded-md" id="profile-button">My Profile</a>
+                    <a href="friends" class="hover:bg-gray-100 px-3 py-2 rounded-md">Add Friend</a>
+                    <a href="/" class="hover:bg-gray-100 px-3 py-2 rounded-md">Logout</a>
+                </div>
+
+                <!--Profile Pic/Button  (left it as a button in case we needed it)-->
+                <div>
+                    <button class="mx-2 max-w-xs bg-gray-800 rounded-full flex items-center focus:outline-none">
+                        <img class="h-8 w-8 rounded-full"
+                            src="https://i.postimg.cc/7P1H9CB0/gettyimages-86788270-e1599654644219.jpg"
+                            alt="profile_pic">
+                    </button>
+                </div>
+        </nav>
+
+        <div class="header__menu has-fade">
+            <a href="#" id="profile-button">My Profile</a>
+            <a href="">Add Friend</a>
+            <a href="/">Logout</a>
+        </div>
+    </header>
+
+    {{{ body }}}
+
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="js/home.js"></script>
+
+</html>
