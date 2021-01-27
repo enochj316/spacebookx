@@ -1,19 +1,21 @@
-<div class="px-6 py-8">
+<div class="px-6 pt-2">
     <div class="container mx-auto">
         <div class="w-full lg:w-8/12">
            
             <div class="mt-6">
                 <div class="max-w-4xl px-10 py-6 bg-white rounded-lg shadow-md">
                     <div class="flex justify-between items-center">
-                        <span class="font-light text-gray-600">Jun 1, 2025</span>
+                        <span class="font-light text-gray-600">{{dataValues.createdAt}}</span>
+
                         <a href="#" class="px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500" id="moment-time">#
-                            Time Travel?</a>
+                            Moment</a>
                     </div>
-                    <div class="mt-2"><a href="#" class="text-2xl text-gray-700 font-bold hover:underline" id="moment-title">Build Your
-                            All we are is dust in the wind, dude</a>
-                        <p class="mt-2 text-gray-600" id="moment-body">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora
-                            expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos enim reprehenderit
-                            nisi, accusamus delectus nihil quis facere in modi ratione libero!
+                    <div class="mt-2"><a href="#" class="text-2xl text-gray-700 font-bold hover:underline" id="moment-title">
+                            {{dataValues.title}}
+                            </a>
+
+                        <p class="mt-2 text-gray-600" id="moment-body">
+                            {{dataValues.body}}
                         </p>
                     </div>
                     <div class="flex justify-between items-center mt-4">

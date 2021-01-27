@@ -1,18 +1,16 @@
 const db = require("../models")
 const path = require("path");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
+const { response } = require("express");
 
 // HTML Routes ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 module.exports = (app) => {
     app.get("/", (req, res) => {
+        req.user = "";
         res.sendFile(path.join(__dirname, "../public/login.html"));
     });
 
-    // app.get("/home", isAuthenticated, (req, res) => {
-    //     res.sendFile(path.join(__dirname, "../public/home.html"));
-    // })
-
-    app.get("/user_id", (req, res) => {
+    app.get("/user_id", isAuthenticated, (req, res) => {
         const exphbs = require('express-handlebars');
 
         app.engine('handlebars', exphbs({
@@ -20,7 +18,10 @@ module.exports = (app) => {
         }));
         app.set('view engine', 'handlebars');
 
-        res.render('user');
+        //find all where user id = req.user
+        db.Posts.findAll().then((result) => {
+            res.render('user', {result: result})
+        })
 
         /*  // Import routes and give the server access to them.
         const routes = require('../controllers/user_controller');
@@ -36,18 +37,28 @@ module.exports = (app) => {
             defaultLayout: '_home'
         }));
         app.set('view engine', 'handlebars');
+        //do a findAll posts, then pass result as object into render
+        db.Posts.findAll().then((result) => {
+            res.render('home', {result: result})
+            console.log({result: result})
+        })
+        
 
-        //do a api call, to create an object and pass into res.render to generate handlebar
-        //currently getting a promise.....
-        //alternatively generate dynamic elements in home.js instead
-        const hbsObject = db.Posts.findAll().then((result) => response.json(result))
-        console.log(hbsObject)
+    });
 
-        res.render('home');
+    app.get("/friends", isAuthenticated, (req, res) => {
+        console.log("friends page hit!")
+        const exphbs = require('express-handlebars');
 
-        /*  // Import routes and give the server access to them.
-        const routes = require('../controllers/user_controller');
+        app.engine('handlebars', exphbs({
+            defaultLayout: '_friends'
+        }));
+        app.set('view engine', 'handlebars');
 
-        app.use(routes); */ 
+        //change to db.Friends.findAll
+        db.Users.findAll().then((result) => {
+            res.render('friends', {result: result})
+        })
+
     });
 }

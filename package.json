@@ -11,6 +11,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "@tailwindcss/forms": "^0.2.1",
     "autoprefixer": "^10.2.3",
     "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",
