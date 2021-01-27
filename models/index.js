@@ -8,6 +8,25 @@ const env = process.env.NODE_ENV || 'development';
 const config = require(__dirname + '/../config/config.json')[env];
 const db = {};
 
+
+const jawsdb = process.env.JAWSDB_URL;
+const connParams = (process.env.JAWSDB_URL) ? jawsdb : local;
+const connection = mysql.createConnection(connParams);
+
+// Attempt to connecto to the database
+connection.connect(error => {
+  if (error) {
+    console.error('ERROR: Unable to make a connection' + error.stack);
+    return;
+  }
+
+  console.log('Connected to database as ID: ' + connection.threadId);
+});
+
+// Export the connection
+module.exports = connection;
+
+
 let sequelize;
 if (config.use_env_variable) {
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
