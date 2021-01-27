@@ -8,10 +8,6 @@ module.exports = (app) => {
         res.sendFile(path.join(__dirname, "../public/login.html"));
     });
 
-    // app.get("/home", isAuthenticated, (req, res) => {
-    //     res.sendFile(path.join(__dirname, "../public/home.html"));
-    // })
-
     app.get("/user_id", (req, res) => {
         const exphbs = require('express-handlebars');
 
@@ -37,17 +33,19 @@ module.exports = (app) => {
         }));
         app.set('view engine', 'handlebars');
 
-        //do a api call, to create an object and pass into res.render to generate handlebar
-        //currently getting a promise.....
-        //alternatively generate dynamic elements in home.js instead
-        const hbsObject = db.Posts.findAll().then((result) => response.json(result))
-        console.log(hbsObject)
+        //do a findAll posts, then pass result as object into render
+        db.Posts.findAll().then((result) => {
+            res.render('home', {result: result})
+            //     title: result[0].dataValues.title,
+            //     body: result[0].dataValues.body,
+            //     createdAt: result[0].dataValues.createdAt
+            // }) 
+            console.log({
+                title: result[0].dataValues.title,
+                body: result[0].dataValues.body,
+                createdAt: result[0].dataValues.createdAt
+            })
+        })
 
-        res.render('home');
-
-        /*  // Import routes and give the server access to them.
-        const routes = require('../controllers/user_controller');
-
-        app.use(routes); */ 
     });
 }
