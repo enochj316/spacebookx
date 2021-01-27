@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
             last_name : document.getElementById("last-name-input").value.trim(),
             email : document.getElementById("email-input").value.trim(),
             phonenumber: document.getElementById("phone-number-input").value.trim(),
+            imageurl: document.getElementById("image-url-input").value.trim(),
             password : document.getElementById("password-input").value.trim(),
         }
         fetch('/users', {

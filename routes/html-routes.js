@@ -39,7 +39,9 @@ module.exports = (app) => {
         //do a findAll posts, then pass result as object into render
         db.Posts.findAll().then((result) => {
             res.render('home', {result: result})
+            console.log({result: result})
         })
+        
 
     });
 
