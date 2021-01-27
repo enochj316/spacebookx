@@ -35,12 +35,12 @@ $(document).ready(() => {
     });
 
 
-    $.get("/posts").then(data => {
-      console.log(data.length)
-      $("#moment-body").text(data[0].body);
-      $("#moment-title").text(data[0].title);
-      $("#moment-time").text(data[0].createdAt);
-    });
+    // $.get("/posts").then(data => {
+    //   console.log(data.length)
+    //   $("#moment-body").text(data[0].body);
+    //   $("#moment-title").text(data[0].title);
+    //   $("#moment-time").text(data[0].createdAt);
+    // });
 
     
     const postButton = document.getElementById("post-button");

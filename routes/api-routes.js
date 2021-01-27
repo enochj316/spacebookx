@@ -15,6 +15,7 @@ module.exports = (app) => {
             last_name: req.body.last_name,
             email: req.body.email,
             phonenumber: req.body.phonenumber,
+            imageurl: req.body.imageurl,
             password: req.body.password
         }).then((result) => res.json(result))
     })
@@ -83,6 +84,7 @@ module.exports = (app) => {
             last_name: req.user.last_name,
             email: req.user.email,
             phonenumber: req.user.phonenumber,
+            imageurl: req.user.imageurl,
             id: req.user.id
           });
         }

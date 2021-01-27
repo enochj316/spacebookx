@@ -32,7 +32,11 @@ $(document).ready(() => {
     // and updates the HTML on the page
     $.get("/api/user_data").then(data => {
       $("#user-name").text(data.first_name);
+      $("#profile-name").text(data.first_name);
+      $("#main-image").attr("src",data.imageurl);
+      
     });
+    
 
     $.get("/posts_user").then(data => {
         console.log(data)
