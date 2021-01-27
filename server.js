@@ -3,7 +3,6 @@ const session = require("express-session");
 const flash = require('express-flash')
 const path = require('path');
 const passport = require("./config/passport.js");
-const connection = require("./controllers/connection.js");
 
 // Sets up the Express App
 const app = express();
@@ -19,7 +18,7 @@ app.use(express.static('public'));
 app.use(session({ secret: "cheesy mcgee", resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
-app.use(flash())
+app.use(flash());
 
 require('./routes/api-routes.js')(app);
 require('./routes/html-routes.js')(app);
