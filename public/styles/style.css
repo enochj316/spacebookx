@@ -87,9 +87,13 @@ body {
   margin: 0;
   padding: 0;
   font-size: 1.125rem;
-  color: #9698a6;
-  background-color: #f3f4f6;
   line-height: 1.5;
+  color: #9698a6;
+  background-color: #666666;
+  background-image: url(https://i.postimg.cc/SNBR4bv5/pexels-felix-mittermeier-956999.jpg);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 body.noscroll {
@@ -146,6 +150,8 @@ a, a:visited, a:hover {
   background-color: white;
   max-width: 100%;
   padding: 24px;
+  -webkit-box-shadow: 2px 2px 2px 5px white;
+          box-shadow: 2px 2px 2px 5px white;
 }
 
 .header__logo img {
@@ -189,7 +195,7 @@ a, a:visited, a:hover {
 }
 
 .header__links a {
-  color: #9698a6;
+  color: #384252;
   -webkit-transition: color 300ms ease-in-out;
   transition: color 300ms ease-in-out;
 }
@@ -302,6 +308,11 @@ li {
 }
 
 */
+.body.body__card {
+  -webkit-box-shadow: 5px 5px 20px 5px white;
+          box-shadow: 5px 5px 20px 5px white;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
