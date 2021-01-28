@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>SpaceBook</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Reset CSS-->
+    <link href="styles/reset.css" rel="stylesheet">
+    <!-- Footer CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@iconscout/unicons@3.0.6/css/line.css">
+    <!--Tailwind CSS-->
+    <link href="styles/tailwind.css" rel="stylesheet">
+    <!--CSS-->
+    <link href="styles/style.css" rel="stylesheet">
+    <!-- Spacebook Icon -->
+    <link rel="icon" href="Assets/spacebook_icon.png" type="image/png">
+</head>
+
+<body>
+    <div class="header">
+        <div class="overlay has-fade"></div>
+        <!-- -----------------------------------------------------------------------------Nav Bar -->
+        <nav class="flex justify-between items-center shadow">
+            <!--Logo-->
+            <a href="/" class="header__logo">
+
+                <img src="Assets/spacebookLogo.png" alt="Spacebook" 
+            </a>
+            <!--Hamburger Menu-->
+            <a id= "btnHamburger" href="#" class="header__toggle hide-for-desktop">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+            <!--Hamburger Menu Links-->
+            <div class="header__links hide-for-mobile">
+                <a href="#" class= "hover:bg-gray-100 px-3 py-2 rounded-md">Moments Feed</a>
+                <a href="#" class="hover:bg-gray-100 px-3 py-2 rounded-md">Add Friend</a>
+                <a href="#" class="hover:bg-gray-100 px-3 py-2 rounded-md">Logout</a>
+            </div>
+
+            <!--Profile Pic/Button  (left it as a button in case we needed it)-->
+            <!-- <div>
+                <button class="max-w-xs bg-gray-800 rounded-full items-center focus:outline-none">
+                  <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                </button>
+            </div> -->
+        </nav>
+
+        <div class="header__menu has-fade">
+            <a href="">Moments Feed</a>
+            <a href="">Add Friend</a>
+            <a href="">Logout</a>   
+        </div>
+        <!-- Search Bar -->
+        <!-- <div class="pt-2 relative mx-auto text-gray-600">
+            <input class="border-2 border-gray-300 bg-gray-800 h-10 px-5 pr-16 rounded-lg text-sm focus:outline-none" type="search" name="search" placeholder="Search">
+            <button type="submit" class="absolute right-0 top-0 mt-5 mr-4">
+                <svg class="text-gray-600 h-4 w-4 fill-current" xmlns="http://www.w3.org/2000/svg"
+                    xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Capa_1" x="0px" y="0px"
+                    viewBox="0 0 56.966 56.966" style="enable-background:new 0 0 56.966 56.966;"
+                    xml:space="preserve" width="512px" height="512px">
+                    <path
+                        d="M55.146,51.887L41.588,37.786c3.486-4.144,5.396-9.358,5.396-14.786c0-12.682-10.318-23-23-23s-23,10.318-23,23  s10.318,23,23,23c4.761,0,9.298-1.436,13.177-4.162l13.661,14.208c0.571,0.593,1.339,0.92,2.162,0.92  c0.779,0,1.518-0.297,2.079-0.837C56.255,54.982,56.293,53.08,55.146,51.887z M23.984,6c9.374,0,17,7.626,17,17s-7.626,17-17,17  s-17-7.626-17-17S14.61,6,23.984,6z" />
+                </svg>
+            </button>
+        </div> -->
+    </div>
+    
+    
+    
+    <!------------------------------------------------------------------------------------Body Content-->
+
+    <div class="flex grid grid-flow-col">
+
+        <!---------------------------------------------------Biography Card-->
+        <div class="hide-for-mobile col-span-1 ml-5 md:ml-4 lg:ml-10 mt-5 sm:mt-14 md:mt-8 lg:mt-8 md:max-w-lg lg:max-w-xl max-h-md">
+
+            <h1 class="mx-5 pb-1 font-bold text-white text-base md:text-2xl">Friends</h1>
+
+            <div class=" mx-3 mt-5 md:mx-5 md:my-0 lg:my-0 xl:my-0 rounded-lg shadow-md">
+                <!--------------------------------------------Card 1-->
+                <figure class="lg:flex bg-gray-100 rounded-xl mt-3 p-3 sm:p-8 md:p-0">
+                    <img class="w-auto h-24 md:w-auto md:h-32 md:rounded-full rounded-full mx-auto" src="https://i.postimg.cc/7P1H9CB0/gettyimages-86788270-e1599654644219.jpg" alt="" width="384" height="512" style="box-shadow: 2px 2px 5px 2px;">
+                    <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
+                      <blockquote>
+                        <p class="text-sm sm:text-md text-gray-600 font-semibold">
+                          “Tailwind CSS is the only framework that I've seen scale
+                          on large teams. It’s easy to customize, adapts to any design,
+                          and the build size is tiny.”
+                        </p>
+                      </blockquote>
+                      <figcaption class="font-medium">
+                        <div class="text-sm sm:text-md text-gray-600">
+                          Sarah Dayan
+                        </div>
+                      </figcaption>
+                    </div>
+                </figure>
+                
+            </div>
+        </div>
+        
+        <!---------------------------------------------------------------------------------Adding Friends-->
+       
+        <!--px = "padding x-axis" py = "padding y-axis"-->
+
+        <div class="col-span-3 mt-5 ml-5 mr-5 sm:mr-5 md:mr-6 lg:mr-10 xl:justify-around my-0 sm:my-4 md:my-8">
+            <!------------------------------------------------------Add New Friends Input-->
+            <div class="max-w-6xl">
+                <div class="flex items-center justify-between">
+                    <h1 class="text-base md:text-2xl font-bold text-white">Let's Add New Friends...</h1>
+                </div>
+                <div class="body__card mt-2 sm:mt-4">
+                    <div class="lg:max-w-4xl px-3 sm:px-5 pb-4 pt-3 md:px-10 md:py-6 bg-white rounded-lg shadow-md">
+
+                        <div class="mt-5 flex justify-between">
+                            <textarea id="about" name="about" rows="1" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full text-xs sm:text-sm border-gray-300 rounded-md" placeholder="Title"></textarea>
+                            <div class="mx-2">
+                                <a href="#" class="px-2 py-1 text-sm md:text-lg bg-gray-600 text-gray-100 rounded hover:bg-gray-500">Submit</a>
+                                </a>
+                            </div>
+                        </div>
+                        <!----------------------------------------------------------------Name-->
+                        <div class="flex mt-8 mb-4 justify-between">
+                            <img src="https://images.unsplash.com/photo-1464863979621-258859e62245?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=333&amp;q=80" alt="avatar" class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block">
+                            <p class="w-full flex text-sm sm:text-base text-gray-700">Full Name</p>
+                            <button class="px-3 ml-4 mr-2 text-sm md:text-lg rounded bg-gray-600 text-white">Add</button>
+                        </div>
+                        <!----------------------------------------------------------------Name-->
+                        <div class="flex mt-8 mb-4 justify-between">
+                            <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=731&amp;q=80" alt="avatar" class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block">
+                            <p class="w-full flex text-sm sm:text-base text-gray-700">Full Name</p>
+                            <button class="px-3 ml-4 mr-2 text-sm md:text-lg rounded bg-gray-600 text-white">Add</button>
+                        </div>
+                        <!----------------------------------------------------------------Name-->
+                        <div class="flex mt-8 mb-4 justify-between">
+                            <img src="https://images.unsplash.com/photo-1464863979621-258859e62245?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=333&amp;q=80" alt="avatar" class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block">
+                            <p class="w-full flex text-sm sm:text-base text-gray-700">Full Name</p>
+                            <button class="px-3 ml-4 mr-2 text-sm md:text-lg rounded bg-gray-600 text-white">Add</button>
+                        </div>
+                        <!----------------------------------------------------------------Name-->
+                        <div class="flex mt-8 mb-4 justify-between">
+                            <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=731&amp;q=80" alt="avatar" class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block">
+                            <p class="w-full flex text-sm sm:text-base text-gray-700">Full Name</p>
+                            <button class="px-3 ml-4 mr-2 text-sm md:text-lg rounded bg-gray-600 text-white">Add</button>
+                        </div>
+                        <!----------------------------------------------------------------Name-->
+                        <div class="flex mt-8 mb-4 justify-between">
+                            <img src="https://images.unsplash.com/photo-1464863979621-258859e62245?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=333&amp;q=80" alt="avatar" class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block">
+                            <p class="w-full flex text-sm sm:text-base text-gray-700">Full Name</p>
+                            <button class="px-3 ml-4 mr-2 text-sm md:text-lg rounded bg-gray-600 text-white">Add</button>
+                        </div>
+                        <!----------------------------------------------------------------Name-->
+                        <div class="flex mt-8 mb-4 justify-between">
+                            <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=731&amp;q=80" alt="avatar" class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block">
+                            <p class="w-full flex text-sm sm:text-base text-gray-700">Full Name</p>
+                            <button class="px-3 ml-4 mr-2 text-sm md:text-lg rounded bg-gray-600 text-white">Add</button>
+                        </div>
+                        <!----------------------------------------------------------------Name-->
+                        <div class="flex mt-8 mb-4 justify-between">
+                            <img src="https://images.unsplash.com/photo-1464863979621-258859e62245?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=333&amp;q=80" alt="avatar" class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block">
+                            <p class="w-full flex text-sm sm:text-base text-gray-700">Full Name</p>
+                            <button class="px-3 ml-4 mr-2 text-sm md:text-lg rounded bg-gray-600 text-white">Add</button>
+                        </div>
+                        <!----------------------------------------------------------------Name-->
+                        <div class="flex mt-8 mb-4 justify-between">
+                            <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=731&amp;q=80" alt="avatar" class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block">
+                            <p class="w-full flex text-sm sm:text-base text-gray-700">Full Name</p>
+                            <button class="px-3 ml-4 mr-2 text-sm md:text-lg rounded bg-gray-600 text-white">Add</button>
+                        </div>
+                        <!----------------------------------------------------------------Name-->
+                        <div class="flex mt-8 mb-4 justify-between">
+                            <img src="https://images.unsplash.com/photo-1464863979621-258859e62245?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=333&amp;q=80" alt="avatar" class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block">
+                            <p class="w-full flex text-sm sm:text-base text-gray-700">Full Name</p>
+                            <button class="px-3 ml-4 mr-2 text-sm md:text-lg rounded bg-gray-600 text-white">Add</button>
+                        </div>
+                        <!----------------------------------------------------------------Name-->
+                        <div class="flex mt-8 mb-4 justify-between">
+                            <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=731&amp;q=80" alt="avatar" class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block">
+                            <p class="w-full flex text-sm sm:text-base text-gray-700">Full Name</p>
+                            <button class="px-3 ml-4 mr-2 text-sm md:text-lg rounded bg-gray-600 text-white">Add</button>
+                        </div>
+                        <!----------------------------------------------------------------Name-->
+                        <div class="flex mt-8 mb-4 justify-between">
+                            <img src="https://images.unsplash.com/photo-1464863979621-258859e62245?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=333&amp;q=80" alt="avatar" class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block">
+                            <p class="w-full flex text-sm sm:text-base text-gray-700">Full Name</p>
+                            <button class="px-3 ml-4 mr-2 text-sm md:text-lg rounded bg-gray-600 text-white">Add</button>
+                        </div>
+                        <!----------------------------------------------------------------Name-->
+                        <div class="flex mt-8 mb-4 justify-between">
+                            <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=731&amp;q=80" alt="avatar" class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block">
+                            <p class="w-full flex text-sm sm:text-base text-gray-700">Full Name</p>
+                            <button class="px-3 ml-4 mr-2 text-sm md:text-lg rounded bg-gray-600 text-white">Add</button>
+                        </div>
+                        <!----------------------------------------------------------------Name-->
+                        <div class="flex mt-8 mb-4 justify-between">
+                            <img src="https://images.unsplash.com/photo-1464863979621-258859e62245?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=333&amp;q=80" alt="avatar" class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block">
+                            <p class="w-full flex text-sm sm:text-base text-gray-700">Full Name</p>
+                            <button class="px-3 ml-4 mr-2 text-sm md:text-lg rounded bg-gray-600 text-white">Add</button>
+                        </div>
+                        <!----------------------------------------------------------------Name-->
+                        <div class="flex mt-8 mb-4 justify-between">
+                            <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=731&amp;q=80" alt="avatar" class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block">
+                            <p class="w-full flex text-sm sm:text-base text-gray-700">Full Name</p>
+                            <button class="px-3 ml-4 mr-2 text-sm md:text-lg rounded bg-gray-600 text-white">Add</button>
+                        </div>
+                        <!----------------------------------------------------------------Name-->
+                        <div class="flex mt-8 mb-4 justify-between">
+                            <img src="https://images.unsplash.com/photo-1464863979621-258859e62245?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=333&amp;q=80" alt="avatar" class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block">
+                            <p class="w-full flex text-sm sm:text-base text-gray-700">Full Name</p>
+                            <button class="px-3 ml-4 mr-2 text-sm md:text-lg rounded bg-gray-600 text-white">Add</button>
+                        </div>
+                        <!----------------------------------------------------------------Name-->
+                        <div class="flex mt-8 mb-4 justify-between">
+                            <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=731&amp;q=80" alt="avatar" class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block">
+                            <p class="w-full flex text-sm sm:text-base text-gray-700">Full Name</p>
+                            <button class="px-3 ml-4 mr-2 text-sm md:text-lg rounded bg-gray-600 text-white">Add</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!---------------------------------------------------------------------------------------------- Footer -->
+    <div class="mt-5 sm:mt-8 md:mt-10">
+        <footer class="bg-gray-800 sm:pt-5">
+            <div class="flex justify-center row-start-1 text-gray-800">
+                <div class="pt-5">
+                    <!--  Title -->
+                    <div class="text-center text-base text-gray-400 font-medium mb-6">
+                    Checkout out our Github page!
+                    </div>
+                    <!-- Links -->
+                    <a href="https://github.com/enochj316/Project2" class="text-center my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                        Github
+                    </a>
+                </div>
+            </div>
+            <div class="pt-5">
+                <hr class="m-auto bg-gray-500 sm:max-w-xs md:max-w-xl lg:max-w-4xl xl:max-w-6xl" >
+            </div>
+            <!-- Copyright Line -->
+            <div class="row-start-2 pt-2">
+                <div class="flex pb-5 px-3 m-auto pt-5 border-t border-gray-500 text-gray-400 text-sm md:flex-row max-w-6xl">
+                    <div class="mt-2">
+                        © Copyright 1998-year. All Rights Reserved.
+                    </div>
+        
+                    <!-- Unicons -->
+                    <div class="md:flex-auto md:flex-row-reverse mt-2 flex-row flex">
+                        <a href="#" class="w-6 mx-1">
+                            <i class="uil uil-twitter-alt"></i>
+                        </a>
+                        <a href="#" class="w-6 mx-1">
+                            <i class="uil uil-youtube"></i>
+                        </a>
+                        <a href="#" class="w-6 mx-1">
+                            <i class="uil uil-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-6 mx-1">
+                            <i class="uil uil-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>

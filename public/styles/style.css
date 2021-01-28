@@ -306,13 +306,7 @@ li {
 .dark-mode, :not(img, h1, h2, p) {
   filter: invert(1) hue-rotate(0deg);
 }
-
 */
-.body.body__card {
-  -webkit-box-shadow: 5px 5px 20px 5px white;
-          box-shadow: 5px 5px 20px 5px white;
-}
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
