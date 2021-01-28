@@ -58,45 +58,47 @@
 
     <!-------------------------------------------------------Body Content-->
 
-    <div class="flex grid grid-flow-col gap-0 md:gap-4"">
+    <div class="flex grid grid-flow-col gap-0 md:gap-4">
         <!---------------------------------------------------Weather-->
         <div class=" col-start-1 my-4 px-4 md:my-8 md:px-8">
-        <h1 class="mx-4 pb-2 font-bold text-white text-base md:text-2xl">Weather</h1>
-        <div class="flex bg-white max-w-sm mt-2 px-6 pb-4 rounded-lg shadow-md">
-            <ul class="-ml-4">
-                <!---------Weather icon and City-->
-                <li class="flex items-center mt-6">
-                    <img id="weather-img" src=""></h3>
-                    <p class="text-sm md:text-lg text-gray-700 mx-1">
-                        City:
-                        <span id="current-city" class="text-gray-700 text-sm font-light"></span>
-                    </p>
-                </li>
-                <!-------------------Temperature-->
-                <li class="flex items-center mt-6">
-                    <p class="text-sm md:text-lg text-gray-700 mx-1">
-                        Temperature:
-                        <span id="temperature" class="text-gray-700 text-sm font-light"></span>
-                    </p>
-                </li>
-                <!--------------------Humidity--->
-                <li class="flex items-center mt-6">
-                    <p class="text-sm md:text-lg text-gray-700 mx-1">
-                        Humidity:
-                        <span id="humidity" class="text-gray-700 text-sm font-light"></span>
-                    </p>
-                </li>
-                <!--------------------Windspeed-->
-                <li class="flex items-center mt-6">
-                    <p class="text-sm md:text-lg text-gray-700 mx-1">
-                        Windspeed:
-                        <span id="windspeed" class="text-gray-700 text-sm font-light"></span>
-                    </p>
-                </li>
-                <div class="flex items-center mt-6">
-                    <input class="text-gray-700 text-sm font-light" placeholder="Enter a City"></input>
-                    <button
-                        class="px-2 py-1 bg-gray-600 text-sm md:text-lg text-gray-100 font-bold rounded hover:bg-gray-500">Search</button>
+            <h1 class="mx-4 pb-2 font-bold text-white text-base md:text-2xl">Weather</h1>
+            <div class="flex bg-white max-w-sm mt-2 px-6 pb-4 rounded-lg shadow-md">
+                <div class="card current-box">
+                    <ul class="-ml-4">
+                        <!---------Weather icon and City-->
+                        <li class="flex items-center mt-6">
+                            <img id="weather-img" src=""></h3>
+                            <p class="text-sm md:text-lg text-gray-700 mx-1">
+                                City:
+                                <span id="current-city" class="text-gray-700 text-sm font-light"></span>
+                            </p>
+                        </li>
+                        <!-------------------Temperature-->
+                        <li class="flex items-center mt-6">
+                            <p class="text-sm md:text-lg text-gray-700 mx-1">
+                                Temperature:
+                                <span id="current-temp" class="text-gray-700 text-sm font-light"></span>
+                            </p>
+                        </li>
+                        <!--------------------Humidity--->
+                        <li class="flex items-center mt-6">
+                            <p class="text-sm md:text-lg text-gray-700 mx-1">
+                                Humidity:
+                                <span id="current-hum" class="text-gray-700 text-sm font-light"></span>
+                            </p>
+                        </li>
+                        <!--------------------Windspeed-->
+                        <li class="flex items-center mt-6">
+                            <p class="text-sm md:text-lg text-gray-700 mx-1">
+                                Windspeed:
+                                <span id="current-wind" class="text-gray-700 text-sm font-light"></span>
+                            </p>
+                        </li>
+                        <div class="flex items-center mt-6">
+                            <input class="text-gray-700 text-sm font-light" placeholder="Enter a City"></input>
+                            <button id="weatherSearch"
+                                class="px-2 py-1 bg-gray-600 text-sm md:text-lg text-gray-100 font-bold rounded hover:bg-gray-500">Search</button>
+                        </div>
                 </div>
                 <!-- <li class="flex items-center mt-6">
                         <img src="https://i.postimg.cc/ZRYzwGrr/billandtedcarlin.jpg" alt="avatar" class="w-10 h-10 object-cover rounded-full mx-4">
@@ -112,137 +114,147 @@
                             <span class="text-gray-700 text-sm font-light">Created 73 Posts</span>
                         </p>
                     </li> -->
-            </ul>
+                </ul>
+            </div>
+            <!-- <button type="submit" class="mx-5 my-1 flex items-center p-1 rounded-xl shadow-xs cursor-pointer hover:bg-gray-100">See More</button>-->
+
         </div>
-        <!-- <button type="submit" class="mx-5 my-1 flex items-center p-1 rounded-xl shadow-xs cursor-pointer hover:bg-gray-100">See More</button>-->
+        <!----------------------------------------------------------Moments Feed-->
 
-    </div>
-    <!----------------------------------------------------------Moments Feed-->
+        <!--px = "padding x-axis" py = "padding y-axis"-->
 
-    <!--px = "padding x-axis" py = "padding y-axis"-->
-
-    <div class="col col-start-2 mr-6 my-4 md:my-8">
-        <!-------------------------------------------------Moments Input-->
-        <div class="max-w-6xl">
-            <div class="flex items-center justify-between">
-                <h1 class="hide-for-mobile md:text-2xl font-bold text-white">Let's Explore Moments Around You...</h1>
-                <h1 class="hide-for-desktop md:text-2xl text-base font-bold text-white">Let's Explore Moments...</h1>
-            </div>
-            <div class="mt-4">
-                <div class="max-w-4xl px-5 pb-5 pt-3 md:px-10 md:py-6 bg-white rounded-lg shadow-md">
-                    <div class="mt-2"><a href="#"
-                            class="text-sm md:text-2xl text-gray-700 font-bold hover:underline">Share Your Moments:</a>
-                        <div>
-                            <div class="mt-5">
-                                <textarea id="about" name="about" rows="1"
-                                    class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full text-xs sm:text-sm border-gray-300 rounded-md"
-                                    placeholder="Title"></textarea>
+        <div class="col col-start-2 mr-6 my-4 md:my-8">
+            <!-------------------------------------------------Moments Input-->
+            <div class="max-w-6xl">
+                <div class="flex items-center justify-between">
+                    <h1 class="hide-for-mobile md:text-2xl font-bold text-white">Let's Explore Moments Around You...
+                    </h1>
+                    <h1 class="hide-for-desktop md:text-2xl text-base font-bold text-white">Let's Explore Moments...
+                    </h1>
+                </div>
+                <div class="mt-4">
+                    <div class="max-w-4xl px-5 pb-5 pt-3 md:px-10 md:py-6 bg-white rounded-lg shadow-md">
+                        <div class="mt-2"><a href="#"
+                                class="text-sm md:text-2xl text-gray-700 font-bold hover:underline">Share Your
+                                Moments:</a>
+                            <div>
+                                <div class="mt-5">
+                                    <textarea id="about" name="about" rows="1"
+                                        class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full text-xs sm:text-sm border-gray-300 rounded-md"
+                                        placeholder="Title"></textarea>
+                                </div>
+                                <div class="mt-5">
+                                    <textarea id="about" name="about" rows="3"
+                                        class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full text-xs sm:text-sm border-gray-300 rounded-md"
+                                        placeholder="Share Your Moments!"></textarea>
+                                </div>
                             </div>
-                            <div class="mt-5">
-                                <textarea id="about" name="about" rows="3"
-                                    class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full text-xs sm:text-sm border-gray-300 rounded-md"
-                                    placeholder="Share Your Moments!"></textarea>
+                        </div>
+                        <div class="flex justify-between items-center mt-4">
+                            <div>
+                                <a href="#"
+                                    class="px-2 py-1 bg-gray-600 text-sm md:text-lg text-gray-100 font-bold rounded hover:bg-gray-500">Submit</a>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!------------------------------------------------------Moment-->
+
+                <div class="col-span-2 mt-6">
+                    <div class="max-w-4xl p-5 md:px-10 md:py-6 bg-white rounded-lg shadow-md">
+                        <div class="flex justify-between items-center">
+
+                            <span class="font-light text-sm md:text-lg text-gray-600">Jun 1, 2020</span>
+                            <!-- <a href="#" class="px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500">Laravel</a> -->
+                        </div>
+                        <div class="mt-2"><a href="#"
+                                class="text-sm md:text-2xl text-gray-700 font-bold hover:underline">Moment title</a>
+                            <p class="mt-2 text-sm md:text-lg text-gray-600">Lorem ipsum dolor sit, amet consectetur
+                                adipisicing elit. Tempora expedita dicta totam aspernatur doloremque. Excepturi iste
+                                iusto
+                                eos enim reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione
+                                libero!
+
+                            </p>
+                        </div>
+                        <div class="flex justify-between items-center mt-4">
+                            <!-- <a href="#" class="text-blue-500 hover:underline">Read more</a> -->
+                            <div>
+                                <a href="#" class="flex items-center"><img
+                                        src="https://images.unsplash.com/photo-1464863979621-258859e62245?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=333&amp;q=80"
+                                        alt="avatar" class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block">
+                                    <h1 class="text-sm md:text-lg text-gray-700 font-bold hover:underline">Jane Doe</h1>
+
+                                </a>
                             </div>
                         </div>
                     </div>
-                    <div class="flex justify-between items-center mt-4">
-                        <div>
-                            <a href="#"
-                                class="px-2 py-1 bg-gray-600 text-sm md:text-lg text-gray-100 font-bold rounded hover:bg-gray-500">Submit</a>
-                            </a>
-                        </div>
-
-                    </div>
                 </div>
-            </div>
-            <!------------------------------------------------------Moment-->
+                <!------------------------------------------------------Moment-->
+                <div class="row-span-2 col-span-2 mt-6">
+                    <div class="max-w-4xl p-5 md:px-10 md:py-6 bg-white rounded-lg shadow-md">
+                        <div class="flex justify-between items-center">
 
-            <div class="col-span-2 mt-6">
-                <div class="max-w-4xl p-5 md:px-10 md:py-6 bg-white rounded-lg shadow-md">
-                    <div class="flex justify-between items-center">
+                            <span class="font-light text-sm md:text-lg text-gray-600">Jun 1, 2020</span>
+                        </div>
+                        <div class="mt-2"><a href="#"
+                                class="text-sm md:text-2xl text-gray-700 font-bold hover:underline">Moment title</a>
+                            <p class="mt-2 text-sm md:text-lg text-gray-600">Lorem ipsum dolor sit, amet consectetur
+                                adipisicing elit. Tempora expedita dicta totam aspernatur doloremque. Excepturi iste
+                                iusto
+                                eos enim reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione
+                                libero!
+                            </p>
+                        </div>
+                        <div class="flex justify-between items-center mt-4">
+                            <div>
+                                <a href="#" class="flex items-center">
 
-                        <span class="font-light text-sm md:text-lg text-gray-600">Jun 1, 2020</span>
-                        <!-- <a href="#" class="px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500">Laravel</a> -->
-                    </div>
-                    <div class="mt-2"><a href="#"
-                            class="text-sm md:text-2xl text-gray-700 font-bold hover:underline">Moment title</a>
-                        <p class="mt-2 text-sm md:text-lg text-gray-600">Lorem ipsum dolor sit, amet consectetur
-                            adipisicing elit. Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto
-                            eos enim reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!
-
-                        </p>
-                    </div>
-                    <div class="flex justify-between items-center mt-4">
-                        <!-- <a href="#" class="text-blue-500 hover:underline">Read more</a> -->
-                        <div>
-                            <a href="#" class="flex items-center"><img
-                                    src="https://images.unsplash.com/photo-1464863979621-258859e62245?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=333&amp;q=80"
-                                    alt="avatar" class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block">
-                                <h1 class="text-sm md:text-lg text-gray-700 font-bold hover:underline">Jane Doe</h1>
-
-                            </a>
+                                    <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=731&amp;q=80"
+                                        alt="avatar" class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block">
+                                    <h1 class="text-sm md:text-lg text-gray-700 font-bold hover:underline">Alex John
+                                    </h1>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <!------------------------------------------------------Moment-->
-            <div class="row-span-2 col-span-2 mt-6">
-                <div class="max-w-4xl p-5 md:px-10 md:py-6 bg-white rounded-lg shadow-md">
-                    <div class="flex justify-between items-center">
+                <!------------------------------------------------------Moment-->
 
-                        <span class="font-light text-sm md:text-lg text-gray-600">Jun 1, 2020</span>
-                    </div>
-                    <div class="mt-2"><a href="#"
-                            class="text-sm md:text-2xl text-gray-700 font-bold hover:underline">Moment title</a>
-                        <p class="mt-2 text-sm md:text-lg text-gray-600">Lorem ipsum dolor sit, amet consectetur
-                            adipisicing elit. Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto
-                            eos enim reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!
-                        </p>
-                    </div>
-                    <div class="flex justify-between items-center mt-4">
-                        <div>
-                            <a href="#" class="flex items-center">
+                <div class="col-span-2 mt-6">
+                    <div class="max-w-4xl p-5 md:px-10 md:py-6 bg-white rounded-lg shadow-md">
+                        <div class="flex justify-between items-center">
 
-                                <img src="https://images.unsplash.com/photo-1492562080023-ab3db95bfbce?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=731&amp;q=80"
-                                    alt="avatar" class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block">
-                                <h1 class="text-sm md:text-lg text-gray-700 font-bold hover:underline">Alex John</h1>
-                            </a>
+                            <span class="font-light text-sm md:text-lg text-gray-600">Jun 1, 2020</span>
+                            <!-- <a href="#" class="px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500">Laravel</a> -->
                         </div>
-                    </div>
-                </div>
-            </div>
-            <!------------------------------------------------------Moment-->
+                        <div class="mt-2"><a href="#"
+                                class="text-sm md:text-2xl text-gray-700 font-bold hover:underline">Moment title</a>
+                            <p class="mt-2 text-sm md:text-lg text-gray-600">Lorem ipsum dolor sit, amet consectetur
+                                adipisicing elit. Tempora expedita dicta totam aspernatur doloremque. Excepturi iste
+                                iusto
+                                eos enim reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione
+                                libero!
 
-            <div class="col-span-2 mt-6">
-                <div class="max-w-4xl p-5 md:px-10 md:py-6 bg-white rounded-lg shadow-md">
-                    <div class="flex justify-between items-center">
+                            </p>
+                        </div>
+                        <div class="flex justify-between items-center mt-4">
+                            <!-- <a href="#" class="text-blue-500 hover:underline">Read more</a> -->
+                            <div>
+                                <a href="#" class="flex items-center"><img
+                                        src="https://images.unsplash.com/photo-1464863979621-258859e62245?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=333&amp;q=80"
+                                        alt="avatar" class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block">
+                                    <h1 class="text-sm md:text-lg text-gray-700 font-bold hover:underline">Jane Doe</h1>
 
-                        <span class="font-light text-sm md:text-lg text-gray-600">Jun 1, 2020</span>
-                        <!-- <a href="#" class="px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500">Laravel</a> -->
-                    </div>
-                    <div class="mt-2"><a href="#"
-                            class="text-sm md:text-2xl text-gray-700 font-bold hover:underline">Moment title</a>
-                        <p class="mt-2 text-sm md:text-lg text-gray-600">Lorem ipsum dolor sit, amet consectetur
-                            adipisicing elit. Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto
-                            eos enim reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!
-
-                        </p>
-                    </div>
-                    <div class="flex justify-between items-center mt-4">
-                        <!-- <a href="#" class="text-blue-500 hover:underline">Read more</a> -->
-                        <div>
-                            <a href="#" class="flex items-center"><img
-                                    src="https://images.unsplash.com/photo-1464863979621-258859e62245?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=333&amp;q=80"
-                                    alt="avatar" class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block">
-                                <h1 class="text-sm md:text-lg text-gray-700 font-bold hover:underline">Jane Doe</h1>
-
-                            </a>
+                                </a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
     <!---------------------------------------------------------------------------------------------- Footer -->
     <div class="mt-5 sm:mt-8 md:mt-10">
