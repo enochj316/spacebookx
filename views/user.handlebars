@@ -2,7 +2,7 @@
     <div class="col-start-1 row-start-1 flex sm:col-start-2 sm:row-span-3">
         <div class="w-full grid grid-cols-3 grid-rows-2 gap-2">
             <div class="relative col-span-3 row-span-2 md:col-span-2">
-                <img id="main-image" src="" alt=""
+                <img id="main-image" src="{{user.dataValues.imageurl}}" alt=""
                     class="absolute inset-0 w-full h-full object-cover bg-gray-100 sm:rounded-lg" />
             </div>
             <div class="relative hidden md:block">
@@ -17,7 +17,7 @@
     </div>
     <div class="relative z-10 col-start-1 row-start-1 px-4 pt-40 pb-3 bg-gradient-to-t from-black sm:bg-none">
         <h2 class="text-xl font-semibold text-white sm:text-2xl sm:leading-7 sm:text-black md:text-3xl" id="profile-name">
-            Ted "Theodore" Logan
+            {{user.dataValues.first_name}} {{user.dataValues.last_name}}
         </h2>
     </div>
     <div class="col-start-1 row-start-2 px-4 sm:pb-16">
@@ -103,9 +103,10 @@
     </div>
 </div>
 
-
+{{#each friends}}
 {{> friends/friends-block }}
+{{/each}}
 
+{{#each posts}}
 {{> moments/moment-block }}
-
-{{> moments/post-block }}
+{{/each}}

@@ -1,8 +1,10 @@
+require("dotenv").config();
 const express = require('express');
 const session = require("express-session");
 const flash = require('express-flash')
 const path = require('path');
 const passport = require("./config/passport.js");
+
 
 // Sets up the Express App
 const app = express();
