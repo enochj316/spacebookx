@@ -1,8 +1,4 @@
 var path = require(‘path’);
-<<<<<<< HEAD
-=======
-
->>>>>>> 47605e9520d3355e103ba6a1f0aebea11b9e5083
 module.exports = {
 ‘config’: path.resolve(‘config’,’config.js’)
 }

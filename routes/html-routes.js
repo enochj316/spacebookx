@@ -2,12 +2,16 @@ const db = require("../models")
 const path = require("path");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 const { response } = require("express");
+const flash = require("express-flash");
 
 // HTML Routes ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 module.exports = (app) => {
     app.get("/", (req, res) => {
         req.user = "";
-        res.sendFile(path.join(__dirname, "../public/login.html"));
+        const errors = req.flash().error || [];
+        //render handlebar with errors passed in... from flash once handlebar is created
+        res.sendFile(path.join(__dirname, "../public/login.html"))
+        // res.render("login.", {message: flash("message")});
     });
 
     app.get("/user_id", isAuthenticated, (req, res) => {

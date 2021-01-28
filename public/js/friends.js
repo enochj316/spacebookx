@@ -1,5 +1,14 @@
 document.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOM loaded! 🚀");
+
+    const profileButton = document.getElementById("profile-button");
+    profileButton.addEventListener("click", (e) => {
+      e.preventDefault();
+      $.get("/api/user_data").then(user => {
+        location.replace("/user/" + user.id);
+      });
+      
+    })
     
 
     const addFriendBtns = document.querySelectorAll(".add-friend");
