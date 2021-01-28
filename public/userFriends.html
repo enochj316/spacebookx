@@ -84,25 +84,46 @@
                 <figure class="lg:flex bg-gray-100 rounded-xl mt-3 p-3 sm:p-8 md:p-0">
                     <img class="w-auto h-24 md:w-auto md:h-32 md:rounded-full rounded-full mx-auto" src="https://i.postimg.cc/7P1H9CB0/gettyimages-86788270-e1599654644219.jpg" alt="" width="384" height="512" style="box-shadow: 2px 2px 5px 2px;">
                     <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
-                      <blockquote>
-                        <p class="text-sm sm:text-md text-gray-600 font-semibold">
-                          “Tailwind CSS is the only framework that I've seen scale
-                          on large teams. It’s easy to customize, adapts to any design,
-                          and the build size is tiny.”
-                        </p>
-                      </blockquote>
-                      <figcaption class="font-medium">
-                        <div class="text-sm sm:text-md text-gray-600">
-                          Sarah Dayan
-                        </div>
-                      </figcaption>
+                        <blockquote>
+                            <p class="text-sm sm:text-md text-gray-600 font-semibold">
+                            “Tailwind CSS is the only framework that I've seen scale
+                            on large teams. It’s easy to customize, adapts to any design,
+                            and the build size is tiny.”
+                            </p>
+                        </blockquote>
+                        <figcaption class="flex font-medium justify-between">
+                            <div class="text-sm md:text-lg text-gray-600">
+                            Sarah Dayan
+                            </div>
+                            <button class="px-3 ml-4 mr-2 text-sm md:text-lg rounded bg-gray-400 hover:bg-gray-600 text-white">Remove</button>
+                        </figcaption>
                     </div>
                 </figure>
-                
+                <!--------------------------------------------Card 1-->
+                <figure class="lg:flex bg-gray-100 rounded-xl mt-3 p-3 sm:p-8 md:p-0">
+                    <img class="w-auto h-24 md:w-auto md:h-32 md:rounded-full rounded-full mx-auto" src="https://i.postimg.cc/7P1H9CB0/gettyimages-86788270-e1599654644219.jpg" alt="" width="384" height="512" style="box-shadow: 2px 2px 5px 2px;">
+                    <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
+                        <blockquote>
+                            <p class="text-sm sm:text-md text-gray-600 font-semibold">
+                            “Tailwind CSS is the only framework that I've seen scale
+                            on large teams. It’s easy to customize, adapts to any design,
+                            and the build size is tiny.”
+                            </p>
+                        </blockquote>
+                        <figcaption class="flex font-medium justify-between">
+                            <div class="text-sm md:text-lg text-gray-600">
+                            Sarah Dayan
+                            </div>
+                            <button class="px-3 ml-4 mr-2 text-sm md:text-lg rounded bg-gray-400 hover:bg-gray-600 text-white">Remove</button>
+                        </figcaption>
+                    </div>
+                </figure>
             </div>
         </div>
         
         <!---------------------------------------------------------------------------------Adding Friends-->
+        
+
        
         <!--px = "padding x-axis" py = "padding y-axis"-->
 
@@ -219,6 +240,46 @@
                             <button class="px-3 ml-4 mr-2 text-sm md:text-lg rounded bg-gray-600 text-white">Add</button>
                         </div>
 
+                    </div>
+                    <!-- Modal for Adding a Friend -->
+                    <div class="hidden md:max-w-lg sm:w-full rounded-lg shadow-lg bg-white my-3">
+                        <div class="flex justify-between border-b border-gray-100 px-5 py-4">
+                            <div>
+                                <i class="fas fa-exclamation-circle text-blue-500"></i>
+                                <span class="font-bold text-gray-700 text-lg">Friend Added!</span>
+                            </div>
+                            <div>
+                                <button><i class="fa fa-times-circle text-red-500 hover:text-red-600 transition duration-150"></i></button>
+                                </div>
+                            </div>
+                      
+                            <div class="text-center px-10 py-5 text-gray-600">
+                            You just added a friend!
+                            </div>
+                      
+                            <div class="px-5 py-4 flex justify-end">
+                                <button class="text-sm py-2 px-3 text-gray-500 hover:text-gray-600 transition duration-150">Close</button>
+                            </div>
+                    </div>
+                    <!-- Modal for Removing a Friend -->
+                    <div class="hidden md:max-w-lg sm:w-full rounded-lg shadow-lg bg-white my-3">
+                        <div class="flex justify-between border-b border-gray-100 px-5 py-4">
+                            <div>
+                                <i class="fas fa-exclamation-circle text-blue-500"></i>
+                                <span class="font-bold text-gray-700 text-lg">Friend Removed</span>
+                            </div>
+                            <div>
+                                <button><i class="fa fa-times-circle text-red-500 hover:text-red-600 transition duration-150"></i></button>
+                            </div>
+                            </div>
+                      
+                            <div class="text-center px-10 py-5 text-gray-600">
+                            You just removed a friend
+                            </div>
+                        
+                            <div class="px-5 py-4 flex justify-end">
+                            <button class="text-sm py-2 px-3 text-gray-500 hover:text-gray-600 transition duration-150">Close</button>
+                        </div>
                     </div>
                 </div>
             </div>
