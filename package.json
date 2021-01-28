@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
+  "engines": {
+    "node": "12.11.1"
+  },
   "scripts": {
     "start": "node server.js",
     "build": "postcss public/styles/style.css -o public/styles/tailwind.css"
