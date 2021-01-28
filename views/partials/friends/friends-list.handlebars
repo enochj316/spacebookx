@@ -12,9 +12,12 @@
             </div>
         </div>
         <div class="buttons flex absolute bottom-0 font-bold right-0 text-xs text-gray-500 space-x-0 my-3.5 mr-3">
-            <div
-                class="add border rounded-l-2xl rounded-r-sm border-gray-300 p-1 px-4 cursor-pointer hover:bg-gray-700 hover:text-white">
-                Add Friend</div>
+            <button type="submit" class="add-friend">
+                <div
+                class="add border rounded-l-2xl rounded-r-sm border-gray-300 p-1 px-4 cursor-pointer hover:bg-gray-700 hover:text-white"
+                data-id="{{dataValues.id}}" data-firstname="{{dataValues.first_name}}" data-lastname="{{dataValues.last_name}}">
+                Add Friend </div>
+            </button>
             <!-- <div class="add border rounded-r-2xl rounded-l-sm border-gray-300 p-1 px-4 cursor-pointer hover:bg-gray-700 hover:text-white">Bio</div> -->
         </div>
     </div>
