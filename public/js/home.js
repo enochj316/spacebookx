@@ -10,13 +10,8 @@ const btnWeatherSearch = document.querySelector('#weatherSearch');
 $("#weatherSearch").on("click", function () {
   var subject = $(".subject").val();
   var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + subject + "&appid=88d9e018c72362777892f1fbbbb2dfb3";
-  var queryURL2 = "https://api.openweathermap.org/data/2.5/forecast?q=" + subject + "&appid=88d9e018c72362777892f1fbbbb2dfb3";
   var lat;
   var lon;
-  if (forecastdisplay === true) {
-    $(".forecast-day").remove();
-    forecastdisplay = false;
-  };
 
 
   //This first ajax request collects current weather data and converts info into what is needed to be displayed
