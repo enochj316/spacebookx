@@ -171,3 +171,5 @@ $(".weatherSearch").on("click", function () {
         })
       })
     })
+  })
+})
