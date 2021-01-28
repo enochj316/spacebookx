@@ -1,24 +1,16 @@
-<div class="pt-2">
-    <div class="card border w-96 hover:shadow-none relative flex flex-col mx-auto shadow-lg m-5">
-        <img class="max-h-20 w-full bg-auto opacity-80 absolute top-0" style="z-index:-1"
-            src="https://miro.medium.com/max/768/1*S-eCEF0XS4J6TZW9NqJyIQ.jpeg" alt="" />
-        <div class="profile w-full flex m-3 ml-4 text-white">
-            <img class="w-28 h-28 p-1 bg-white rounded-full"
-                src="{{dataValues.imageurl}}" alt="profile_pic" />
-            <div class="title mt-11 ml-3 font-bold flex flex-col">
-                <div class="name break-words">{{dataValues.first_name}} {{dataValues.last_name}}</div>
-                <!--  add [dark] class for bright background -->
-                <div class="add text-black font-semibold text-sm italic dark">Time Traveler</div>
-            </div>
-        </div>
-        <div class="buttons flex absolute bottom-0 font-bold right-0 text-xs text-gray-500 space-x-0 my-3.5 mr-3">
+<div class="body__card mt-2 sm:mt-4">
+    <div class="lg:max-w-4xl px-3 sm:px-5 pb-4 pt-3 md:px-10 md:py-6 bg-white rounded-lg shadow-md">
+        <!----------------------------------------------------------------Name-->
+        <div class="flex mt-8 mb-4 justify-between">
+            <img src="{{dataValues.imageurl}}" alt="profile_pic" 
+            class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block">
+            <p class="w-full flex text-sm sm:text-base text-gray-700">{{dataValues.first_name}} {{dataValues.last_name}}</p>
             <button type="submit" class="add-friend">
-                <div
-                class="add border rounded-l-2xl rounded-r-sm border-gray-300 p-1 px-4 cursor-pointer hover:bg-gray-700 hover:text-white"
-                data-id="{{dataValues.id}}" data-firstname="{{dataValues.first_name}}" data-lastname="{{dataValues.last_name}}">
-                Add Friend </div>
+                <div class="px-3 ml-4 mr-2 text-sm md:text-lg rounded bg-gray-600 text-white"
+                    data-id="{{dataValues.id}}" data-firstname="{{dataValues.first_name}}" data-lastname="{{dataValues.last_name}}">
+                    Add 
+                </div>
             </button>
-            <!-- <div class="add border rounded-r-2xl rounded-l-sm border-gray-300 p-1 px-4 cursor-pointer hover:bg-gray-700 hover:text-white">Bio</div> -->
         </div>
     </div>
 </div>

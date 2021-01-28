@@ -21,9 +21,9 @@ $(document).ready(function () {
                     for (var i in latestNews) {
                         output += `
 
-                        <div class="px-6 pt-2">
-    <div class="container mx-auto">
-        <div class="w-full lg:w-8/12">
+                        <div class="">
+    <div class="">
+        <div class="w-full">
            
             <div class="mt-6">
                 <div class="max-w-4xl px-10 py-6 bg-white rounded-lg shadow-md">
@@ -108,5 +108,88 @@ $(document).ready(function () {
         }
 
     });
+
+
+
+    //Gif
+
+    
+
+    $("#gifbtn").on("click", function (e) {
+        e.preventDefault();
+
+        let query = $("#searchquery").val();
+        let url = "https://api.giphy.com/v1/gifs/search?q=funny&api_key=fhyjxSw2icjRND3sWkVDSIduWRwkEPsI&rating=g&limit=1";
+
+        if (query !== "") {
+
+            $.ajax({
+
+                url: url,
+                method: "GET",
+                dataType: "json",
+
+                success: function (gif) {
+                    let output = "";
+                    let giphy = gif.data;
+
+                    for (var i in giphy) {
+                        output += `
+
+                        <div class="">
+    <div class="">
+        <figure class="bg-gray-100 px-4 rounded-xl w-72">
+            <div class="h-auto w-auto">
+                <iframe class=" block h-64 w-64"
+                    src="${giphy[i].embed_url}"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope">
+                </iframe>
+            </div>
+        </figure>
+    </div>
+</div>
+              `;
+                    }
+
+                    if (output !== "") {
+                        $("#gifResults").html(output);
+                        M.toast({
+                            html: "",
+                            classes: 'green'
+                        });
+
+                    } else {
+                        let noGif = `<div style='text-align:center; font-size:36px; margin-top:40px;'>Error</div>`;
+                        $("#gifResults").html(noGif);
+                        M.toast({
+                            html: "Error",
+                            classes: 'red'
+                        });
+                    }
+
+                },
+
+                error: function () {
+                    let internetFailure = `
+             <div style="font-size:34px; text-align:center; margin-top:40px;">Please check your internet connection and try again.
+             </div>`;
+
+                    $("#gifResults").html(internetFailure);
+                    M.toast({
+                        html: "We encountered an error, please try again",
+                        classes: 'red'
+                    });
+                }
+
+
+            });
+
+        } else {
+            console.log("working");
+        }
+
+    });
+
+
 
 });
