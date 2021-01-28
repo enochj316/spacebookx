@@ -1,3 +1,5 @@
+const { data } = require("autoprefixer");
+
 const btnHamburger = document.querySelector('#btnHamburger');
 const body = document.querySelector('body');
 const header = document.querySelector('.header');
@@ -35,12 +37,12 @@ $(document).ready(() => {
     });
 
 
-    // $.get("/posts").then(data => {
-    //   console.log(data.length)
-    //   $("#moment-body").text(data[0].body);
-    //   $("#moment-title").text(data[0].title);
-    //   $("#moment-time").text(data[0].createdAt);
-    // });
+    $.get("/posts").then(data => {
+      console.log(data.length)
+      $("#moment-body").text(data[0].body);
+      $("#moment-title").text(data[0].title);
+      $("#moment-time").text(data[0].createdAt);
+    });
 
     
     const postButton = document.getElementById("post-button");
@@ -78,7 +80,10 @@ document.addEventListener("DOMContentLoaded", (event) => {
     const profileButton = document.getElementById("profile-button");
     profileButton.addEventListener("click", (e) => {
       e.preventDefault();
-      location.replace("/user_id");
+      $.get("/api/user_data").then(data => {
+        
+      });
+      location.replace("/cheese");
     })
 
     const postButton = document.getElementById("post-button");
