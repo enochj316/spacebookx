@@ -66,10 +66,16 @@ module.exports = (app) => {
         failureRedirect: "/",
         failureFlash: true
     }), (req, res) => {
-        res.json({
+        if (error) {
+            console.log("login failed")
+        } else {
+            console.log("login successful")
+            res.json({
             email: req.user.email,
             id: req.user.id
         });
+        }
+        
     });
 
     app.get("/api/user_data", (req, res) => {

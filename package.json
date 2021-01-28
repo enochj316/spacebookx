@@ -17,6 +17,7 @@
     "@tailwindcss/forms": "^0.2.1",
     "autoprefixer": "^10.2.3",
     "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "express-flash": "0.0.2",
