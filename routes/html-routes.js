@@ -2,12 +2,16 @@ const db = require("../models")
 const path = require("path");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 const { response } = require("express");
+const flash = require("express-flash");
 
 // HTML Routes ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 module.exports = (app) => {
     app.get("/", (req, res) => {
         req.user = "";
-        res.sendFile(path.join(__dirname, "../public/login.html"));
+        const errors = req.flash().error || [];
+        //render handlebar with errors passed in... from flash once handlebar is created
+        res.sendFile(path.join(__dirname, "../public/login.html"))
+        // res.render("login.", {message: flash("message")});
     });
 
     app.get("/user_id", isAuthenticated, (req, res) => {
@@ -18,9 +22,16 @@ module.exports = (app) => {
         }));
         app.set('view engine', 'handlebars');
 
-        //find all where user id = req.user
-        db.Posts.findAll().then((result) => {
-            res.render('user', {result: result})
+        //change friends to find all where id = req.user.id (friends of person who is logged in)
+        db.Posts.findAll().then((posts) => {
+            db.Friends.findAll().then((friends) => {
+                res.render('user', {
+                    posts: posts,
+                    friends: friends})
+                    console.log({
+                        posts: posts,
+                        friends: friends})
+            })
         })
 
         /*  // Import routes and give the server access to them.
@@ -61,4 +72,29 @@ module.exports = (app) => {
         })
 
     });
+
+    app.get("/user/:id", isAuthenticated, (req, res) => {
+        const exphbs = require('express-handlebars');
+
+        app.engine('handlebars', exphbs({
+            defaultLayout: '_user'
+        }));
+        app.set('view engine', 'handlebars');
+        
+        
+        var id = req.params.id;
+        db.Users.findOne({where: {id: id}}).then((User) => {
+            db.Posts.findAll({where: {UserId: id}}).then((Posts) => {
+                db.Friends.findAll({where: {UserId: id}}).then((Friends) => {
+                    res.render("user", {
+                        user: User,
+                        posts: Posts,
+                        friends: Friends
+                    })
+                })
+            })
+            
+            
+        })
+    })
 }

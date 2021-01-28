@@ -32,10 +32,15 @@ $(document).ready(() => {
     // and updates the HTML on the page
     $.get("/api/user_data").then(data => {
       $("#user-name").text(data.first_name);
-      $("#profile-name").text(data.first_name);
-      $("#main-image").attr("src",data.imageurl);
+      // $("#profile-name").text(data.first_name);
+      // $("#main-image").attr("src",data.imageurl);
       
     });
+
+    // $.get("/friends").then(data => {
+    //   res.render('user', {data: data})
+      
+    // });
     
 
     $.get("/posts_user").then(data => {
