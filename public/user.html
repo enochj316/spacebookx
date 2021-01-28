@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!--Reset CSS-->
     <link href="styles/reset.css" rel="stylesheet">
+    <!-- Footer CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@iconscout/unicons@3.0.6/css/line.css">
     <!--Tailwind CSS-->
     <link href="styles/tailwind.css" rel="stylesheet">
     <!--CSS-->
@@ -15,7 +17,7 @@
     <link rel="icon" href="Assets/spacebook_icon.png" type="image/png">
 </head>
 
-<body>
+<body class="body">
     <div class="header">
         <div class="overlay has-fade"></div>
         <!-- -----------------------------------------------------------------------------Nav Bar -->
@@ -70,21 +72,21 @@
     
     <!------------------------------------------------------------------------------------Body Content-->
 
-    <div class="flex grid grid-rows-3 sm:grid-flow-col gap-0 md:gap-2 xl:gap-5"">
+    <div class="flex grid sm:grid-flow-col gap-0 md:gap-2 xl:gap-5"">
 
         <!---------------------------------------------------Biography Card-->
-        <div class="row-span-3 col-span-1 mx-5 md:mx-8 lg:ml-10 my-5 sm:my-14 md:my-28 lg:my-20 md:max-w-lg lg:max-w-xl">
-            <div class=" px-3 py-4 md:px-5 md:py-6 bg-white rounded-lg shadow-md">
+        <div class=" col-span-1 mx-5 md:mx-8 lg:ml-10 my-5 sm:my-10 md:my-16 lg:my-18 md:max-w-lg lg:max-w-xl">
+            <div class="mt-4 px-3 py-4 md:px-5 md:py-6 bg-white rounded-lg shadow-md">
                 <div class="flex justify-center">
                     <div class="flex grid grid-cols-3 grid-rows-2 gap-2">
                         <div class="col-span-3 row-span-2 sm:col-span-2">
-                            <img src="https://i.postimg.cc/7P1H9CB0/gettyimages-86788270-e1599654644219.jpg" alt="" class="inset-0 max-h-40 bg-gray-100 rounded sm:rounded-lg"/>
+                            <img src="https://i.postimg.cc/7P1H9CB0/gettyimages-86788270-e1599654644219.jpg" alt="" class="inset-0 max-h-40 bg-gray-100 rounded sm:rounded-lg" style="box-shadow: 2px 2px 5px 2px;"/>
                         </div>
                         <div class="relative hidden sm:block">
-                            <img src="https://i.postimg.cc/gkQ6FLWj/download.jpg" alt="" class="absolute inset-0 w-full h-full object-cover rounded-lg bg-gray-100"/>
+                            <img src="https://i.postimg.cc/gkQ6FLWj/download.jpg" alt="" class="absolute inset-0 w-full h-full object-cover rounded-lg bg-gray-100" style="box-shadow: 2px 2px 5px 2px;"/>
                         </div>
                         <div class="relative hidden sm:block">
-                            <img src="https://i.postimg.cc/d3XDYpgp/b-compressed.png" alt="" class="absolute inset-0 w-full h-full object-cover rounded-lg bg-gray-100"/>
+                            <img src="https://i.postimg.cc/d3XDYpgp/b-compressed.png" alt="" class="absolute inset-0 w-full h-full object-cover rounded-lg bg-gray-100" style="box-shadow: 2px 2px 5px 2px;"/>
                         </div>
                     </div>
                 
@@ -109,11 +111,11 @@
             </div>
         </div>
         
-        <!---------------------------------------------------------------------------------Moments Feed-->
+        <!-----------------------------------------------------------------------------User's Personal Moments Feed-->
        
         <!--px = "padding x-axis" py = "padding y-axis"-->
 
-        <div class="mx-5 md:mr-6 lg:mr-10 my-0 sm:my-4 md:my-8">
+        <div class="col-span-2 mx-5 md:mr-6 lg:mr-10 mt-2 sm:my-4 md:my-8">
             <!------------------------------------------------------Moments Input-->
             <div class="max-w-6xl">
                 <div class="flex items-center justify-between">
@@ -196,7 +198,51 @@
             </div>
         </div>
     </div>
+    <!---------------------------------------------------------------------------------------------- Footer -->
+    <div class="mt-5 sm:mt-8 md:mt-10">
+        <footer class="bg-gray-800 sm:pt-5">
+            <div class="flex justify-center row-start-1 text-gray-800">
+                <div class="pt-5">
+                    <!--  Title -->
+                    <div class="text-center text-base text-gray-400 font-medium mb-6">
+                       Checkout out our Github page!
+                    </div>
+                    <!-- Links -->
+                    <a href="https://github.com/enochj316/Project2" class="text-center my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                        Github
+                    </a>
+                </div>
+            </div>
+            <div class="pt-5">
+                <hr class="m-auto bg-gray-500 sm:max-w-xs md:max-w-xl lg:max-w-4xl xl:max-w-6xl" >
+            </div>
+            <!-- Copyright Line -->
+            <div class="row-start-2 pt-2">
+                <div class="flex pb-5 px-3 m-auto pt-5 border-t border-gray-500 text-gray-400 text-sm md:flex-row max-w-6xl">
+                    <div class="mt-2">
+                        © Copyright 1998-year. All Rights Reserved.
+                    </div>
+        
+                    <!-- Unicons -->
+                    <div class="md:flex-auto md:flex-row-reverse mt-2 flex-row flex">
+                        <a href="#" class="w-6 mx-1">
+                            <i class="uil uil-twitter-alt"></i>
+                        </a>
+                        <a href="#" class="w-6 mx-1">
+                            <i class="uil uil-youtube"></i>
+                        </a>
+                        <a href="#" class="w-6 mx-1">
+                            <i class="uil uil-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-6 mx-1">
+                            <i class="uil uil-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/home.js"></script>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="js/home.js"></script>
 </html>
