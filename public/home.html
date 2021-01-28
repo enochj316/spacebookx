@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!--Reset CSS-->
     <link href="styles/reset.css" rel="stylesheet">
+    <!-- Footer CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@iconscout/unicons@3.0.6/css/line.css">
     <!--Tailwind CSS-->
     <link href="styles/tailwind.css" rel="stylesheet">
     <!--CSS-->
@@ -57,9 +59,9 @@
 
     <!-------------------------------------------------------Body Content-->
 
-    <div class="flex grid grid-rows-3 grid-flow-col gap-0 md:gap-4"">
+    <div class="flex grid grid-flow-col gap-0 md:gap-4"">
         <!---------------------------------------------------Weather-->
-        <div class="row-span-3 my-4 px-4 md:my-8 md:px-8">
+        <div class="col-start-1 my-4 px-4 md:my-8 md:px-8">
             <h1 class="mx-4 pb-2 font-bold text-white text-base md:text-2xl">Weather</h1>
             <div class="flex bg-white max-w-sm mt-2 px-6 pb-4 rounded-lg shadow-md">
                 <ul class="-ml-4">
@@ -115,7 +117,7 @@
        
         <!--px = "padding x-axis" py = "padding y-axis"-->
 
-        <div class="mr-6 my-4 md:my-8">
+        <div class="col col-start-2 mr-6 my-4 md:my-8">
             <!-------------------------------------------------Moments Input-->
             <div class="max-w-6xl">
                 <div class="flex items-center justify-between">
@@ -126,8 +128,11 @@
                     <div class="max-w-4xl px-5 pb-5 pt-3 md:px-10 md:py-6 bg-white rounded-lg shadow-md">
                         <div class="mt-2"><a href="#" class="text-sm md:text-2xl text-gray-700 font-bold hover:underline">Share Your Moments:</a>
                             <div>
-                                <div class="mt-1">
-                                <textarea id="about" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md" placeholder=""></textarea>
+                                <div class="mt-5">
+                                    <textarea id="about" name="about" rows="1" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full text-xs sm:text-sm border-gray-300 rounded-md" placeholder="Title"></textarea>
+                                </div>
+                                <div class="mt-5">
+                                <textarea id="about" name="about" rows="3" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full text-xs sm:text-sm border-gray-300 rounded-md" placeholder="Share Your Moments!"></textarea>
                                 </div>
                             </div>
                         </div>
@@ -191,11 +196,82 @@
                         </div>
                     </div>
                 </div>
+                <!------------------------------------------------------Moment-->
+
+                <div class="col-span-2 mt-6">
+                    <div class="max-w-4xl p-5 md:px-10 md:py-6 bg-white rounded-lg shadow-md">
+                        <div class="flex justify-between items-center">
+
+                            <span class="font-light text-sm md:text-lg text-gray-600">Jun 1, 2020</span>
+                            <!-- <a href="#" class="px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500">Laravel</a> -->
+                        </div>
+                        <div class="mt-2"><a href="#" class="text-sm md:text-2xl text-gray-700 font-bold hover:underline">Moment title</a>
+                            <p class="mt-2 text-sm md:text-lg text-gray-600">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tempora expedita dicta totam aspernatur doloremque. Excepturi iste iusto eos enim reprehenderit nisi, accusamus delectus nihil quis facere in modi ratione libero!
+
+                            </p>
+                        </div>
+                        <div class="flex justify-between items-center mt-4">
+                            <!-- <a href="#" class="text-blue-500 hover:underline">Read more</a> -->
+                            <div>
+                                <a href="#" class="flex items-center"><img
+
+                                    src="https://images.unsplash.com/photo-1464863979621-258859e62245?ixlib=rb-1.2.1&amp;ixid=eyJhcHBfaWQiOjEyMDd9&amp;auto=format&amp;fit=crop&amp;w=333&amp;q=80"
+                                    alt="avatar" class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block">
+                                <h1 class="text-sm md:text-lg text-gray-700 font-bold hover:underline">Jane Doe</h1>
+
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-</div>
+    <!---------------------------------------------------------------------------------------------- Footer -->
+    <div class="mt-5 sm:mt-8 md:mt-10">
+        <footer class="bg-gray-800 sm:pt-5">
+            <div class="flex justify-center row-start-1 text-gray-800">
+                <div class="pt-5">
+                    <!--  Title -->
+                    <div class="text-center text-base text-gray-400 font-medium mb-6">
+                    Checkout out our Github page!
+                    </div>
+                    <!-- Links -->
+                    <a href="https://github.com/enochj316/Project2" class="text-center my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                        Github
+                    </a>
+                </div>
+            </div>
+            <div class="pt-5">
+                <hr class="m-auto bg-gray-500 sm:max-w-xs md:max-w-xl lg:max-w-4xl xl:max-w-6xl" >
+            </div>
+            <!-- Copyright Line -->
+            <div class="row-start-2 pt-2">
+                <div class="flex pb-5 px-3 m-auto pt-5 border-t border-gray-500 text-gray-400 text-sm md:flex-row max-w-6xl">
+                    <div class="mt-2">
+                        © Copyright 1998-year. All Rights Reserved.
+                    </div>
+        
+                    <!-- Unicons -->
+                    <div class="md:flex-auto md:flex-row-reverse mt-2 flex-row flex">
+                        <a href="#" class="w-6 mx-1">
+                            <i class="uil uil-twitter-alt"></i>
+                        </a>
+                        <a href="#" class="w-6 mx-1">
+                            <i class="uil uil-youtube"></i>
+                        </a>
+                        <a href="#" class="w-6 mx-1">
+                            <i class="uil uil-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-6 mx-1">
+                            <i class="uil uil-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/home.js"></script>
 </body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="js/home.js"></script>
 </html>
