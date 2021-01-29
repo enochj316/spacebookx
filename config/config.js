@@ -1,12 +1,12 @@
 module.exports = {
-  "development1": {
+  "development": {
     "username": process.env.DB_USERNAME,
     "password": process.env.DB_PASSWORD,
     "database": process.env.DB_DATABASE,
     "host": process.env.DB_HOST,
     "dialect": "mysql"
   },
-  "development": {
+  "test": {
     "username": "root",
     "password": "Gen2612$$",
     "database": "database_test",
