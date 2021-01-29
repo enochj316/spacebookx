@@ -24,8 +24,8 @@ module.exports = (app) => {
         app.set('view engine', 'handlebars');
 
         //change friends to find all where id = req.user.id (friends of person who is logged in)
-        db.Posts.findAll().then((posts) => {
-            db.Friends.findAll().then((friends) => {
+        db.Posts.findAll({where: {UserId: req.user.id}}).then((posts) => {
+            db.Friends.findAll({where : {UserId: req.user.id}}).then((friends) => {
                 res.render('user', {
                     posts: posts,
                     friends: friends

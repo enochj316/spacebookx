@@ -36,19 +36,6 @@ $(document).ready(() => {
       // $("#main-image").attr("src",data.imageurl);
       
     });
-
-    // $.get("/friends").then(data => {
-    //   res.render('user', {data: data})
-      
-    // });
-    
-
-    $.get("/posts_user").then(data => {
-        console.log(data)
-        $("#moment-body").text(data[0].body);
-        $("#moment-title").text(data[0].title);
-        $("#moment-time").text(data[0].createdAt);
-      });
 });
 
 let button = document.querySelector('.btn')
