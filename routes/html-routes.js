@@ -66,8 +66,6 @@ module.exports = (app) => {
             db.Posts.findAll().then((posts) => {
                 res.render('home', {posts: posts,
                                     weather: weather})
-                console.log({posts: posts,
-                    weather: weather})
             })
         })
     })
@@ -83,7 +81,10 @@ module.exports = (app) => {
 
         //change to db.Friends.findAll
         db.Users.findAll().then((result) => {
-            res.render('friends', { result: result })
+            db.Friends.findAll({where: {UserId: req.user.id}}).then((friends) => {
+                res.render('friends', { result: result,
+                                        friends: friends})
+            })
         })
     });
 

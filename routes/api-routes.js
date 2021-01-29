@@ -28,6 +28,20 @@ module.exports = (app) => {
         }).then((result) => res.json(result))
     })
 
+    // app.get("/friends", (req, res) => {
+    //     db.Friends.findAll().then((result) => {
+    //         res.json(result)
+    //     })
+    // })
+
+    app.delete("/friends/:id", (req, res) => {
+        db.Friends.destroy({
+            where: {
+                id: req.params.id
+            }
+        }).then((result) => res.json(result))
+    })
+
     // POSTS //
     //find all posts based on userid
     app.get("/posts_user", (req, res) => {
