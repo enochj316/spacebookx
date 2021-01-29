@@ -84,24 +84,33 @@ $(document).ready(() => {
 document.addEventListener("DOMContentLoaded", (event) => {
   console.log("DOM loaded! 🚀");
 
+
   const deleteButtons = document.querySelectorAll(".delete-button")
   if (deleteButtons) {
-    deleteButtons.forEach((button) => {
-      button.addEventListener("click", (e) => {
-        console.log(e.target)
-        const postId = e.target.getAttribute("data-id");
-        console.log("clicked", postId)
-        fetch("/delete_post/" + postId, {
-          method: 'DELETE',
-          headers: {
-            Accept: 'application/json',
-            'Content-Type': 'application/json',
-          },
-        }).then((res) => {
-          location.reload()
+    $.get("/api/user_data").then(user => {
+      const userId = user.id;
+      deleteButtons.forEach((button) => {
+        if (button.getAttribute("data-UserId") == userId) {
+          console.log(userId)
+          button.classList.remove("hidden");
+        }
+        button.addEventListener("click", (e) => {
+          console.log(e.target)
+          const postId = e.target.getAttribute("data-id");
+          console.log("clicked", postId)
+          fetch("/delete_post/" + postId, {
+            method: 'DELETE',
+            headers: {
+              Accept: 'application/json',
+              'Content-Type': 'application/json',
+            },
+          }).then((res) => {
+            location.reload()
+          })
         })
       })
-    })
+    });
+    
   }
 
   const profileButton = document.getElementById("profile-button");
