@@ -3,7 +3,8 @@ const path = require("path");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 const { response } = require("express");
 const flash = require("express-flash");
-const axios = require("axios")
+const axios = require("axios");
+const { watchFile } = require("fs");
 
 // HTML Routes ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 module.exports = (app) => {
@@ -24,8 +25,8 @@ module.exports = (app) => {
         app.set('view engine', 'handlebars');
 
         //change friends to find all where id = req.user.id (friends of person who is logged in)
-        db.Posts.findAll({where: {UserId: req.user.id}}).then((posts) => {
-            db.Friends.findAll({where : {UserId: req.user.id}}).then((friends) => {
+        db.Posts.findAll({ where: { UserId: req.user.id } }).then((posts) => {
+            db.Friends.findAll({ where: { UserId: req.user.id } }).then((friends) => {
                 res.render('user', {
                     posts: posts,
                     friends: friends
@@ -82,9 +83,11 @@ module.exports = (app) => {
 
         //change to db.Friends.findAll
         db.Users.findAll().then((result) => {
-            db.Friends.findAll({where: {UserId: req.user.id}}).then((friends) => {
-                res.render('friends', { result: result,
-                                        friends: friends})
+            db.Friends.findAll({ where: { UserId: req.user.id } }).then((friends) => {
+                res.render('friends', {
+                    result: result,
+                    friends: friends
+                })
             })
         })
     });
