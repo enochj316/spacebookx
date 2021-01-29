@@ -31,7 +31,7 @@ $(document).ready(() => {
 
   btnHamburger.addEventListener('click', function () {
     console.log('click hamburger');
-  
+
     if (header.classList.contains('open')) { // Close Hamburger Menu
       body.classList.remove('noscroll');
       header.classList.remove('open');
@@ -39,7 +39,7 @@ $(document).ready(() => {
         element.classList.remove('fade-in');
         element.classList.add('fade-out');
       });
-  
+
     }
     else { // Open Hamburger Menu
       body.classList.add('noscroll');
@@ -120,43 +120,21 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 //This function initiates the process of collecting the data from "The Weather APIs" to display on the page 
 $("#weatherSearch").on("click", function () {
-  console.log("cat")
   var subject = $(".subject").val();
-  var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + subject + "&appid=88d9e018c72362777892f1fbbbb2dfb3";
-  var lat;
-  var lon;
+  const postObj = { city: subject }
 
+  fetch("/getcity/", {
+    method: 'GET',
+    headers: {
+      Accept: 'application/json',
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(postObj)
+  }).then((response) => {
+    console.log(response)
+    location.reload();
+  }).catch(err => {
+    console.log(err)
 
-  //This first ajax request collects current weather data and converts info into what is needed to be displayed
-  $.ajax({
-    url: queryURL,
-    method: "GET",
-    statusCode: {
-      404: function () {
-        return;
-      }
-    }
-  }).then(function (response) {
-    console.log(response);
-    $(".current-box").show();
-    var iconcode = response.weather[0].icon;
-    var iconurl = "http://openweathermap.org/img/w/" + iconcode + ".png";
-    $(".icon").attr('src', iconurl)
-    lat = response.coord.lat;
-    lon = response.coord.lon;
-    $(".current-city").text(response.name + " " + moment().format('ll'));
-    var currentTemp = response.main.temp - 273.15;
-    $(".current-temp").text("Temperature: " + currentTemp.toFixed(1) + " °C");
-    $(".current-hum").text("Humidity: " + response.main.humidity + "%");
-    $(".current-wind").text("Wind Speed: " + response.wind.speed + " MPH");
-    queryURL = "http://api.openweathermap.org/data/2.5/uvi/forecast?&appid=88d9e018c72362777892f1fbbbb2dfb3&lat=" + lat + "&lon=" + lon;
-
-    //This is nested ajax request that gets the UV index but uses longitude and latitude from the previous ajax request 
-    $.ajax({
-      url: queryURL,
-      method: "GET"
-    }).then(function (response) {
-      $(".current-uv").text("UV Index: " + response[0].value);
-    })
-  });
+  })
 })
