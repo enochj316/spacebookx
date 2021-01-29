@@ -3,6 +3,7 @@ const path = require("path");
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 const { response } = require("express");
 const flash = require("express-flash");
+const axios = require("axios")
 
 // HTML Routes ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 module.exports = (app) => {
@@ -48,14 +49,31 @@ module.exports = (app) => {
             defaultLayout: '_home'
         }));
         app.set('view engine', 'handlebars');
+
         //do a findAll posts, then pass result as object into render
         db.Posts.findAll().then((result) => {
             res.render('home', {result: result})
             console.log({result: result})
         })
-        
-
     });
+
+    app.get("/getcity/", isAuthenticated, (req, res) => {
+        let city = req.body.city;
+        let data = db.Posts.findAll().then((result) => {
+
+            console.log({result: result})
+        })
+        let weath = axios.get("https://api.openweathermap.org/data/2.5/weather?q=" + "Tokyo" + "&appid=88d9e018c72362777892f1fbbbb2dfb3")
+        .then((response) => {
+            
+        })
+        let allInfo = {
+            city: city,
+            weather: weather,
+            posts: data
+        }
+        res.render('home', allInfo)
+    })
 
     app.get("/friends", isAuthenticated, (req, res) => {
         console.log("friends page hit!")
@@ -70,7 +88,6 @@ module.exports = (app) => {
         db.Users.findAll().then((result) => {
             res.render('friends', {result: result})
         })
-
     });
 
     app.get("/user/:id", isAuthenticated, (req, res) => {
