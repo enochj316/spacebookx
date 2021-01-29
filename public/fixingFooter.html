@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--Reset CSS-->
+    <link href="styles/reset.css" rel="stylesheet">
+    <!-- Footer CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@iconscout/unicons@3.0.6/css/line.css">
+    <!--Tailwind CSS-->
+    <link href="styles/tailwind.css" rel="stylesheet">
+    <!--CSS-->
+    <link href="styles/style.css" rel="stylesheet">
+    <!-- Spacebook Icon -->
+    <link rel="icon" href="Assets/spacebook_icon.png" type="image/png">
+    <title>Spacebook</title>
+</head>
+
+<body class="body">
+    <!-- <div class="bg-fixed" style="background-image: url(https://i.postimg.cc/SNBR4bv5/pexels-felix-mittermeier-956999.jpg)"> -->
+    <div class="header">
+        <div class="overlay has-fade"></div>
+        <!-- ---------------------------------------------------------Nav Bar -->
+        <nav class="flex justify-between items-center shadow">
+            <!--Logo-->
+            <a href="/" class="header__logo">
+
+                <img src="Assets/spacebookLogo.png" alt="Spacebook" </a>
+                <!--Hamburger Menu-->
+                <a id="btnHamburger" href="#" class="header__toggle hide-for-desktop">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </a>
+                <!--Hamburger Menu Links-->
+                <div class="header__links hide-for-mobile">
+                    <a href="#" class="hover:bg-gray-100 px-3 py-2 rounded-md">My Profile</a>
+                    <a href="#" class="hover:bg-gray-100 px-3 py-2 rounded-md">Add Friend</a>
+                    <a href="#" class="hover:bg-gray-100 px-3 py-2 rounded-md">Logout</a>
+                </div>
+
+                <!--Profile Pic/Button  (left it as a button in case we needed it)-->
+                <!-- <div>
+                <button class="max-w-xs bg-gray-800 rounded-full items-center focus:outline-none">
+                  <img class="h-8 w-8 rounded-full" src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">
+                </button>
+            </div> -->
+        </nav>
+
+        <div class="header__menu has-fade">
+            <a href="">My Profile</a>
+            <a href="">Add Friend</a>
+            <a href="">Logout</a>
+        </div>
+
+    </div>
+
+    <!-------------------------------------------------------Body Content-->
+
+    <div class="flex grid grid-flow-col gap-0 md:gap-4">
+        <!---------------------------------------------------Weather-->
+        <div class=" col-start-1 my-4 px-4 md:my-8 md:px-8">
+            <h1 class="mx-4 pb-2 font-bold text-white text-base md:text-2xl">Weather</h1>
+            <div class="flex bg-white max-w-sm mt-2 px-6 pb-4 rounded-lg shadow-md">
+                <div class="card current-box">
+                    <ul class="-ml-4">
+                        <!---------Weather icon and City-->
+                        <li class="flex items-center mt-6">
+                            <img id="weather-img" src=""></h3>
+                            <p class="text-sm md:text-lg text-gray-700 mx-1">
+                                City:
+                                <span id="current-city" class="text-gray-700 text-sm font-light"></span>
+                            </p>
+                        </li>
+                        <!-------------------Temperature-->
+                        <li class="flex items-center mt-6">
+                            <p class="text-sm md:text-lg text-gray-700 mx-1">
+                                Temperature:
+                                <span id="current-temp" class="text-gray-700 text-sm font-light"></span>
+                            </p>
+                        </li>
+                        <!--------------------Humidity--->
+                        <li class="flex items-center mt-6">
+                            <p class="text-sm md:text-lg text-gray-700 mx-1">
+                                Humidity:
+                                <span id="current-hum" class="text-gray-700 text-sm font-light"></span>
+                            </p>
+                        </li>
+                        <!--------------------Windspeed-->
+                        <li class="flex items-center mt-6">
+                            <p class="text-sm md:text-lg text-gray-700 mx-1">
+                                Windspeed:
+                                <span id="current-wind" class="text-gray-700 text-sm font-light"></span>
+                            </p>
+                        </li>
+                        <div class="flex items-center mt-6">
+                            <input class="text-gray-700 text-sm font-light" placeholder="Enter a City"></input>
+                            <button id="weatherSearch"
+                                class="px-2 py-1 bg-gray-600 text-sm md:text-lg text-gray-100 font-bold rounded hover:bg-gray-500">Search</button>
+                        </div>
+                </div>
+                <!-- <li class="flex items-center mt-6">
+                        <img src="https://i.postimg.cc/ZRYzwGrr/billandtedcarlin.jpg" alt="avatar" class="w-10 h-10 object-cover rounded-full mx-4">
+                        <p>
+                            <a href="#" class="text-gray-700 font-bold mx-1 hover:underline">Rufus</a>
+                            <span class="text-gray-700 text-sm font-light">Created 2 Posts</span>
+                        </p>
+                    </li>
+                    <li class="flex items-center mt-6">
+                        <img src="https://i.postimg.cc/RhKrhv9x/Character-Socrates.jpg" alt="avatar" class="w-10 h-10 object-cover rounded-full mx-4">
+                        <p>
+                            <a href="#" class="text-gray-700 font-bold mx-1 hover:underline">Socrates Johnson</a>
+                            <span class="text-gray-700 text-sm font-light">Created 73 Posts</span>
+                        </p>
+                    </li> -->
+                </ul>
+            </div>
+            <!-- <button type="submit" class="mx-5 my-1 flex items-center p-1 rounded-xl shadow-xs cursor-pointer hover:bg-gray-100">See More</button>-->
+
+        </div>
+        <!----------------------------------------------------------Moments Feed-->
+
+        <!--px = "padding x-axis" py = "padding y-axis"-->
+
+        <div class="col col-start-2 mr-6 my-4 md:my-8">
+            <!-------------------------------------------------Moments Input-->
+            <div class="max-w-6xl">
+                <div class="flex items-center justify-between">
+                    <h1 class="hide-for-mobile md:text-2xl font-bold text-white">Let's Explore Moments Around You...
+                    </h1>
+                    <h1 class="hide-for-desktop md:text-2xl text-base font-bold text-white">Let's Explore Moments...
+                    </h1>
+                </div>
+                <div class="mt-4">
+                    <div class="max-w-4xl px-5 pb-5 pt-3 md:px-10 md:py-6 bg-white rounded-lg shadow-md">
+                        <div class="mt-2"><a href="#"
+                                class="text-sm md:text-2xl text-gray-700 font-bold hover:underline">Share Your
+                                Moments:</a>
+                            <div>
+                                <div class="mt-5">
+                                    <textarea id="about" name="about" rows="1"
+                                        class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full text-xs sm:text-sm border-gray-300 rounded-md"
+                                        placeholder="Title"></textarea>
+                                </div>
+                                <div class="mt-5">
+                                    <textarea id="about" name="about" rows="3"
+                                        class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full text-xs sm:text-sm border-gray-300 rounded-md"
+                                        placeholder="Share Your Moments!"></textarea>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex justify-between items-center mt-4">
+                            <div>
+                                <a href="#"
+                                    class="px-2 py-1 bg-gray-600 text-sm md:text-lg text-gray-100 font-bold rounded hover:bg-gray-500">Submit</a>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- ------------------------------------------------------ -->
+                
+            </div>
+        </div>
+    </div>
+    <!---------------------------------------------------------------------------------------------- Footer -->
+    <footer class="bg-gray-800 sm:pt-5 mt-5 sm:mt-8 md:mt-10" style="position: absolute; bottom: 0; width: 100%">
+        <div class="flex justify-center row-start-1 text-gray-800">
+            <div class="pt-5">
+                <!--  Title -->
+                <div class="text-center text-base text-gray-400 font-medium mb-6">
+                    Checkout out our Github page!
+                </div>
+                <!-- Links -->
+                <a href="https://github.com/enochj316/Project2"
+                    class="text-center my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                    Github
+                </a>
+            </div>
+        </div>
+        <div class="pt-5">
+            <hr class="m-auto bg-gray-500 sm:max-w-xs md:max-w-xl lg:max-w-4xl xl:max-w-6xl">
+        </div>
+        <!-- Copyright Line -->
+        <div class="row-start-2 pt-2">
+            <div
+                class="flex pb-5 px-3 m-auto pt-5 border-t border-gray-500 text-gray-400 text-sm md:flex-row max-w-6xl">
+                <div class="mt-2">
+                    © Copyright 1998-year. All Rights Reserved.
+                </div>
+
+                <!-- Unicons -->
+                <div class="md:flex-auto md:flex-row-reverse mt-2 flex-row flex">
+                    <a href="#" class="w-6 mx-1">
+                        <i class="uil uil-twitter-alt"></i>
+                    </a>
+                    <a href="#" class="w-6 mx-1">
+                        <i class="uil uil-youtube"></i>
+                    </a>
+                    <a href="#" class="w-6 mx-1">
+                        <i class="uil uil-linkedin"></i>
+                    </a>
+                    <a href="#" class="w-6 mx-1">
+                        <i class="uil uil-instagram"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/home.js"></script>
+</body>
+
+</html>
