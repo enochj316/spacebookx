@@ -59,22 +59,15 @@ module.exports = (app) => {
         })
     });
 
-    app.get("/getcity/", isAuthenticated, (req, res) => {
-        let city = req.body.city;
-        let data = db.Posts.findAll().then((result) => {
-
-            console.log({ result: result })
-        })
-        let weath = axios.get("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=88d9e018c72362777892f1fbbbb2dfb3")
-            .then((response) => {
-
+    app.get("/getcity/:name", isAuthenticated, (req, res) => {
+        console.log(req.params.name)
+        let city = req.params.name;
+        axios.get("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=88d9e018c72362777892f1fbbbb2dfb3").then((weather) => {
+            db.Posts.findAll().then((posts) => {
+                res.render('home', {posts: posts,
+                                    weather: weather})
             })
-        let allInfo = {
-            city: city,
-            weather: weather,
-            posts: data
-        }
-        res.render('home', allInfo)
+        })
     })
 
     app.get("/friends", isAuthenticated, (req, res) => {
@@ -88,7 +81,10 @@ module.exports = (app) => {
 
         //change to db.Friends.findAll
         db.Users.findAll().then((result) => {
-            res.render('friends', { result: result })
+            db.Friends.findAll({where: {UserId: req.user.id}}).then((friends) => {
+                res.render('friends', { result: result,
+                                        friends: friends})
+            })
         })
     });
 

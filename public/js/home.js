@@ -63,21 +63,21 @@ document.addEventListener("DOMContentLoaded", (event) => {
   console.log("DOM loaded! 🚀");
 
   const deleteButtons = document.querySelectorAll(".delete-button")
-  if(deleteButtons) {
+  if (deleteButtons) {
     deleteButtons.forEach((button) => {
       button.addEventListener("click", (e) => {
         console.log(e.target)
-          const postId = e.target.getAttribute("data-id");
-          console.log("clicked", postId)
-          fetch("/delete_post/" + postId, {
-            method: 'DELETE',
-            headers: {
+        const postId = e.target.getAttribute("data-id");
+        console.log("clicked", postId)
+        fetch("/delete_post/" + postId, {
+          method: 'DELETE',
+          headers: {
             Accept: 'application/json',
-                    'Content-Type': 'application/json', 
-              },
-          }).then((res) => {
-            location.reload()
-          })
+            'Content-Type': 'application/json',
+          },
+        }).then((res) => {
+          location.reload()
+        })
       })
     })
   }
@@ -118,21 +118,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
 
 //This function initiates the process of collecting the data from "The Weather APIs" to display on the page 
 $("#weatherSearch").on("click", function () {
-  var subject = $(".subject").val();
-  const postObj = { city: subject }
-
-  fetch("/getcity/", {
+  const cityName = document.getElementById("city-name");
+  cityPost = cityName.value.trim();
+  fetch("/getcity/" + cityPost, {
     method: 'GET',
     headers: {
       Accept: 'application/json',
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify(postObj)
   }).then((response) => {
     console.log(response)
-    location.reload();
+    // location.reload();
   }).catch(err => {
     console.log(err)
-
   })
 })

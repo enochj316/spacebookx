@@ -57,9 +57,32 @@ document.addEventListener("DOMContentLoaded", (event) => {
                         'Content-Type': 'application/json', 
                     },
                     body: JSON.stringify(userFriend)
+                }).then((response) => {
+                    location.reload();
                 })
 
             })
         })
     }
+
+    const deleteFriendBtns = document.querySelectorAll(".delete-friend");
+    if(deleteFriendBtns) {
+        deleteFriendBtns.forEach((button) => {
+            button.addEventListener("click", (e) => {
+                const deleteFriendId = e.target.getAttribute("data-id")
+                fetch('/friends/' + deleteFriendId, {
+                    method: 'DELETE',
+                    headers: {
+                        Accept: 'application/json',
+                        'Content-Type': 'application/json', 
+                    },
+                }).then((response) => {
+                    location.reload();
+                })
+
+            })
+        })
+    }
+
+
 })
