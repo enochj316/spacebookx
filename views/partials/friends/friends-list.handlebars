@@ -4,7 +4,7 @@
         <div class="flex mt-8 mb-4 justify-between">
             <img src="{{dataValues.imageurl}}" alt="profile_pic" 
             class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block">
-            <p class="w-full flex text-sm sm:text-base text-gray-700">{{dataValues.first_name}} {{dataValues.last_name}}</p>
+            <a href="/user/{{dataValues.id}}" ><p class="w-full flex text-sm sm:text-base text-gray-700">{{dataValues.first_name}} {{dataValues.last_name}}</p></a>
             <button type="submit" class="add-friend">
                 <div class="px-3 ml-4 mr-2 text-sm md:text-lg rounded bg-gray-600 text-white"
                     data-id="{{dataValues.id}}" data-firstname="{{dataValues.first_name}}" data-lastname="{{dataValues.last_name}}">
