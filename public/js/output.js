@@ -4,7 +4,7 @@ $(document).ready(function () {
         e.preventDefault();
 
         let query = $("#searchquery").val();
-        let url = "https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=3bc0201431e44a5e939fb1f0e403dff1";
+        let url = "https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=9ttok59nX5MomfyboWAaWtryuexakq5K";
 
         if (query !== "") {
 
@@ -16,7 +16,7 @@ $(document).ready(function () {
 
                 success: function (news) {
                     let output = "";
-                    let latestNews = news.articles;
+                    let latestNews = news.results;
 
                     for (var i in latestNews) {
                         output += `
@@ -28,33 +28,25 @@ $(document).ready(function () {
             <div class="mt-6">
                 <div class="max-w-4xl px-10 py-6 bg-white rounded-lg shadow-md">
                     <div class="flex justify-between items-center">
-                        <span class="font-light text-gray-600">${latestNews[i].publishedAt}</span>
+                        <span class="font-light text-gray-600">${latestNews[i].published_date}</span>
 
-                        <a href="#" class="px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500" id="moment-time">
+                        <a href="${latestNews[i].url}" target="_blank" class="px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500" id="moment-time">
                         #News
                             </a>
                     </div>
-                    <div class="mt-2"><a href="#" class="text-2xl text-gray-700 font-bold hover:underline" id="moment-title">
+                    <div class="mt-2"><a href="${latestNews[i].url}" target="_blank" class="text-2xl text-gray-700 font-bold hover:underline" id="moment-title">
                             ${latestNews[i].title}
                             </a>
                     </div>
                     <div>
-                        <a href="https://newsapi.org/docs/endpoints/top-headlines" target="_blank" class="text-blue-500 hover:underline">${latestNews[i].author}: </a>
+                        <a href="https://newsapi.org/docs/endpoints/top-headlines" target="_blank" class="text-blue-500 hover:underline">
+                        ${latestNews[i].nytdsection}: </a>
                         <p class="mt-2 text-gray-600 overflow-ellipsis md:overflow-clip" id="moment-body">
-                         ${latestNews[i].description}
+                         ${latestNews[i].abstract}
                         </p>
                         <a href="${latestNews[i].url}" target="_blank" class="btn">Read more</a>
                     </div>
-                    <div class="flex justify-between items-center">
-                        <a href="#" class="text-blue-500 hover:underline"> </a>
-                        <div class="w-1/3 cover"
-                            <a href="#" class="flex items-center"><img
-                                    src="${latestNews[i].urlToImage}"
-                                    alt="avatar"
-                                    class="rounded-lg hidden sm:block">
-                            </a>
-                        </div>
-                    </div>
+                   
                 </div>
             </div>
 
@@ -119,7 +111,7 @@ $(document).ready(function () {
         e.preventDefault();
 
         let query = $("#searchquery").val();
-        let url = "https://api.giphy.com/v1/gifs/search?q=funny&api_key=fhyjxSw2icjRND3sWkVDSIduWRwkEPsI&rating=g&limit=1";
+        let url = "https://api.giphy.com/v1/gifs/search?q=funny&api_key=fhyjxSw2icjRND3sWkVDSIduWRwkEPsI&rating=g&limit=5";
 
         if (query !== "") {
 
@@ -136,9 +128,9 @@ $(document).ready(function () {
                     for (var i in giphy) {
                         output += `
 
-                        <div class="">
+                        <div class="pt-4">
     <div class="">
-        <figure class="bg-gray-100 px-4 rounded-xl w-72">
+        <figure class="bg-gray-300 bg-opacity-10 px-4 rounded-xl w-72">
             <div class="h-auto w-auto">
                 <iframe class=" block h-64 w-64"
                     src="${giphy[i].embed_url}"
