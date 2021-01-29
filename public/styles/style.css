@@ -150,8 +150,6 @@ a, a:visited, a:hover {
   background-color: white;
   max-width: 100%;
   padding: 24px;
-  -webkit-box-shadow: 2px 2px 2px 5px white;
-          box-shadow: 2px 2px 2px 5px white;
 }
 
 .header__logo img {
@@ -195,7 +193,7 @@ a, a:visited, a:hover {
 }
 
 .header__links a {
-  color: #384252;
+  color: #9698a6;
   -webkit-transition: color 300ms ease-in-out;
   transition: color 300ms ease-in-out;
 }
@@ -306,6 +304,7 @@ li {
 .dark-mode, :not(img, h1, h2, p) {
   filter: invert(1) hue-rotate(0deg);
 }
+
 */
 @tailwind base;
 @tailwind components;
