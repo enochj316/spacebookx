@@ -51,13 +51,12 @@ module.exports = (app) => {
         }).then((result) => res.json(result))
     })
 
-    app.delete("/posts/:id", (req, res) => {
+    app.delete("/delete_post/:id", (req, res) => {
         db.Posts.destroy({
             where: {
                 id: req.params.id,
             },
         }).then((result) => res.json(result))
-
     })
 
     // Login with passport//
