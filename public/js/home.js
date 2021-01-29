@@ -8,6 +8,7 @@ const btnWeatherSearch = document.querySelector('#weatherSearch');
 
 //This function initiates the process of collecting the data from "The Weather APIs" to display on the page 
 $("#weatherSearch").on("click", function () {
+  console.log("cat")
   var subject = $(".subject").val();
   var queryURL = "https://api.openweathermap.org/data/2.5/weather?q=" + subject + "&appid=88d9e018c72362777892f1fbbbb2dfb3";
   var lat;
