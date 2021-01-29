@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static('public'));
 app.use(cookieParser());
-app.use(session({ secret: "cheesy mcgee", cookie: {maxAge : 600000}, resave: true, saveUninitialized: true }));
+app.use(session({ secret: "cheesy mcgee", cookie: { maxAge: 600000 }, resave: true, saveUninitialized: true }));
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
