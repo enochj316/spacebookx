@@ -61,10 +61,11 @@ module.exports = (app) => {
 
     app.get("/getcity/:name", isAuthenticated, (req, res) => {
         console.log(req.params.name)
+        console.log("")
         let city = req.params.name;
         axios.get("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + process.env.WEATHER_KEY).then((weather) => {
-            db.Posts.findAll().then((posts) => {
-                res.render('home', {posts: posts,
+            db.Posts.findAll().then((result) => {
+                res.render('home', {result: result,
                                     weather: weather})
             })
         })
