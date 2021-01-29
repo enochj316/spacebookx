@@ -11,47 +11,103 @@
     <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 
-<body>
+<body class="body">
     <header class="header">
         <div class="overlay has-fade"></div>
         <!--Nav Bar-->
-        <nav class="flex justify-between items-center shadow">
+        <nav class="flex flex-nowrap justify-between items-center shadow">
             <!--Logo-->
-            <a href="/home_id" class="header__logo">
+    
+            <a href="/home_id" class="header__logo flex-initial order-1">
                 <img class="logo" src="Assets/spacebookLogo.png" alt="Spacebook" </a>
-                <h2 id="name-top-right">Welcome </h2>
+    
                 <!--Hamburger Menu-->
-                <a id="btnHamburger" href="#" class="header__toggle hide-for-desktop">
+                <a id="btnHamburger" href="#" class="header__toggle hide-for-desktop order-3">
                     <span></span>
                     <span></span>
                     <span></span>
                 </a>
+                <div class="header__logo flex-initial order-2 hide-for-mobile">
+                    <h2 id="welcome-message">Welcome <span id="user-name"></span>
+                    </h2>
+                </div>
                 <!--Hamburger Menu Links-->
-                <div class="header__links hide-for-mobile">
-                    <a href="/home_id" class="hover:bg-gray-100 px-3 py-2 rounded-md">Home</a>
+                <div class="right-0 flex-end header__links hide-for-mobile order-3">
+    
+                    <a href="/home_id" class="hover:bg-gray-100 px-3 py-2 rounded-md">Moments Feed</a>
                     <a href="#" class="hover:bg-gray-100 px-3 py-2 rounded-md" id="profile-button">My Profile</a>
                     <a href="/" class="hover:bg-gray-100 px-3 py-2 rounded-md">Logout</a>
                 </div>
-
-                <!--Profile Pic/Button  (left it as a button in case we needed it)-->
-                <div>
-                    <button class="mx-2 max-w-xs bg-gray-800 rounded-full flex items-center focus:outline-none">
-                        <img class="h-8 w-8 rounded-full"
-                            src="https://i.postimg.cc/7P1H9CB0/gettyimages-86788270-e1599654644219.jpg"
-                            alt="profile_pic">
-                    </button>
-                </div>
+    
+    
+                <!--Profile Pic/Button  (left it as a button in case we needed it)
+                    <div>
+                        <button class="mx-2 max-w-xs bg-gray-800 rounded-full flex items-center focus:outline-none">
+                            <img class="h-8 w-8 rounded-full"
+                                src="{{dataValues.imageurl}}"
+                                alt="profile_pic">
+                        </button>
+                    </div> -->
         </nav>
-
+    
         <div class="header__menu has-fade">
-            <a href="/home_id">Home</a>
+            <a href="/home_id">Moments Feed</a>
+    
             <a href="#" id="profile-button">My Profile</a>
+    
             <a href="/">Logout</a>
         </div>
     </header>
+        
+        {{{ body }}}
 
-    {{{ body }}}
-
+    </div>
+    <!---------------------------------------------------------------------------------------------- Footer -->
+    <div class="mt-5 sm:mt-8 md:mt-10">
+        <footer class="bg-gray-800 sm:pt-5">
+            <div class="flex justify-center row-start-1 text-gray-800">
+                <div class="pt-5">
+                    <!--  Title -->
+                    <div class="text-center text-base text-gray-400 font-medium mb-6">
+                        Checkout out our Github page!
+                    </div>
+                    <!-- Links -->
+                    <a href="https://github.com/enochj316/Project2"
+                        class="text-center my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                        Github
+                    </a>
+                </div>
+            </div>
+            <div class="pt-5">
+                <hr class="m-auto bg-gray-500 sm:max-w-xs md:max-w-xl lg:max-w-4xl xl:max-w-6xl">
+            </div>
+            <!-- Copyright Line -->
+            <div class="row-start-2 pt-2">
+                <div
+                    class="flex pb-5 px-3 m-auto pt-5 border-t border-gray-500 text-gray-400 text-sm md:flex-row max-w-6xl">
+                    <div class="mt-2">
+                        © Copyright 1998-year. All Rights Reserved.
+                    </div>
+    
+                    <!-- Unicons -->
+                    <div class="md:flex-auto md:flex-row-reverse mt-2 flex-row flex">
+                        <a href="#" class="w-6 mx-1">
+                            <i class="uil uil-twitter-alt"></i>
+                        </a>
+                        <a href="#" class="w-6 mx-1">
+                            <i class="uil uil-youtube"></i>
+                        </a>
+                        <a href="#" class="w-6 mx-1">
+                            <i class="uil uil-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-6 mx-1">
+                            <i class="uil uil-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="js/friends.js"></script>

@@ -2,45 +2,55 @@
 <html lang="en">
 
 <head>
-    <title>SpaceBook</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Reset CSS-->
+    <link href="styles/reset.css" rel="stylesheet">
+    <!-- Footer CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@iconscout/unicons@3.0.6/css/line.css">
+    <!--Tailwind CSS-->
     <link href="styles/tailwind.css" rel="stylesheet">
+    <!--CSS-->
     <link href="styles/style.css" rel="stylesheet">
+    <!-- Spacebook Icon -->
     <link rel="icon" href="Assets/spacebook_icon.png" type="image/png">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js" defer></script>
+    <title>SpaceBook</title>
 </head>
 
-<body>
-    <header class="header">
+<body class="body">
+    <div class="header">
         <div class="overlay has-fade"></div>
         <!--Nav Bar-->
         <nav class="flex justify-between items-center shadow">
             <!--Logo-->
-            <a href="/home_id" class="header__logo">
+            <a href="/home_id" class="header__logo order-1">
                 <img class="logo" src="Assets/spacebookLogo.png" alt="Spacebook" </a>
-                <h2 id="welcome-message"> Welcome <h2 id="name-top-right"></h2></h2>
                 <!--Hamburger Menu-->
-                <a id= "btnHamburger" href="#" class="header__toggle hide-for-desktop">
+                <a id= "btnHamburger" href="#" class="header__toggle hide-for-desktop order-3">
                     <span></span>
                     <span></span>
                     <span></span>
                 </a>
+                <!--Welcome User-->
+                <div class="header__logo flex-initial order-2 hide-for-mobile">
+                    <h2 id="welcome-message">Welcome <span id="user-name"></span>
+                    </h2>
+                </div>
                 <!--Hamburger Menu Links-->
-                <div class="header__links hide-for-mobile">
+                <div class="header__links hide-for-mobile order-3">
                     <a href="#" class="hover:bg-gray-100 px-3 py-2 rounded-md" id="profile-button">My Profile</a>
                     <a href="/friends" class="hover:bg-gray-100 px-3 py-2 rounded-md">People</a>
                     <a href="/logout" class="hover:bg-gray-100 px-3 py-2 rounded-md">Logout</a>
                 </div>
-
-                <!--Profile Pic/Button  (left it as a button in case we needed it)-->
+                <!--Profile Pic/Button  (left it as a button in case we needed it)
                 <div>
                     <button class="mx-2 max-w-xs bg-gray-800 rounded-full flex items-center focus:outline-none">
                         <img class="h-8 w-8 rounded-full"
-                            src="https://i.postimg.cc/7P1H9CB0/gettyimages-86788270-e1599654644219.jpg"
+                            src="{{dataValues.imageurl}}"
                             alt="profile_pic">
                     </button>
-                </div>
+                </div>-->
         </nav>
 
         <div class="header__menu has-fade">
@@ -48,12 +58,67 @@
             <a href="/friends">People</a>
             <a href="/" id="logout-button">Logout</a>
         </div>
-    </header>
+    </div>
 
-    {{{ body }}}
+    <!-------------------------------------------------------Body Content-->
+    
+    <div class="flex grid grid-flow-col gap-0 md:gap-4">
 
+        {{{ body }}}
 
+    </div>
+
+    <!---------------------------------------------------------------------------------------------- Footer -->
+    <div class=" bottom-0">
+    <div class="mt-5 sm:mt-8 md:mt-10">
+        <footer class="bg-gray-800 sm:pt-5">
+            <div class="flex justify-center row-start-1 text-gray-800">
+                <div class="pt-5">
+                    <!--  Title -->
+                    <div class="text-center text-base text-gray-400 font-medium mb-6">
+                        Checkout out our Github page!
+                    </div>
+                    <!-- Links -->
+                    <a href="https://github.com/enochj316/Project2"
+                        class="text-center my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                        Github
+                    </a>
+                </div>
+            </div>
+            <div class="pt-5">
+                <hr class="m-auto bg-gray-500 sm:max-w-xs md:max-w-xl lg:max-w-4xl xl:max-w-6xl">
+            </div>
+            <!-- Copyright Line -->
+            <div class="row-start-2 pt-2">
+                <div
+                    class="flex pb-5 px-3 m-auto pt-5 border-t border-gray-500 text-gray-400 text-sm md:flex-row max-w-6xl">
+                    <div class="mt-2">
+                        © Copyright 1998-year. All Rights Reserved.
+                    </div>
+    
+                    <!-- Unicons -->
+                    <div class="md:flex-auto md:flex-row-reverse mt-2 flex-row flex">
+                        <a href="#" class="w-6 mx-1">
+                            <i class="uil uil-twitter-alt"></i>
+                        </a>
+                        <a href="#" class="w-6 mx-1">
+                            <i class="uil uil-youtube"></i>
+                        </a>
+                        <a href="#" class="w-6 mx-1">
+                            <i class="uil uil-linkedin"></i>
+                        </a>
+                        <a href="#" class="w-6 mx-1">
+                            <i class="uil uil-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+    </div>
 </body>
+
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="js/home.js"></script>
 <script src="js/output.js"></script>
