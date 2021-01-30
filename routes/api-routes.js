@@ -124,6 +124,7 @@ module.exports = (app) => {
             UserId: req.user.id
             //req.user.id is a global value based on passport
         }).then((result) => res.json(result))
+        .catch(err => console.error(err));
       })
     
     app.get("/weather/:city", (req, res) => {
@@ -142,6 +143,7 @@ module.exports = (app) => {
                         humidity: humidity,
                     windspeed: windspeed})
             })
+            .catch(err => console.error(err));
         })  
     app.get("/news", (req, res) => {
         axios({
