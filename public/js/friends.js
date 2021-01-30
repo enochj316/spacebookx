@@ -49,7 +49,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
             button.addEventListener("click", (e) => {
                 const userFriend = {
                     first_name: e.target.getAttribute("data-firstname"),
-                    last_name: e.target.getAttribute("data-lastname")
+                    last_name: e.target.getAttribute("data-lastname"),
+                    image_url: e.target.getAttribute("data-imgurl")
                 }
                 fetch('/friends', {
                     method: 'POST',

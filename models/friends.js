@@ -23,6 +23,8 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false},
     last_name: {type: DataTypes.STRING,
         allowNull: false},
+    img_url: {type: DataTypes.STRING,
+        allowNull: false},
   }, {
     sequelize,
     modelName: 'Friends',

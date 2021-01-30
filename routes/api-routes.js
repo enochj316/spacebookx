@@ -1,5 +1,6 @@
 const db = require("../models")
 const passport = require("../config/passport.js");
+const axios = require("axios");
 
 module.exports = (app) => {
     // USERS //
@@ -7,7 +8,13 @@ module.exports = (app) => {
         db.Users.findAll({
             include: [db.Posts, db.Friends]
         }).then((result) => res.send(JSON.stringify(result)))
+        .catch(err => console.error(err));
     })
+
+   
+
+
+
 
     app.post("/users", (req, res) => {
         db.Users.create({
@@ -18,6 +25,7 @@ module.exports = (app) => {
             imageurl: req.body.imageurl,
             password: req.body.password
         }).then((result) => res.json(result))
+        .catch(err => console.error(err));
     })
 
     app.delete("/users/:id", (req, res) => {
@@ -26,6 +34,7 @@ module.exports = (app) => {
                 id: req.params.id
             }
         }).then((result) => res.json(result))
+        .catch(err => console.error(err));
     })
 
     // app.get("/friends", (req, res) => {
@@ -114,15 +123,54 @@ module.exports = (app) => {
         db.Friends.create({
             first_name: req.body.first_name,
             last_name: req.body.last_name,
+            img_url: req.body.image_url,
             UserId: req.user.id
             //req.user.id is a global value based on passport
         }).then((result) => res.json(result))
+        .catch(err => console.error(err));
       })
+    
+    app.get("/weather/:city", (req, res) => {
+        let city = req.params.city;
+        console.log(city)
+        axios.get("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + process.env.WEATHER_KEY)
+            .then((result) => {
+                console.log(result)
+                let city = result.data.name;
+                let humidity = result.data.main.humidity;
+                let temperature = result.data.main.temp - 273.15;
+                let windspeed = result.data.wind.speed;
+
+                res.json({name: city,
+                            temperature: temperature,
+                        humidity: humidity,
+                    windspeed: windspeed})
+            })
+            .catch(err => console.error(err));
+        })  
+    app.get("/news", (req, res) => {
+        axios({
+                method: 'get',
+                url: 'https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=' + process.env.NYTIMES_KEY
+                
+            })
+            .then(result => res.send(result))
+            .catch(err => console.error(err));
+
+    })
+
+    app.get("/giphy", (req, res) => {
+        axios({
+                method: 'get',
+                url: 'https://api.giphy.com/v1/gifs/search?q=funny&api_key=' + process.env.GIPHY_KEY
+            })
+            .then(result => res.send(result.data))
+            .catch(err => console.error(err));
+
+    })
 
       app.get('/logout', (req, res) => {
         req.logout();
         res.redirect('/');
       });
 };
-
-
