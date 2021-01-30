@@ -28,6 +28,6 @@ require('./routes/api-routes.js')(app);
 require('./routes/html-routes.js')(app);
 
 //add {force: true} to reset table
-db.sequelize.sync().then(() => {
+db.sequelize.sync({force: true}).then(() => {
     app.listen(PORT, () => console.log(`Server listening on: http://localhost:${PORT}`));
 });
