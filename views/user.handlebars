@@ -8,7 +8,7 @@
                 <div class="flex justify-center">
                     <div class="flex grid grid-cols-3 grid-rows-2 gap-2">
                 <div class="col-span-3 row-span-2 sm:col-span-2">
-                    <img id="main-image" src="{{user.dataValues.imageurl}}" alt="main profile photo"
+                    <img id="main-image" src="{{user.dataValues.imageurl}}" onerror="this.src='https://picsum.photos/400'"
                         class="inset-0 max-h-40 bg-gray-100 rounded sm:rounded-lg"
                         style="box-shadow: 2px 2px 5px 2px;" />
                 </div>
