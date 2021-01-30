@@ -9,7 +9,7 @@ function geoFindMe() {
   function success(position) {
     
     console.log(position.coords)
-    geoLocation.textContent = position.coords.latitude + " " + position.coords.longitude
+    geoLocation.textContent = "Location: " + position.coords.latitude + " " + position.coords.longitude
   }
   function error() {
     geoLocation.textContent =  "Geo location is not supported by your browser..."

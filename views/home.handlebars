@@ -13,34 +13,34 @@
                             <img id="weather-img" src=""></h3>
                             <p class="text-sm md:text-lg text-gray-700 mx-1">
                                 City:
-                                <span id="current-city" class="text-gray-700 text-sm font-light"></span>
+                                <span id="current-city" class="text-gray-900 text-lg font-bold"></span>
                             </p>
                         </div>
                         <!-------------------Temperature-->
                         <div class="flex mt-6">
                             <p class="text-sm md:text-lg text-gray-700 mx-1">
                                 Temperature:
-                                <span id="temperature" class="text-gray-700 text-sm font-light"></span>
+                                <span id="temperature" class="text-gray-900 text-lg font-bold"></span>
                             </p>
                         </div>
                         <!--------------------Humidity--->
                         <div class="flex mt-6">
                             <p class="text-sm md:text-lg text-gray-700 mx-1">
                                 Humidity:
-                                <span id="humidity" class="text-gray-700 text-sm font-light"></span>
+                                <span id="humidity" class="text-gray-900 text-lg font-bold"></span>
                             </p>
                         </div>
                         <!--------------------Windspeed-->
                         <div class="flex mt-6">
                             <p class="text-sm md:text-lg text-gray-700 mx-1">
                                 Windspeed:
-                                <span id="windspeed" class="text-gray-700 text-sm font-light"></span>
+                                <span id="windspeed" class="text-gray-900 text-lg font-bold"></span>
                             </p>
                         </div>
                         <!--------------------Weather Input-->
                         <div class="flex justify-between mt-6">
-                            <input class="text-gray-700 text-sm font-light" placeholder="Enter a City"></input>
-                            <button class="px-2 py-1 bg-gray-600 text-sm md:text-lg text-gray-100 font-bold rounded hover:bg-gray-500">Search</button>
+                            <input class="text-gray-700 text-sm font-light" id="city-name" placeholder="Enter a City"></input>
+                            <button id="weatherSearch" class="px-2 py-1 bg-gray-600 text-sm md:text-lg text-gray-100 font-bold rounded hover:bg-gray-500">Search</button>
                         </div>
 
                         
@@ -50,7 +50,7 @@
                 <div class="col-start-1 my-1 md:my-8">
 
                 <div class="flex grid grid-rows-3 grid-flow-col gap-0">
-                    <div class=" mx-0 w-4/12 absolute fixed top-50 left-0 hidden lg:block px-6 py-8">
+                    <div class=" mx-0 w-4/12 absolute fixed top-50 left-0 hidden md:block px-6 py-8">
 
                         <div class="pt-2 px-2 py-10">
                             <div class="container mx-auto">

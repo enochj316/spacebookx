@@ -154,7 +154,7 @@ module.exports = (app) => {
                 url: 'https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=' + process.env.NYTIMES_KEY
                 
             })
-            .then(result => res.send(result))
+            .then(result => res.send(result.data))
             .catch(err => console.error(err));
 
     })

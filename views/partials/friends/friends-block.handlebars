@@ -1,6 +1,6 @@
 <!--------------------------------------------Card 1-->
                 <figure class="lg:flex bg-gray-100 rounded-xl mt-3 p-3 sm:p-8 md:p-0">
-                    <img class="w-auto h-24 md:w-auto md:h-32 md:rounded-full rounded-full mx-auto" src="{{dataValues.img_url}}" 
+                    <img class="w-auto h-24 md:w-auto md:h-32 md:rounded-full rounded-full mx-auto" src="{{dataValues.img_url}}" onerror="this.src='https://picsum.photos/400'"
                     alt="profile_pic" width="384" height="512" style="box-shadow: 2px 2px 5px 2px;">
                     <div class="pt-6 md:p-8 text-center md:text-left space-y-4">
                         <blockquote>
@@ -11,7 +11,7 @@
                             <div class="logo text-sm md:text-lg text-gray-600">
                             {{dataValues.first_name}} {{dataValues.last_name}} 
                             </div>
-                            <button class="logo px-3 ml-4 mr-2 text-sm md:text-lg rounded bg-gray-400 hover:bg-gray-600 text-white" data-id="{{dataValues.id}}">Remove</button>
+                            <button class="logo px-3 ml-4 mr-2 text-sm md:text-lg rounded bg-gray-400 hover:bg-gray-600 text-white delete-friend" data-id="{{dataValues.id}}">Remove</button>
                         </figcaption>
                     </div>
                 </figure>
