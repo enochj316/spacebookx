@@ -8,6 +8,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
         event.preventDefault();
         //grab values of the form fields
         //fetch POST with values as a JSON object 
+
         const newUser = {
             first_name : document.getElementById("first-name-input").value.trim(),
             last_name : document.getElementById("last-name-input").value.trim(),
