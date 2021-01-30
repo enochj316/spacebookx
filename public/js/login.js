@@ -8,6 +8,14 @@ document.addEventListener("DOMContentLoaded", (event) => {
             loginBtn.click();
         }
     });
+
+    var input = document.getElementById("email-login");
+    $(input).keypress(function (e) { 
+        var key = e.which;
+        if(key == 13) {
+            loginBtn.click();
+        }
+    });
     
     const loginBtn = document.getElementById("loginBtn");
     loginBtn.addEventListener("click", (event) => {
