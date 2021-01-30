@@ -5,21 +5,24 @@
     <title>SpaceBook</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--Reset CSS-->
+    <link href="styles/reset.css" rel="stylesheet">
+    <!-- Footer CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@iconscout/unicons@3.0.6/css/line.css">
+    <!--Tailwind CSS-->
     <link href="styles/tailwind.css" rel="stylesheet">
+    <!--CSS-->
     <link href="styles/style.css" rel="stylesheet">
+    <!-- Spacebook Icon -->
     <link rel="icon" href="Assets/spacebook_icon.png" type="image/png">
-    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
 </head>
 
-<body class="body">
+<body>
     <header class="header">
         <div class="overlay has-fade"></div>
         <!--Nav Bar-->
-        <nav class="flex flex-nowrap justify-between items-center shadow">
-            <!--Logo-->
-    
-            <a href="/home_id" class="header__logo flex-initial order-1">
-                <img class="logo" src="Assets/spacebookLogo.png" alt="Spacebook" </a>
+        <nav class="flex justify-between items-center shadow">
+            
     
                 <!--Hamburger Menu-->
                 <a id="btnHamburger" href="#" class="header__toggle hide-for-desktop order-3">
@@ -27,16 +30,22 @@
                     <span></span>
                     <span></span>
                 </a>
-                <div class="header__logo flex-initial order-2 hide-for-mobile">
+                 <!--Welcome-->
+                <div class="header__logo flex-initial order-1 hide-for-mobile">
                     <h2 id="welcome-message">Welcome <span id="user-name"></span>
                     </h2>
                 </div>
-                <!--Hamburger Menu Links-->
-                <div class="right-0 flex-end header__links hide-for-mobile order-3">
+
+                <!--Logo-->
     
-                    <a href="/home_id" class="hover:bg-gray-100 px-3 py-2 rounded-md">Moments Feed</a>
-                    <a href="#" class="hover:bg-gray-100 px-3 py-2 rounded-md" id="profile-button">My Profile</a>
-                    <a href="/" class="hover:bg-gray-100 px-3 py-2 rounded-md">Logout</a>
+                <a href="/home_id" class="header__logo order-2">
+                    <img class="logo" src="Assets/spacebookLogo.png" alt="Spacebook" </a>
+                <!--Hamburger Menu Links-->
+                <div class="header__links hide-for-mobile order-3">
+    
+                    <a href="/home_id" class="logo hover:bg-gray-100 px-3 py-2 rounded-md">Moments Feed</a>
+                    <a href="#" class="logo hover:bg-gray-100 px-3 py-2 rounded-md" id="profile-button">My Profile</a>
+                    <a href="/" class="logo hover:bg-gray-100 px-3 py-2 rounded-md">Logout</a>
                 </div>
     
     
@@ -59,6 +68,8 @@
         </div>
     </header>
         
+    <div>
+    
         {{{ body }}}
 
     </div>
@@ -68,12 +79,12 @@
             <div class="flex justify-center row-start-1 text-gray-800">
                 <div class="pt-5">
                     <!--  Title -->
-                    <div class="text-center text-base text-gray-400 font-medium mb-6">
+                    <div class="logo text-center text-base text-gray-400 font-medium mb-6">
                         Checkout out our Github page!
                     </div>
                     <!-- Links -->
                     <a href="https://github.com/enochj316/Project2"
-                        class="text-center my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                        class="logo text-center my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                         Github
                     </a>
                 </div>
