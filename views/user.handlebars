@@ -1,13 +1,12 @@
-
 <!------------------------------------------------------------------------------------Body Content-->
 
-<div class="flex grid sm:grid-flow-col gap-0 md:gap-2 xl:gap-5">
+    <div class="flex grid sm:grid-flow-col gap-0 md:gap-2 xl:gap-5">
 
         <!---------------------------------------------------Biography Card-->
         <div class=" col-span-1 mx-5 md:mx-8 lg:ml-10 my-5 sm:my-10 md:my-16 lg:my-18 md:max-w-lg lg:max-w-xl">
-    <div class="mt-4 px-3 py-4 md:px-5 md:py-6 bg-white rounded-lg shadow-md">
-        <div class="flex justify-center">
-            <div class="flex grid grid-cols-3 grid-rows-2 gap-2">
+            <div class="mt-4 px-3 py-4 md:px-5 md:py-6 bg-white rounded-lg shadow-md">
+                <div class="flex justify-center">
+                    <div class="flex grid grid-cols-3 grid-rows-2 gap-2">
                 <div class="col-span-3 row-span-2 sm:col-span-2">
                     <img id="main-image" src="{{user.dataValues.imageurl}}" alt="main profile photo"
                         class="inset-0 max-h-40 bg-gray-100 rounded sm:rounded-lg"
@@ -24,11 +23,10 @@
                         style="box-shadow: 2px 2px 5px 2px;" />
                 </div>
             </div>
+                
+                </div>
 
-        </div>
-
-
-        <!-- Bio -->
+                <!-- Bio -->
         <div class="col-start-1 row-start-1 flex justify-center pt-3">
             <h2 class="text-center text-base text-gray-700 font-bold sm:text-2xl sm:leading-7 sm:text-black md:text-3xl"
                 id="profile-name">
@@ -36,68 +34,75 @@
             </h2>
         </div>
         <div class="px-4 flex justify-center">
-            <p class="text-sm font-medium my-1 sm:mt-2 sm:mb-4">
-                San Dimas, California in 1988
+            <p class="text-sm font-medium my-1 sm:mt-2 sm:mb-4" id="geo-location">
+                
             </p>
         </div>
-        <div class=" px-2 sm:px-4 flex items-center">
-            <p class="text-gray-700 text-sm md:text-md ">
-                Theodore "Ted" Logan was born and raised in San Dimas, California. He lived with his father San Dimas
-                Police Captain Jonathan Logan and his younger brother Deacon Logan. He met Bill S. Preston, Esq. and the
-                two became friends forming their own band the Wyld Stallyns.
-            </p>
+        <div class="flex flex-col">
+            <div class=" px-2 sm:px-4 flex items-center">
+                <p class="text-gray-900 text-lg md:text-md ">
+                    Email: {{user.dataValues.email}}
+                </p>
+            </div>
+            <div class=" px-2 sm:px-4 flex items-center">
+                <p class="text-gray-900 text-lg md:text-md ">
+                    Phone Number: {{user.dataValues.phonenumber}}
+                </p>
+            </div>
+            <div class=" px-2 sm:px-4 flex items-center">
+                <p class="text-gray-900 text-lg md:text-md ">
+                    Date joined: {{user.dataValues.createdAt}}
+                </p>
+            </div>
         </div>
-    </div>
-</div>
-
-<!-----------------------------------------------------------------------------User's Personal Moments Feed-->
-
-<!--px = "padding x-axis" py = "padding y-axis"-->
-
-<div class="col-span-2 mx-5 md:mr-6 lg:mr-10 mt-2 sm:my-4 md:my-8">
-    <!------------------------------------------------------Moments Input-->
-    <div class="max-w-6xl">
-        <div class="flex items-center justify-between">
-            <h1 class="hide-for-mobile md:text-2xl font-bold text-white">Let's Explore Moments Around You...</h1>
-            <h1 class="hide-for-desktop md:text-2xl text-base font-bold text-white">Let's Explore Your Moments...</h1>
+            </div>
         </div>
+        
+        <!-----------------------------------------------------------------------------User's Personal Moments Feed-->
+       
+        <!--px = "padding x-axis" py = "padding y-axis"-->
 
-        <div class="mt-4">
-            <div class="max-w-4xl px-5 pb-5 pt-3 md:px-10 md:py-6 bg-white rounded-lg shadow-md">
-                <div class="mt-2"><a href="#" class="text-sm md:text-2xl text-gray-700 font-bold hover:underline">Share
-                        Your Moments:</a>
-                    <div>
+        <div class="col-span-2 mx-5 md:mr-6 lg:mr-10 mt-2 sm:my-4 md:my-8">
+            <!------------------------------------------------------Moments Input-->
+            <div class="max-w-6xl">
+                <div class="flex items-center justify-between">
+                    <h1 class="logo hide-for-mobile md:text-2xl font-bold text-white">Let's Explore Moments Around You...</h1>
+                    <h1 class="logo hide-for-desktop md:text-2xl text-base font-bold text-white">Let's Explore Your Moments...</h1>
+                </div>
+
+                <div class="body__card mt-4">
+                    <div class="lg:max-w-4xl px-5 pb-5 pt-3 md:px-10 md:py-6 bg-white rounded-lg shadow-md">
+                        <div class="mt-2"><a class="logo text-sm md:text-2xl text-gray-700 font-bold hover:underline">Share Your Moments:</a>
+                            <div>
                         <div class="mt-1">
                             <textarea id="post-title" name="about" rows="2"
-                                class="p-3 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md"
+                                class="p-3 logo shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md"
                                 placeholder="Title"></textarea>
                         </div>
                         <div class="mt-0">
                             <textarea id="post-body" name="about" rows="4"
-                                class="p-3 shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md"
+                                class="p-3 logo shadow-sm focus:ring-indigo-500 focus:border-indigo-500 mt-1 block w-full sm:text-sm border-gray-300 rounded-md"
                                 placeholder="Moment I want to share..."></textarea>
+                            </div>
+                        </div>
+                        </div>
+                        <div class="flex justify-between items-center mt-4">
+                            <div>
+                                <button type="submit" id="post-button">
+                                     <a
+                                        class="logo px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500">Share!</a>
+                                    </a>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="flex justify-between items-center mt-4">
-                    <div>
-                        <button type="submit" id="post-button">
-                            <a href="#"
-                                class="px-2 py-1 bg-gray-600 text-gray-100 font-bold rounded hover:bg-gray-500">Share!</a>
-                            </a>
-                        </button>
-                    </div>
-        
-                </div>
+                <!------------------------------------------------------Moment-->
+
+                {{#each posts}}
+                {{> moments/moment-block }}
+                {{/each}}
             </div>
         </div>
-
-        {{#each posts}}
-        {{> moments/moment-block }}
-        {{/each}}
     </div>
-</div>
-<div class="col-span-3 px-2"></div>
-</div>
-
 

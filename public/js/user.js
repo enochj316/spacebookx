@@ -4,6 +4,19 @@ const header = document.querySelector('.header');
 const overlay = document.querySelector('.overlay');
 const fadeElems = document.querySelectorAll('.has-fade');
 
+function geoFindMe() {
+  const geoLocation = document.getElementById("geo-location");
+  function success(position) {
+    
+    console.log(position.coords)
+    geoLocation.textContent = "Location: " + position.coords.latitude + " " + position.coords.longitude
+  }
+  function error() {
+    geoLocation.textContent =  "Geo location is not supported by your browser..."
+  }
+  navigator.geolocation.getCurrentPosition(success, error)
+}
+
 // Javascript for the Hamburger toggle menu
 btnHamburger.addEventListener('click', function(){
   console.log('click hamburger');
@@ -35,6 +48,7 @@ $(document).ready(() => {
       // $("#profile-name").text(data.first_name);
       // $("#main-image").attr("src",data.imageurl);
     });
+    geoFindMe();
 
   const postButton = document.getElementById("post-button");
   const postTitle = document.getElementById("post-title")
