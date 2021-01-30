@@ -1,5 +1,6 @@
 const db = require("../models")
 const passport = require("../config/passport.js");
+const axios = require("axios");
 
 module.exports = (app) => {
     // USERS //
@@ -8,6 +9,11 @@ module.exports = (app) => {
             include: [db.Posts, db.Friends]
         }).then((result) => res.send(JSON.stringify(result)))
     })
+
+   
+
+
+
 
     app.post("/users", (req, res) => {
         db.Users.create({
@@ -119,11 +125,45 @@ module.exports = (app) => {
             //req.user.id is a global value based on passport
         }).then((result) => res.json(result))
       })
+    
+    app.get("/weather", (req, res) => {
+        //get news NEWS_KEY=9ttok59nX5MomfyboWAaWtryuexakq5K
+        axios({
+                method: 'get',
+                url: 'https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + process.env.WEATHER_KEY'
+                
+            })
+            .then(result => res.send(result.data))
+            .catch(err => console.error(err));
+
+    })
+      
+    app.get("/news", (req, res) => {
+        //get news NEWS_KEY=9ttok59nX5MomfyboWAaWtryuexakq5K
+        axios({
+                method: 'get',
+                url: 'https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=' + process.env.NEWS_KEY,
+                
+            })
+            .then(result => res.send(result.data))
+            .catch(err => console.error(err));
+
+    })
+
+    app.get("/giphy", (req, res) => {
+        //get news GIPHY_KEY=fhyjxSw2icjRND3sWkVDSIduWRwkEPsI&rating=g&limit=5
+        axios({
+                method: 'get',
+                url: 'https://api.giphy.com/v1/gifs/search?q=funny&api_key=' + process.env.GIPHY_KEY,
+                
+            })
+            .then(result => res.send(result.data))
+            .catch(err => console.error(err));
+
+    })
 
       app.get('/logout', (req, res) => {
         req.logout();
         res.redirect('/');
       });
 };
-
-
