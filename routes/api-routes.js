@@ -124,38 +124,42 @@ module.exports = (app) => {
             UserId: req.user.id
             //req.user.id is a global value based on passport
         }).then((result) => res.json(result))
+        .catch(err => console.error(err));
       })
     
-    app.get("/weather", (req, res) => {
-        //get news NEWS_KEY=9ttok59nX5MomfyboWAaWtryuexakq5K
-        axios({
-                method: 'get',
-                url: 'https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + process.env.WEATHER_KEY'
-                
-            })
-            .then(result => res.send(result.data))
-            .catch(err => console.error(err));
+    app.get("/weather/:city", (req, res) => {
+        let city = req.params.city;
+        console.log(city)
+        axios.get("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + process.env.WEATHER_KEY)
+            .then((result) => {
+                console.log(result)
+                let city = result.data.name;
+                let humidity = result.data.main.humidity;
+                let temperature = result.data.main.temp - 273.15;
+                let windspeed = result.data.wind.speed;
 
-    })
-      
+                res.json({name: city,
+                            temperature: temperature,
+                        humidity: humidity,
+                    windspeed: windspeed})
+            })
+            .catch(err => console.error(err));
+        })  
     app.get("/news", (req, res) => {
-        //get news NEWS_KEY=9ttok59nX5MomfyboWAaWtryuexakq5K
         axios({
                 method: 'get',
-                url: 'https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=' + process.env.NEWS_KEY,
+                url: 'https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=' + process.env.NYTIMES_KEY
                 
             })
-            .then(result => res.send(result.data))
+            .then(result => res.send(result))
             .catch(err => console.error(err));
 
     })
 
     app.get("/giphy", (req, res) => {
-        //get news GIPHY_KEY=fhyjxSw2icjRND3sWkVDSIduWRwkEPsI&rating=g&limit=5
         axios({
                 method: 'get',
-                url: 'https://api.giphy.com/v1/gifs/search?q=funny&api_key=' + process.env.GIPHY_KEY,
-                
+                url: 'https://api.giphy.com/v1/gifs/search?q=funny&api_key=' + process.env.GIPHY_KEY
             })
             .then(result => res.send(result.data))
             .catch(err => console.error(err));

@@ -16,30 +16,6 @@ module.exports = (app) => {
         // res.render("login.", {message: flash("message")});
     });
 
-    app.get("/user_id", isAuthenticated, (req, res) => {
-        const exphbs = require('express-handlebars');
-
-        app.engine('handlebars', exphbs({
-            defaultLayout: '_user'
-        }));
-        app.set('view engine', 'handlebars');
-
-        //change friends to find all where id = req.user.id (friends of person who is logged in)
-        db.Posts.findAll({ where: { UserId: req.user.id } }).then((posts) => {
-            db.Friends.findAll({ where: { UserId: req.user.id } }).then((friends) => {
-                res.render('user', {
-                    posts: posts,
-                    friends: friends
-                })
-            })
-        })
-
-        /*  // Import routes and give the server access to them.
-        const routes = require('../controllers/user_controller');
-
-        app.use(routes); */
-    });
-
     app.get("/home_id", isAuthenticated, (req, res) => {
         console.log("home page hit!")
         const exphbs = require('express-handlebars');
@@ -77,7 +53,6 @@ module.exports = (app) => {
 
     app.get("/user/:id", isAuthenticated, (req, res) => {
         const exphbs = require('express-handlebars');
-
         app.engine('handlebars', exphbs({
             defaultLayout: '_user'
         }));
@@ -91,7 +66,7 @@ module.exports = (app) => {
                     res.render("user", {
                         user: User,
                         posts: Posts,
-                        friends: Friends
+                        friends: Friends,
                     })
                     console.log({
                         user: User,
