@@ -30,10 +30,6 @@ module.exports = (app) => {
                     posts: posts,
                     friends: friends
                 })
-                console.log({
-                    posts: posts,
-                    friends: friends
-                })
             })
         })
 
@@ -55,19 +51,27 @@ module.exports = (app) => {
         //do a findAll posts, then pass result as object into render
         db.Posts.findAll().then((result) => {
             res.render('home', { result: result })
-            console.log({ result: result })
         })
     });
 
     app.get("/getcity/:name", isAuthenticated, (req, res) => {
-        console.log(req.params.name)
+        const exphbs = require('express-handlebars');
+
+        app.engine('handlebars', exphbs({
+            defaultLayout: '_home'
+        }));
+        app.set('view engine', 'handlebars');
         let city = req.params.name;
-        axios.get("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=88d9e018c72362777892f1fbbbb2dfb3").then((weather) => {
-            db.Posts.findAll().then((posts) => {
-                res.render('home', {posts: posts,
-                                    weather: weather})
-            })
+        axios.get("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + process.env.WEATHER_KEY).then((Weather) => {
+            res.render("home", {weather: Weather})
+            console.log(Weather)
         })
+    })
+
+    app.get("/news", isAuthenticated, (req, res) => {
+        //news axios call 
+        //weather axios call
+        //posts db call
     })
 
     app.get("/friends", isAuthenticated, (req, res) => {
@@ -102,6 +106,11 @@ module.exports = (app) => {
             db.Posts.findAll({ where: { UserId: id } }).then((Posts) => {
                 db.Friends.findAll({ where: { UserId: id } }).then((Friends) => {
                     res.render("user", {
+                        user: User,
+                        posts: Posts,
+                        friends: Friends
+                    })
+                    console.log({
                         user: User,
                         posts: Posts,
                         friends: Friends
