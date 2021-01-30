@@ -44,6 +44,9 @@ If your README is very long, add a table of contents to make it easy for users t
 
 ## Team Members
 * Chris Burns
+* Carmen Hui
+* Kevin S
+* Joyson P
 
 
 ## Installation 
@@ -97,6 +100,7 @@ Joyson P
 ✅
 ![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
 ![badge](https://img.shields.io/badge/license-MIT-green)
-
-
-
+![badge](https://img.shields.io/github/issues/enochj316/Project2)
+![badge](https://img.shields.io/badge/scss-beauty-brightgreen)
+![badge](https://img.shields.io/github/languages/count/enochj316/Project2)
+![badge](https://img.shields.io/badge/version-1.0.1-blue)
