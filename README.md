@@ -57,7 +57,7 @@ To Install this application, you can clone the repository. Ensure you create .en
 
 
 * Load the application via the provided Heroku Link and create your user ID
-    ![Demo Home Page](Project2\public\images\Spacebook1.png)
+    ![Demo Home Page](.\public\images\Spacebook1.png)
 
 
 
