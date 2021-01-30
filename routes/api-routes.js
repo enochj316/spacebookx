@@ -8,6 +8,7 @@ module.exports = (app) => {
         db.Users.findAll({
             include: [db.Posts, db.Friends]
         }).then((result) => res.send(JSON.stringify(result)))
+        .catch(err => console.error(err));
     })
 
    
@@ -24,6 +25,7 @@ module.exports = (app) => {
             imageurl: req.body.imageurl,
             password: req.body.password
         }).then((result) => res.json(result))
+        .catch(err => console.error(err));
     })
 
     app.delete("/users/:id", (req, res) => {
@@ -32,6 +34,7 @@ module.exports = (app) => {
                 id: req.params.id
             }
         }).then((result) => res.json(result))
+        .catch(err => console.error(err));
     })
 
     // app.get("/friends", (req, res) => {
