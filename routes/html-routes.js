@@ -55,31 +55,6 @@ module.exports = (app) => {
         })
     });
 
-    app.get("/getcity/:name", isAuthenticated, (req, res) => {
-        console.log("home page hit!")
-        const exphbs = require('express-handlebars');
-
-        app.engine('handlebars', exphbs({
-            defaultLayout: '_home'
-        }));
-        app.set('view engine', 'handlebars');
-        console.log(req.params.name)
-        console.log("")
-        let city = req.params.name;
-        axios.get("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + process.env.WEATHER_KEY).then((weather) => {
-            db.Posts.findAll().then((result) => {
-                res.render('home', {result: result,
-                                    weather: weather})
-            })
-        })
-    })
-
-    app.get("/news", isAuthenticated, (req, res) => {
-        //news axios call 
-        //weather axios call
-        //posts db call
-    })
-
     app.get("/friends", isAuthenticated, (req, res) => {
         console.log("friends page hit!")
         const exphbs = require('express-handlebars');
