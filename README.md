@@ -65,6 +65,9 @@ To Install this application, you can clone the repository. Ensure you create .en
 * Take advantage of our many API's for example the GIPHY or News feature keeping you smiling and up to date wth current events
     ![Demo Home Page](https://github.com/enochj316/Project2/blob/main/public/images/Spacebook3.png)
 
+* Explore our friendly digital neighbourhood and go ahead and start making friends
+    ![Demo Home Page](https://github.com/enochj316/Project2/blob/main/public/images/Spacebook.4png)
+
 
 ## Credits 
 📣
