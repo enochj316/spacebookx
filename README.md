@@ -62,6 +62,8 @@ To Install this application, you can clone the repository. Ensure you create .en
 * Once user ID is created and you are logged in, you will be taken to main page with many cool features
     ![Demo Home Page](https://github.com/enochj316/Project2/blob/main/public/images/Spacebook2.png)
 
+* Take advantage of our many API's for example the GIPHY or News feature keeping you smiling and up to date wth current events
+    ![Demo Home Page](https://github.com/enochj316/Project2/blob/main/public/images/Spacebook3.png)
 
 
 ## Credits 
