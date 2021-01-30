@@ -114,6 +114,7 @@ module.exports = (app) => {
         db.Friends.create({
             first_name: req.body.first_name,
             last_name: req.body.last_name,
+            img_url: req.body.image_url,
             UserId: req.user.id
             //req.user.id is a global value based on passport
         }).then((result) => res.json(result))
