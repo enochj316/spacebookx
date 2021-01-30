@@ -132,7 +132,15 @@ module.exports = (app) => {
         axios.get("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + process.env.WEATHER_KEY)
             .then((result) => {
                 console.log(result)
-                res.json(result)
+                let city = result.data.name;
+                let humidity = result.data.main.humidity;
+                let temperature = result.data.main.temp - 273.15;
+                let windspeed = result.data.wind.speed;
+
+                res.json({name: city,
+                            temperature: temperature,
+                        humidity: humidity,
+                    windspeed: windspeed})
             })
         })  
     app.get("/news", (req, res) => {

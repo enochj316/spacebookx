@@ -124,13 +124,24 @@ document.addEventListener("DOMContentLoaded", (event) => {
     })
   })
 })
-
+var weatherSearch = document.getElementById("weatherSearch");
+var input = document.getElementById("city-name");
+    $(input).keypress(function (e) { 
+        var key = e.which;
+        if(key == 13) {
+            weatherSearch.click();
+        }
+    });
 //This function initiates the process of collecting the data from "The Weather APIs" to display on the page 
 $("#weatherSearch").on("click", function () {
   const inputCityName = document.getElementById("city-name");
   cityPost = inputCityName.value.trim();
   $.get("/weather/" + cityPost).then(result => {
-    $("#current-city").text(JSON.stringify(result));
+    $("#current-city").text(JSON.stringify(result.name));
+    $("#temperature").text(JSON.stringify(result.temperature));
+    $("#humidity").text(JSON.stringify(result.humidity));
+    $("#windspeed").text(JSON.stringify(result.windspeed));
+    inputCityName.value = "";
   });
     // console.log(weather)
     // const cityName = document.getElementById("current-city");
