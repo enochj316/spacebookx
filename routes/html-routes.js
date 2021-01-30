@@ -31,6 +31,24 @@ module.exports = (app) => {
         })
     });
 
+<<<<<<< HEAD
+    app.get("/getcity/:name", isAuthenticated, (req, res) => {
+        console.log(req.params.name)
+        let city = req.params.name;
+        axios.get("https://api.openweathermap.org/data/2.5/weather?q=" + city + "&appid=" + process.env.WEATHER_KEY).then((weather) => {
+            db.Posts.findAll().then((posts) => {
+                res.render('home', {
+                    posts: posts,
+                    weather: weather
+                })
+                console.log(weather.data)
+
+            })
+        })
+    })
+
+=======
+>>>>>>> b75c05d96b371a5676b1b8b54f5478b33694d4f1
     app.get("/friends", isAuthenticated, (req, res) => {
         console.log("friends page hit!")
         const exphbs = require('express-handlebars');

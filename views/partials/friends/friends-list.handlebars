@@ -2,7 +2,7 @@
     <div class="lg:max-w-4xl px-3 sm:px-5 pb-4 pt-3 md:px-10 md:py-6 bg-white rounded-lg shadow-md">
         <!----------------------------------------------------------------Name-->
         <div class="flex mt-8 mb-4 justify-between">
-            <img src="{{dataValues.imageurl}}" alt="profile_pic" 
+            <img src="{{dataValues.imageurl}}" alt="profile_pic" onerror="this.src='https://picsum.photos/400'"
             class="mx-4 w-10 h-10 object-cover rounded-full hidden sm:block">
             <a href="/user/{{dataValues.id}}" ><p class="logo w-full flex text-sm sm:text-base text-gray-700">{{dataValues.first_name}} {{dataValues.last_name}}</p></a>
             <button type="submit" class="logo add-friend">

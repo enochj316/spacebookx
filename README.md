@@ -44,28 +44,49 @@ If your README is very long, add a table of contents to make it easy for users t
 
 ## Team Members
 * Chris Burns
+* Carmen Hui
+* Kevin S
+* Joyson P
 
 
 ## Installation 
 💾
 
-What are the steps required to install your project? Provide a step-by-step description of how to get the development environment running.
+To Install this application, you can clone the repository. Ensure you create .env  file with the appropriate MySQL credentials and begin coding away.
 
 
 ## Usage 
 🔧
 
-Provide instructions and examples for use. Include screenshots as needed. 
+
+* Load the application via the provided Heroku Link and create your user ID
+    ![Demo Home Page](https://github.com/enochj316/Project2/blob/main/public/images/Spacebook1.png)
+
+* Once user ID is created and you are logged in, you will be taken to main page with many cool features
+    ![Demo Home Page](https://github.com/enochj316/Project2/blob/main/public/images/Spacebook2.png)
+
+* Take advantage of our many API's for example the GIPHY or News feature keeping you smiling and up to date wth current events
+    ![Demo Home Page](https://github.com/enochj316/Project2/blob/main/public/images/Spacebook3.png)
+
+* Explore our friendly digital neighbourhood and go ahead and start making friends
+    ![Demo Home Page](https://github.com/enochj316/Project2/blob/main/public/images/Spacebook.4png)
 
 
 ## Credits 
 📣
 
-List your collaborators, if any, with links to their GitHub profiles.
+Chris Burns 
+Carmen Hui
+Kevin S
+Joyson P
 
-If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
+### Deployment and Availability
 
-If you followed tutorials, include links to those here as well.
+* Heroku
+  * Live app - https://spacebookx.herokuapp.com/
+   
+* GitHub
+  * Repository - https://github.com/enochj316/Project2
 
 
 
@@ -79,6 +100,7 @@ If you followed tutorials, include links to those here as well.
 ✅
 ![badmath](https://img.shields.io/github/languages/top/nielsenjared/badmath)
 ![badge](https://img.shields.io/badge/license-MIT-green)
-
-
-
+![badge](https://img.shields.io/github/issues/enochj316/Project2)
+![badge](https://img.shields.io/badge/scss-beauty-brightgreen)
+![badge](https://img.shields.io/github/languages/count/enochj316/Project2)
+![badge](https://img.shields.io/badge/version-1.0.1-blue)
