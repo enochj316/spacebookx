@@ -43,6 +43,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
     
 
     const addFriendBtns = document.querySelectorAll(".add-friend");
+    const addFriendModal = document.getElementById("friend-modal");
     if(addFriendBtns) {
         addFriendBtns.forEach((button) => {
             button.addEventListener("click", (e) => {
@@ -59,6 +60,7 @@ document.addEventListener("DOMContentLoaded", (event) => {
                     body: JSON.stringify(userFriend)
                 }).then((response) => {
                     location.reload();
+                    addFriendModal.classList.remove("hidden");
                 })
 
             })

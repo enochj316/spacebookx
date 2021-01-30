@@ -11,7 +11,7 @@
                 <div class="flex mt-6">
                     <img id="weather-img" src=""></h3>
                     <p class="text-sm md:text-lg text-gray-700 mx-1">
-                        City:  
+                        City:  {{weather.data.name}}
                         <span id="current-city" class="text-gray-700 text-sm font-light"></span>
                     </p>
                 </div>
@@ -38,9 +38,10 @@
                 </div>
                 <!--------------------Weather Input-->
                 <div class="flex justify-between mt-6">
-                    <input  class="text-gray-700 text-sm font-light" id="city-name"
-                        placeholder="Enter a City"></input>
-                    <button class="px-2 py-1 bg-gray-600 text-sm md:text-lg text-gray-100 font-bold rounded hover:bg-gray-500" id="weatherSearch">Search</button>
+                    <input class="text-gray-700 text-sm font-light" id="city-name" placeholder="Enter a City"></input>
+                    <button
+                        class="px-2 py-1 bg-gray-600 text-sm md:text-lg text-gray-100 font-bold rounded hover:bg-gray-500"
+                        id="weatherSearch">Search</button>
                 </div>
             </div>
         </div>

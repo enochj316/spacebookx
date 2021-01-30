@@ -4,7 +4,7 @@ $(document).ready(function () {
         e.preventDefault();
 
         let query = $("#searchquery").val();
-        let url = "https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=9ttok59nX5MomfyboWAaWtryuexakq5K";
+        let url = "https://api.nytimes.com/svc/mostpopular/v2/emailed/7.json?api-key=" + process.env.NYTIMES_KEY;
 
         if (query !== "") {
 
@@ -111,7 +111,7 @@ $(document).ready(function () {
         e.preventDefault();
 
         let query = $("#searchquery").val();
-        let url = "https://api.giphy.com/v1/gifs/search?q=funny&api_key=fhyjxSw2icjRND3sWkVDSIduWRwkEPsI&rating=g&limit=5";
+        let url = "https://api.giphy.com/v1/gifs/search?q=funny&api_key=" + process.env.GIPHY_KEY + "&rating=g&limit=5";
 
         if (query !== "") {
 
