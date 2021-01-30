@@ -55,7 +55,10 @@ To Install this application, you can clone the repository. Ensure you create .en
 ## Usage 
 🔧
 
-Provide instructions and examples for use. Include screenshots as needed. 
+
+* Load the application via the provided Heroku Link and create your user ID
+    ![Demo Home Page](Project2\public\images\Spacebook1.png)
+
 
 
 ## Credits 
@@ -66,6 +69,14 @@ List your collaborators, if any, with links to their GitHub profiles.
 If you used any third-party assets that require attribution, list the creators with links to their primary web presence in this section.
 
 If you followed tutorials, include links to those here as well.
+
+### Deployment and Availability
+
+* Heroku
+  * Live app - https://spacebookx.herokuapp.com/
+   
+* GitHub
+  * Repository - https://github.com/enochj316/Project2
 
 
 
