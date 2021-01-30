@@ -31,10 +31,6 @@ module.exports = (app) => {
                     posts: posts,
                     friends: friends
                 })
-                console.log({
-                    posts: posts,
-                    friends: friends
-                })
             })
         })
 
@@ -56,11 +52,17 @@ module.exports = (app) => {
         //do a findAll posts, then pass result as object into render
         db.Posts.findAll().then((result) => {
             res.render('home', { result: result })
-            console.log({ result: result })
         })
     });
 
     app.get("/getcity/:name", isAuthenticated, (req, res) => {
+        console.log("home page hit!")
+        const exphbs = require('express-handlebars');
+
+        app.engine('handlebars', exphbs({
+            defaultLayout: '_home'
+        }));
+        app.set('view engine', 'handlebars');
         console.log(req.params.name)
         console.log("")
         let city = req.params.name;
@@ -70,6 +72,12 @@ module.exports = (app) => {
                                     weather: weather})
             })
         })
+    })
+
+    app.get("/news", isAuthenticated, (req, res) => {
+        //news axios call 
+        //weather axios call
+        //posts db call
     })
 
     app.get("/friends", isAuthenticated, (req, res) => {
@@ -106,6 +114,11 @@ module.exports = (app) => {
             db.Posts.findAll({ where: { UserId: id } }).then((Posts) => {
                 db.Friends.findAll({ where: { UserId: id } }).then((Friends) => {
                     res.render("user", {
+                        user: User,
+                        posts: Posts,
+                        friends: Friends
+                    })
+                    console.log({
                         user: User,
                         posts: Posts,
                         friends: Friends

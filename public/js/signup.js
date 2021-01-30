@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", (event) => {
     console.log("DOM loaded! 🚀")
 
+    
+
     const signUpBtn = document.getElementById("sign-up-btn");
     signUpBtn.addEventListener("click", (event) => {
         event.preventDefault();
@@ -25,4 +27,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
             location.replace("/");
         })
     })
+    
+
 })
