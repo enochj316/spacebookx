@@ -14,7 +14,6 @@
     <link href="styles/style.css" rel="stylesheet">
     <!-- Spacebook Icon -->
     <link rel="icon" href="Assets/spacebook_icon.png" type="image/png">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/js/materialize.min.js" defer></script>
     <title>SpaceBook</title>
 </head>
 
@@ -24,8 +23,7 @@
         <!--Nav Bar-->
         <nav class="flex justify-between items-center shadow">
             <!--Logo-->
-            <a href="/home_id" class="header__logo order-1">
-                <img class="logo" src="Assets/spacebookLogo.png" alt="Spacebook" </a>
+            
                 <!--Hamburger Menu-->
                 <a id= "btnHamburger" href="#" class="header__toggle hide-for-desktop order-3">
                     <span></span>
@@ -33,15 +31,17 @@
                     <span></span>
                 </a>
                 <!--Welcome User-->
-                <div class="header__logo flex-initial order-2 hide-for-mobile">
+                <div class="header__logo flex-initial order-1 hide-for-mobile">
                     <h2 id="welcome-message">Welcome <span id="user-name"></span>
                     </h2>
                 </div>
+                <a href="/home_id" class="header__logo order-2">
+                <img class="logo" src="Assets/spacebookLogo.png" alt="Spacebook" </a>
                 <!--Hamburger Menu Links-->
                 <div class="header__links hide-for-mobile order-3">
-                    <a href="#" class="hover:bg-gray-100 px-3 py-2 rounded-md" id="profile-button">My Profile</a>
-                    <a href="/friends" class="hover:bg-gray-100 px-3 py-2 rounded-md">People</a>
-                    <a href="/logout" class="hover:bg-gray-100 px-3 py-2 rounded-md">Logout</a>
+                    <a href="#" class="logo hover:bg-gray-100 px-3 py-2 rounded-md" id="profile-button">My Profile</a>
+                    <a href="/friends" class="logo hover:bg-gray-100 px-3 py-2 rounded-md">People</a>
+                    <a href="/logout" class="logo hover:bg-gray-100 px-3 py-2 rounded-md">Logout</a>
                 </div>
                 <!--Profile Pic/Button  (left it as a button in case we needed it)
                 <div>
@@ -62,25 +62,26 @@
 
     <!-------------------------------------------------------Body Content-->
     
-    <div class="flex grid grid-flow-col gap-0 md:gap-4">
+    <div>
+        <div>
 
-        {{{ body }}}
+            {{{ body }}}
 
+        </div>
     </div>
 
     <!---------------------------------------------------------------------------------------------- Footer -->
-    <div class=" bottom-0">
     <div class="mt-5 sm:mt-8 md:mt-10">
         <footer class="bg-gray-800 sm:pt-5">
             <div class="flex justify-center row-start-1 text-gray-800">
                 <div class="pt-5">
                     <!--  Title -->
-                    <div class="text-center text-base text-gray-400 font-medium mb-6">
+                    <div class="logo text-center text-base text-gray-400 font-medium mb-6">
                         Checkout out our Github page!
                     </div>
                     <!-- Links -->
                     <a href="https://github.com/enochj316/Project2"
-                        class="text-center my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
+                        class="logo text-center my-3 block text-gray-300 hover:text-gray-100 text-sm font-medium duration-700">
                         Github
                     </a>
                 </div>
@@ -95,7 +96,7 @@
                     <div class="mt-2">
                         © Copyright 1998-year. All Rights Reserved.
                     </div>
-    
+
                     <!-- Unicons -->
                     <div class="md:flex-auto md:flex-row-reverse mt-2 flex-row flex">
                         <a href="#" class="w-6 mx-1">
@@ -114,7 +115,6 @@
                 </div>
             </div>
         </footer>
-    </div>
     </div>
 </body>
 
