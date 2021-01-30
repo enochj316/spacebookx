@@ -69,6 +69,7 @@ module.exports = (app) => {
                     posts: posts,
                     weather: weather
                 })
+                console.log(weather.data)
 
             })
         })
