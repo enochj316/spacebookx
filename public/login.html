@@ -2,6 +2,10 @@
 <html lang="en">
 
 <head>
+	<meta
+  name="description"           
+  content="Login into SpaceBook or Sign-Up using the button! 
+					SpaceBook is an Canadian online social media and social networking service based in Toronto, Canada, and a flagship service of the namesake company SpaceBook, Inc">
 	<title>SpaceBook</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -12,37 +16,37 @@
 
 <body>
 	<div class="w-screen h-screen flex flex-col justify-center items-center lg:grid lg:grid-cols-2">
-		<img src="Assets/Assets_avatar.svg" class="logo hidden lg:block w-1/5 hover:scale-150 transition-all duration-500 transform mx-auto" />
+		<img src="Assets/Assets_avatar.svg" class="logo hidden lg:block w-1/5 hover:scale-150 transition-all duration-500 transform mx-auto" alt="avatar pic"/>
 		
 		<form class="flex flex-col justify-center items-center w-1/2">
 			<img src="Assets/spacebookLogo1.svg"
-			class="logo w-full hover:scale-110 transition-all duration-500 transform" />
+			class=" w-full hover:scale-110 transition-all duration-500 transform" alt="SpaceBook logo" />
 			<h2 class="logo my-8 font-display font-bold text-3xl text-white text-center">
 				Welcome!
 			</h2>
 			<div class="relative">
-				<i class="fa fa-user absolute text-primarycolor text-xl"></i>
-				<input type="text" placeholder="username"
-					class="logo pl-8 border-b-2 font-display focus:outline-none focus:border-primarycolor transition-all duration-500 text-lg" id="email-login" />
+				<i class="logo fa fa-user absolute text-grey-darkest text-xl" style="color:blue;"></i>
+				<input type="text" placeholder="username" style="color:black;"
+					class="logo pl-8 border-b-2 font-display focus:outline-none focus:border-primarycolor transition-all duration-500 text-grey-darkest text-lg" id="email-login" ><label for="email-login" class="hidden">username</label>
 
 			</div>
 			<div class="relative mt-8">
-				<i class="fa fa-lock absolute text-primarycolor text-xl"></i>
-				<input type="password" placeholder="password"
-					class="logo pl-8 border-b-2 font-display focus:outline-none focus:border-primarycolor transition-all duration-500 text-lg" id="password-login" />
+				<i class="logo fa fa-lock absolute text-grey-darkest text-xl" style="color:blue;"></i>
+				<input type="password" placeholder="password" style="color:black;"
+					class="logo pl-8 border-b-2 font-display focus:outline-none focus:border-primarycolor transition-all duration-500 text-grey-darkest text-lg" id="password-login" ><label for="password-login" class="hidden">password</label>
 
 			</div>
-			<a class="mt-4 text-white font-bold">Forgot password?</a>
-			<a href="#"
+			<a href="#" class="mt-4 text-white font-bold">Forgot password?</a>
+			<a href="#" style="color:black;"
 				class="logo py-3 px-20 bg-primarycolor rounded-full text-white font-bold uppercase text-lg mt-4 transform hover:translate-y-1 transition-all duration-500"
 				id="loginBtn">Login</a>
-			<a href="/signup.html"
+			<a href="/signup.html" style="color:black;"
 				class="logo py-3 px-20 bg-primarycolor rounded-full text-white font-bold uppercase text-lg mt-4 transform hover:translate-y-1 transition-all duration-500"
 				id="signUpBtn">Sign Up</a>
 		</form>
 	</div>
 
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="js/login.js"></script>
 </body>
 
