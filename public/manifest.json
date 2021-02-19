@@ -1,0 +1,22 @@
+{
+  "name": "SpaceBook login",
+  "short_name": "SpaceBook",
+  "icons": [
+    {
+      "src": "Assets/spacebook_icon.png",
+      "sizes": "300x300",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "Assets/spacebook_icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#141c3a",
+  "background_color": "#141c3a",
+  "start_url": "/",
+  "display": "standalone"
+}

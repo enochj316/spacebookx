@@ -12,6 +12,9 @@
 	<link href="styles/tailwind.css" rel="stylesheet">
 	<link href="styles/style.css" rel="stylesheet">
 	<link rel="icon" href="Assets/spacebook_icon.png" type="image/png">
+	<link rel="manifest" crossorigin="use-credentials" href="manifest.json"/>
+	<link rel="apple-touch-icon" href="./Assets/spacebook_icon.png">
+	<meta name="theme-color" content="#141c3a"/>
 </head>
 
 <body>
@@ -48,6 +51,15 @@
 
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 	<script src="js/login.js"></script>
+	<script>
+      if ("serviceWorker" in navigator) {
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("service-worker.js").then(reg => {
+            console.log("We found your service worker file!", reg);
+          });
+        });
+      }
+    </script>
 </body>
 
 </html>
