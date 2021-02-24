@@ -102,3 +102,23 @@ dist
 
 # TernJS port file
 .tern-port
+
+app/
+
+gradle/
+
+build.gradle
+
+google-services.json
+
+gradlew
+
+gradlew.bat
+
+local.properties
+
+cert.pem
+
+key.pem
+
+keytmp.pem

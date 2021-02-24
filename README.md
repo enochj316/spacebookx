@@ -71,6 +71,9 @@ To Install this application, you can clone the repository. Ensure you create .en
 * Explore our friendly digital neighbourhood and go ahead and start making friends
     ![Demo Home Page](https://github.com/enochj316/Project2/blob/main/public/images/Spacebook.4png)
 
+* 100% on Lighthouse tests
+    ![Demo Home Page](https://github.com/enochj316/Project2/blob/main/public/images/lighthouse.gif)
+    
 
 ## Credits 
 📣
@@ -88,6 +91,10 @@ Joyson P
 * GitHub
   * Repository - https://github.com/enochj316/Project2
 
+* Google Play store
+  * Repository - https://play.google.com/store/apps/details?id=localhost_8080.twa
+  ![Google Play](https://github.com/enochj316/Project2/blob/main/public/images/play.png)
+
 
 
 ## License 
@@ -104,3 +111,4 @@ Joyson P
 ![badge](https://img.shields.io/badge/scss-beauty-brightgreen)
 ![badge](https://img.shields.io/github/languages/count/enochj316/Project2)
 ![badge](https://img.shields.io/badge/version-1.0.1-blue)
+![badge](https://img.shields.io/badge/Google%20Play-1.0.1-green)
